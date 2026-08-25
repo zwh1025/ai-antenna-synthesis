@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 模型与输出
+*.pt
+*.pth
+*.om
+outputs/
+*.npz
+
+# 原始资料（体积大，不放仓库）
+*.pdf
+*.docx
+*.rar
+extracted/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+
+# 临时
+*.log
+.ipynb_checkpoints/
