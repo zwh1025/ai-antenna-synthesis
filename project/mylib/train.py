@@ -89,7 +89,7 @@ class EarlyStopping:
 def train_model(model, encoder_input, decoder_input, decoder_output,
                 batch_size=64, epochs=50, learning_rate=1e-3,
                 patience_lr=3, patience_stop=12, verbose=True,
-                device=None):
+                device=None, save_path=None, save_every=50):
     """训练 Seq2SeqModel。
 
     返回 (model, history)：
@@ -147,11 +147,19 @@ def train_model(model, encoder_input, decoder_input, decoder_output,
                   f"loss={avg_loss:.6f}  acc={avg_acc:.4f}  "
                   f"lr={cur_lr:.2e}")
 
+        if save_path and (epoch + 1) % save_every == 0:
+            torch.save(model.state_dict(), save_path)
+            if verbose:
+                print(f"  → checkpoint saved: {save_path}")
+
         if early_stop.step(avg_acc):
             if verbose:
                 print(f"Early stopping at epoch {epoch+1} "
                       f"(best acc={early_stop.best:.4f})")
             break
+
+    if save_path:
+        torch.save(model.state_dict(), save_path)
 
     return model, history
 
