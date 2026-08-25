@@ -205,10 +205,12 @@ def predict_sequence(model, encoder_input, output_dim,
     from mylib.embedding import map_vec_to_num_np
 
     model.eval()
+    device = next(model.parameters()).device
     with torch.no_grad():
+        encoder_input = encoder_input.to(device)
         _, states = model.encoder(encoder_input)
 
-        dec_input = torch.zeros(1, 1, output_dim, 2)
+        dec_input = torch.zeros(1, 1, output_dim, 2, device=device)
         dec_input[0, 0, output_dim - 1, :] = 1.0
 
         amp_dp = np.linspace(amp_range[0], amp_range[1], output_dim - 1)
@@ -220,7 +222,7 @@ def predict_sequence(model, encoder_input, output_dim,
         for step in range(max_steps):
             dec_in = dec_input.reshape(1, 1, -1)
             output, states = model.decoder(dec_in, states)
-            raw = output[0, 0].numpy()
+            raw = output[0, 0].cpu().numpy()
             raw_outputs.append(raw)
 
             if raw[-1, 0] > separator_threshold or raw[-1, 1] > separator_threshold:
@@ -235,7 +237,7 @@ def predict_sequence(model, encoder_input, output_dim,
             phase_vec = map_num_to_vec_np(phase, phase_dp)
             dec_input = torch.from_numpy(
                 np.stack([amp_vec, phase_vec], axis=0).reshape(1, 1, output_dim, 2)
-            ).float()
+            ).float().to(device)
 
         return generated, raw_outputs
 
