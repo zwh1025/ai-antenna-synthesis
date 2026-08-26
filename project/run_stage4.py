@@ -31,7 +31,7 @@ from mylib.train import get_device
 
 def get_exclude_angle(N, theta0):
     bw = 0.886 * 2.0 / N * 180 / np.pi
-    return 2.0 * bw / max(np.cos(np.deg2rad(theta0)), 0.1)
+    return 3.0 * bw / max(np.cos(np.deg2rad(theta0)), 0.1)
 
 
 def eval_sll(amp, phase, posx, posy, theta0, phi0, Nx):

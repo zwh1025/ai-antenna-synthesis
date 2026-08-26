@@ -115,7 +115,7 @@ def get_exclude_angle(N, theta0):
     """扫描自适应排除角。"""
     bw = 0.886 * 2.0 / N * 180 / np.pi
     cos_scan = max(np.cos(np.deg2rad(theta0)), 0.1)
-    return 2.0 * bw / cos_scan
+    return 3.0 * bw / cos_scan
 
 
 def evaluate_pattern(amp_2d, phase_2d, posx, posy, theta0, phi0, Nx):

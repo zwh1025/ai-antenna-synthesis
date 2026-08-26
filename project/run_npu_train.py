@@ -162,7 +162,7 @@ def main():
         pat = calculate_2d_pattern(amp_2d, phase_2d, posx, posy, theta, phi).numpy()
 
         cos_scan = max(np.cos(np.deg2rad(theta0)), 0.1)
-        exc = 2.0 * bw / cos_scan
+        exc = 3.0 * bw / cos_scan
         sll_net = get_2d_sll(pat, theta, phi, theta0, phi0, exclude_angle=exc)
 
         amp_x_a, amp_y_a = taylor_2d_separable(Nx, Ny, 35)

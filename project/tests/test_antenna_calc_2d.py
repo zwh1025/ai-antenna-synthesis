@@ -114,7 +114,7 @@ def test_32x32_broadside_sll():
 
     exc = get_exclude_angle(Nx)
     sll = get_2d_sll(pat, theta, phi, 0, 0, exclude_angle=exc)
-    assert sll <= -32.0, f"broadside SLL={sll:.1f} dB, expected ≤ -32"
+    assert sll <= -33.0, f"broadside SLL={sll:.1f} dB, expected ≤ -33 (3×3dB_BW exclusion)"
     print(f"PASS: test_32x32_broadside_sll (SLL={sll:.1f} dB, exc={exc:.1f}°)")
 
 
@@ -141,12 +141,12 @@ def test_conical_scan_sll():
             pat = calculate_2d_pattern(amp_2d, phase_2d, posx, posy, theta, phi).numpy()
 
             cos_scan = max(np.cos(np.deg2rad(theta0)), 0.1)
-            exc = 2.0 * bw_broadside / cos_scan
+            exc = 3.0 * bw_broadside / cos_scan
 
             sll = get_2d_sll(pat, theta, phi, theta0, phi0, exclude_angle=exc)
             results.append((theta0, phi0, sll, exc))
 
-            threshold = -30.0 if theta0 <= 30 else -18.0
+            threshold = -30.0 if theta0 <= 30 else -25.0
             assert sll <= threshold, \
                 f"θ0={theta0}° φ0={phi0}°: SLL={sll:.1f} dB, expected ≤ {threshold}"
 

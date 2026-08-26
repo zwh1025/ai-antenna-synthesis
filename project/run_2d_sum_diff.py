@@ -21,7 +21,7 @@ from mylib.sum_diff import bayliss_excitation, capon_nulling_2d, monopulse_metri
 
 def get_exc(N, theta0):
     bw = 0.886 * 2.0 / N * 180 / np.pi
-    return 2.0 * bw / max(np.cos(np.deg2rad(theta0)), 0.1)
+    return 3.0 * bw / max(np.cos(np.deg2rad(theta0)), 0.1)
 
 
 def main():
