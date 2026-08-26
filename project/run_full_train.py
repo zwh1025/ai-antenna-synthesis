@@ -36,16 +36,10 @@ def main():
     enc_in, dec_in, dec_out = prepare_training_data(X, Y)
     config = get_dataset_config(N_list)
 
-    # 13M 模型
+    # 13M 模型（从头训练，不加载旧 checkpoint）
     main_n = [512, 512]; branch_n = [256, 256, 128, 128]; dense_n = [64, 32, 16]
     model = Seq2SeqModel(32, 32, [main_n, branch_n, branch_n, dense_n, dense_n])
-    print(f"Model: {count_parameters(model):,} params")
-
-    # 加载之前的 checkpoint（如果有）
-    ckpt = os.path.join(output_dir, 'model_full_npu.pt')
-    if os.path.exists(ckpt):
-        model.load_state_dict(torch.load(ckpt, map_location='cpu', weights_only=False))
-        print(f"Loaded checkpoint: {ckpt}")
+    print(f"Model: {count_parameters(model):,} params (from scratch)")
 
     print(f"Training: 120 epochs, batch=128, lr=5e-4")
     save_path = os.path.join(output_dir, 'model_final.pt')

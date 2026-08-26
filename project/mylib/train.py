@@ -104,10 +104,10 @@ class EarlyStopping:
 def masked_mse_loss(pred, target):
     """带 padding mask 的 MSE loss。
 
-    padding 定义：目标在该时间步的 amp 和 phase 向量均为全零。
+    padding 定义：该时间步的全部目标值（32维×2通道）均为零。
     """
     if target.dim() == 4:
-        is_pad = (target.abs().sum(dim=-1) == 0).any(dim=-1)
+        is_pad = (target.abs().sum(dim=(2, 3)) == 0)
     else:
         is_pad = (target.abs().sum(dim=-1) == 0)
 
@@ -117,7 +117,9 @@ def masked_mse_loss(pred, target):
 
     sq_err = (pred - target) ** 2
     masked = sq_err * mask
-    return masked.sum() / (mask.sum() * target.shape[-1] + 1e-8)
+    n_valid = mask.sum() * target.shape[-1] * target.shape[-2] if target.dim() == 4 \
+        else mask.sum() * target.shape[-1]
+    return masked.sum() / (n_valid + 1e-8)
 
 
 def train_model(model, encoder_input, decoder_input, decoder_output,
