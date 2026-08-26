@@ -236,7 +236,7 @@ def predict_sequence(model, encoder_input, output_dim,
             amp_vec = map_num_to_vec_np(amp, amp_dp)
             phase_vec = map_num_to_vec_np(phase, phase_dp)
             dec_input = torch.from_numpy(
-                np.stack([amp_vec, phase_vec], axis=0).reshape(1, 1, output_dim, 2)
+                np.stack([amp_vec, phase_vec], axis=-1).reshape(1, 1, output_dim, 2)
             ).float().to(device)
 
         return generated, raw_outputs

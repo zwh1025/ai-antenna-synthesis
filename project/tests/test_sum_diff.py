@@ -167,7 +167,7 @@ def test_competition_metrics():
     theta = np.linspace(0, 180, 1801)
 
     amp_sum = taylor_excitation(N * 0.5, pos, SLL)
-    amp_diff, _ = bayliss_excitation(N, 30)
+    amp_diff, _ = bayliss_excitation(N, 35)
     phase = beam_steering_phase(pos, theta0)
 
     sum_pat = calculate_1d_pattern(pos, amp_sum, phase, theta).numpy()
@@ -197,10 +197,10 @@ def test_competition_metrics():
     print(f"  3dB BW:        {bw:.2f}°")
     print(f"  Pointing err:  {pointing_err:.3f}° (target ≤ {bw/30:.3f}°)")
 
-    assert diff_sll <= -15, f"Diff SLL={diff_sll:.1f}"
-    assert diff_null < -30, f"Diff null={diff_null:.1f}"
-    assert all(d < -25 for d in null_depths), f"Null depths too high"
-    print("\n  ALL METRICS PASS (1D verification)")
+    assert diff_sll <= -20, f"Diff SLL={diff_sll:.1f}, target ≤ -20"
+    assert diff_null < -30, f"Diff null={diff_null:.1f}, target ≤ -30"
+    assert all(d < -30 for d in null_depths), f"Null depths must be ≤ -30, got {null_depths}"
+    print("\n  COMPETITION THRESHOLDS CHECKED (1D verification)")
 
 
 if __name__ == '__main__':

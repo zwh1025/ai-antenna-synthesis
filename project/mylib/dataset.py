@@ -19,11 +19,14 @@ from mylib.embedding import map_num_to_vec_np
 
 
 def create_single_data(N_units, theta0, SLL,
-                       theta0_range, pos_range, L_X,
+                       theta0_range, SLL_range, pos_range, L_X,
                        amp_range, phase_range, L_Y,
                        N_units_max,
                        reference='Taylor', dtype=np.float32):
     """生成单组训练数据。
+
+    输入序列: [sep] + [SLL] + [sep] + [theta0] + [sep] + [pos...] + [sep] + [pad...]
+    输出序列: [sep] + [amp/phase...] + [sep] + [pad...]
 
     返回 (X, Y):
       X: (enc_seq, L_X+1)            输入序列
@@ -32,6 +35,7 @@ def create_single_data(N_units, theta0, SLL,
     pos = uniform_linear_array_pos(N_units)
 
     dp_theta0 = np.linspace(theta0_range[0], theta0_range[1], L_X)
+    dp_sll = np.linspace(SLL_range[0], SLL_range[1], L_X)
     dp_pos = np.linspace(pos_range[0], pos_range[1], L_X)
     dp_amp = np.linspace(amp_range[0], amp_range[1], L_Y)
     dp_phase = np.linspace(phase_range[0], phase_range[1], L_Y)
@@ -44,11 +48,13 @@ def create_single_data(N_units, theta0, SLL,
     if isinstance(theta0, (int, float)):
         theta0 = [theta0]
 
+    sll_vec = map_num_to_vec_np(float(SLL), dp_sll, dtype=dtype)
     theta0_vecs = [map_num_to_vec_np(t, dp_theta0, dtype=dtype) for t in theta0]
     pos_vecs = [map_num_to_vec_np(p, dp_pos, dtype=dtype) for p in pos]
 
     X = np.stack(
-        [sep_X] + theta0_vecs + [sep_X] +
+        [sep_X] + [sll_vec] + [sep_X] +
+        theta0_vecs + [sep_X] +
         pos_vecs + [sep_X] +
         (N_units_max - N_units) * [pad_X], axis=0)
 
@@ -94,6 +100,7 @@ def create_dataset(N_list, theta0_list, SLL_list,
     """
     N_units_max = int(np.max(N_list)) + 1
     theta0_range = (0.0, 180.0)
+    SLL_range = (0.0, 50.0)
     pos_range = ((0.5 - N_units_max / 2) * 0.5,
                  (N_units_max / 2 - 0.5) * 0.5)
     L_X = 31
@@ -104,7 +111,7 @@ def create_dataset(N_list, theta0_list, SLL_list,
     results = [
         create_single_data(
             int(N), float(t), int(s),
-            theta0_range, pos_range, L_X,
+            theta0_range, SLL_range, pos_range, L_X,
             amp_range, phase_range, L_Y,
             N_units_max, reference, dtype)
         for N in N_list for t in theta0_list for s in SLL_list
