@@ -56,22 +56,37 @@ def evaluate_2d_comprehensive(amp_2d, phase_2d, posx, posy,
     bw = 0.886 * 2.0 / Nx * 180 / np.pi
 
     # ---- SLL 主口径: 方向自适应第一零点 ----
-    # 在每个方位角方向，从峰值出发找第一零点
+    # 在每个方位角方向，从峰值出发找第一局部最小值(零点)
     main_lobe_mask = np.zeros_like(pat, dtype=bool)
     n_az = len(phi_grid)
+    null_threshold = -20.0  # 低于此值才算零点候选
     for j in range(n_az):
-        # 从峰值所在行出发，沿theta方向搜索
         i_start = idx_peak[0]
-        # 向theta增大方向
-        for i in range(i_start, len(theta_grid)):
-            if pat[i, j] < -50:
-                break
+        # 向theta增大方向找第一零点
+        found = False
+        for i in range(i_start, min(i_start+50, len(theta_grid)-1)):
             main_lobe_mask[i, j] = True
+            if pat[i, j] < null_threshold and i > i_start + 1:
+                if pat[i, j] <= pat[i-1, j] and pat[i, j] <= pat[min(i+1, len(theta_grid)-1), j]:
+                    found = True
+                    break
+        if not found:
+            for i in range(i_start+1, min(i_start+50, len(theta_grid))):
+                if pat[i, j] < null_threshold:
+                    found = True
+                    break
         # 向theta减小方向
-        for i in range(i_start-1, -1, -1):
-            if pat[i, j] < -50:
-                break
+        found2 = False
+        for i in range(i_start, max(i_start-50, -1), -1):
             main_lobe_mask[i, j] = True
+            if pat[i, j] < null_threshold and i < i_start - 1:
+                if i > 0 and pat[i, j] <= pat[i-1, j] and pat[i, j] <= pat[i+1, j]:
+                    found2 = True
+                    break
+        if not found2:
+            for i in range(i_start-1, max(i_start-50, -1), -1):
+                if i >= 0 and pat[i, j] < null_threshold:
+                    break
 
     sl_mask_fn = (~main_lobe_mask) & visible
     sll_fn = float(np.max(pat[sl_mask_fn])) if np.any(sl_mask_fn) else float('nan')
