@@ -295,7 +295,7 @@ def main():
 
                 # 无补偿
                 w_no = (amp_ref * np.exp(1j * phase_ref)).ravel()
-                w_no[~active_idx] = 0
+                w_no[fmask] = 0
                 w_no_active = w_no[active_idx]
                 r_no = evaluate_w(w_no_active, active_idx, posx, posy, Nx, Ny,
                                   theta0, phi0, null_dirs)
@@ -367,7 +367,7 @@ def main():
         al, pl = capon_nulling_2d(posx32, posy32, amp_ref, phase_ref, theta0, phi0, null_dirs)
 
         w_no = (al * np.exp(1j * pl)).ravel()
-        w_no[~active_idx] = 0
+        w_no[fmask] = 0
         w_no_active = w_no[active_idx]
         r_no = evaluate_w(w_no_active, active_idx, posx32, posy32, Nx32, Ny32,
                           theta0, phi0, null_dirs)

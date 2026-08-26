@@ -274,7 +274,7 @@ def main():
 
             # 无补偿
             w_no = (al * np.exp(1j * pl)).ravel()
-            w_no[~active_idx] = 0
+            w_no[fmask] = 0
             w_no_active = w_no[active_idx].copy()
             sll_no, pt_no, nd_no, papr_no = eval_final(
                 w_no_active, active_idx, posx, posy, theta0, phi0, null_dirs)
