@@ -114,8 +114,7 @@ def capon_nulling(pos, amp, phase, theta0,
     """LCMV 置零（1D，以参考权值为中心的最小修正）。
 
     min ||w - w_ref||^2  s.t.  C^H w = f
-    解: w = w_ref + R^{-1} C (C^H R^{-1} C)^{-1} (f - C^H w_ref)
-    其中 R=I, w_ref = amp * exp(j*phase)
+    先归一化 w_ref 使主瓣响应 = 1，避免尺度不一致。
     """
     pos = np.asarray(pos, dtype=np.float64)
     N = len(pos)
@@ -124,6 +123,10 @@ def capon_nulling(pos, amp, phase, theta0,
     w_ref = amp * np.exp(1j * phase)
     a_main = np.exp(1j * k * np.cos(np.deg2rad(theta0)) * pos)
 
+    # 关键修正：归一化 w_ref 使主瓣响应 = 1
+    main_resp = a_main.conj() @ w_ref
+    w_ref = w_ref / main_resp
+
     null_dirs = list(null_directions)
     cols = [a_main]
     for theta_null in null_dirs:
@@ -131,7 +134,7 @@ def capon_nulling(pos, amp, phase, theta0,
 
     C = np.column_stack(cols)
     f = np.zeros(len(cols), dtype=complex)
-    f[0] = 1.0
+    f[0] = 1.0  # 现在与 w_ref 的主瓣响应一致
 
     R_inv = np.eye(N, dtype=complex)
     CR = C.conj().T @ R_inv @ C
@@ -149,8 +152,7 @@ def capon_nulling_2d(posx, posy, amp_2d, phase_2d, theta0, phi0,
                      null_directions, lamb=1.0):
     """2D LCMV 置零（以参考权值为中心的最小修正）。
 
-    min ||w - w_ref||^2  s.t.  C^H w = f
-    w_ref = amp_2d * exp(j*phase_2d)，保留低副瓣结构。
+    先归一化 w_ref 使主瓣响应 = 1，避免尺度不一致。
     """
     posx = np.asarray(posx, dtype=np.float64)
     posy = np.asarray(posy, dtype=np.float64)
@@ -166,6 +168,10 @@ def capon_nulling_2d(posx, posy, amp_2d, phase_2d, theta0, phi0,
     v0 = np.sin(np.deg2rad(theta0)) * np.sin(np.deg2rad(phi0))
     a_main = np.exp(1j * k * (posx_2d * u0 + posy_2d * v0)).ravel()
 
+    # 关键修正：归一化 w_ref 使主瓣响应 = 1
+    main_resp = a_main.conj() @ w_ref
+    w_ref = w_ref / main_resp
+
     cols = [a_main]
     for tn, pn in null_directions:
         un = np.sin(np.deg2rad(tn)) * np.cos(np.deg2rad(pn))
@@ -174,7 +180,7 @@ def capon_nulling_2d(posx, posy, amp_2d, phase_2d, theta0, phi0,
 
     C = np.column_stack(cols)
     f = np.zeros(len(cols), dtype=complex)
-    f[0] = 1.0
+    f[0] = 1.0  # 现在与 w_ref 的主瓣响应一致
 
     R_inv = np.eye(Nx * Ny, dtype=complex)
     CR = C.conj().T @ R_inv @ C
