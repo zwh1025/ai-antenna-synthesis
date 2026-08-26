@@ -111,89 +111,75 @@ def sum_diff_pattern_1d(pos, amp_sum, amp_diff, phase_sum, phase_diff,
 def capon_nulling(pos, amp, phase, theta0,
                   null_directions, theta_calc=None,
                   lamb=1.0):
-    """Capon 最小方差置零。
+    """LCMV 自适应置零（1D）。
 
-    在保持主瓣方向增益的前提下，在指定方向形成零陷。
-
-    Args:
-        pos: (N,) 阵元位置
-        amp: (N,) 原始激励幅值
-        phase: (N,) 原始激励相位 (弧度)
-        theta0: 主瓣方向 (度)
-        null_directions: [theta1, theta2, ...] 置零方向 (度)
-        theta_calc: 方向图采样点
-
-    Returns:
-        (new_amp, new_phase) 补偿后的激励
+    线性约束: 主瓣响应=1, 零陷方向响应=0。
+    解: w = R^{-1} C (C^H R^{-1} C)^{-1} f
+    其中 C=[a_main, a_null...], f=[1, 0, 0, ...], R=I (白噪声)
     """
     pos = np.asarray(pos, dtype=np.float64)
     N = len(pos)
     k = 2 * np.pi / lamb
 
-    w = amp * np.exp(1j * phase)
-
     a_main = np.exp(1j * k * np.cos(np.deg2rad(theta0)) * pos)
-
     null_dirs = list(null_directions)
     A_null = np.zeros((len(null_dirs), N), dtype=complex)
     for i, theta_null in enumerate(null_dirs):
         A_null[i] = np.exp(1j * k * np.cos(np.deg2rad(theta_null)) * pos)
 
-    R = np.eye(N, dtype=complex) + A_null.conj().T @ A_null
+    # 约束矩阵: C^H w = [1, 0, 0, ...]
+    C = np.column_stack([a_main] + [A_null[i] for i in range(len(null_dirs))])
+    f = np.zeros(len(null_dirs) + 1, dtype=complex)
+    f[0] = 1.0
 
-    a_main_col = a_main.reshape(-1, 1)
-    w_opt = np.linalg.solve(R, a_main_col).ravel()
+    R = np.eye(N, dtype=complex)
+    w_opt, _, _, _ = np.linalg.lstsq(C.conj().T, f, rcond=1e-10)
 
-    w_new = w * w_opt
-
-    new_amp = np.abs(w_new)
+    new_amp = np.abs(w_opt)
     if new_amp.max() > 0:
         new_amp = new_amp / new_amp.max()
-    new_phase = np.angle(w_new) % (2 * np.pi)
-
+    new_phase = np.angle(w_opt) % (2 * np.pi)
     return new_amp, new_phase
 
 
 def capon_nulling_2d(posx, posy, amp_2d, phase_2d, theta0, phi0,
                      null_directions, lamb=1.0):
-    """2D Capon 置零。
+    """2D LCMV 置零。
 
-    null_directions: [(theta1, phi1), (theta2, phi2), ...]
-
-    Returns:
-        (new_amp_2d, new_phase_2d)
+    线性约束: 主瓣=1, 零陷=0。
+    steering vector 与权值使用相同的 C-order flatten。
     """
     posx = np.asarray(posx, dtype=np.float64)
     posy = np.asarray(posy, dtype=np.float64)
     Nx, Ny = len(posx), len(posy)
     k = 2 * np.pi / lamb
 
-    w = (amp_2d * np.exp(1j * phase_2d)).ravel()
+    posx_2d = np.tile(posx[:, None], (1, Ny))
+    posy_2d = np.tile(posy[None, :], (Nx, 1))
 
     u0 = np.sin(np.deg2rad(theta0)) * np.cos(np.deg2rad(phi0))
     v0 = np.sin(np.deg2rad(theta0)) * np.sin(np.deg2rad(phi0))
-    a_main = np.exp(1j * k * (np.outer(np.full(Ny, u0), posx).T.ravel() +
-                               np.outer(posy, np.full(Nx, v0)).ravel()))
+    a_main = np.exp(1j * k * (posx_2d * u0 + posy_2d * v0)).ravel()
 
     null_dirs = list(null_directions)
-    A_null = np.zeros((len(null_dirs), Nx * Ny), dtype=complex)
-    for i, (tn, pn) in enumerate(null_dirs):
+    cols = [a_main]
+    for tn, pn in null_dirs:
         un = np.sin(np.deg2rad(tn)) * np.cos(np.deg2rad(pn))
         vn = np.sin(np.deg2rad(tn)) * np.sin(np.deg2rad(pn))
-        A_null[i] = np.exp(1j * k * (np.outer(np.full(Ny, un), posx).T.ravel() +
-                                      np.outer(posy, np.full(Nx, vn)).ravel()))
+        cols.append(np.exp(1j * k * (posx_2d * un + posy_2d * vn)).ravel())
 
-    R = np.eye(Nx * Ny, dtype=complex) + 10 * A_null.conj().T @ A_null
+    C = np.column_stack(cols)
+    f = np.zeros(len(cols), dtype=complex)
+    f[0] = 1.0
 
-    a_main_col = a_main.reshape(-1, 1)
-    w_opt = np.linalg.solve(R, a_main_col).ravel()
-    w_new = w * w_opt
+    R = np.eye(Nx * Ny, dtype=complex)
+    w_opt, _, _, _ = np.linalg.lstsq(C.conj().T, f, rcond=1e-10)
 
-    new_amp = np.abs(w_new).reshape(Nx, Ny)
+    w_mat = w_opt.reshape(Nx, Ny)
+    new_amp = np.abs(w_mat)
     if new_amp.max() > 0:
         new_amp = new_amp / new_amp.max()
-    new_phase = np.angle(w_new).reshape(Nx, Ny) % (2 * np.pi)
-
+    new_phase = np.angle(w_mat) % (2 * np.pi)
     return new_amp, new_phase
 
 

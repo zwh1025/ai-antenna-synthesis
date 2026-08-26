@@ -230,6 +230,53 @@ def calculate_2d_pattern(amp, phase, posx, posy,
 #  指标计算（numpy，验收用）
 # ============================================================
 
+def calculate_2d_pattern_arbitrary(amp, phase, posx_2d, posy_2d,
+                                  theta_calc=None, phi_calc=None, lamb=1.0):
+    """2D 方向图（任意阵元位置，非可分离）。
+
+    用于位置扰动等非理想场景，每个阵元有独立 2D 坐标。
+
+    Args:
+        amp:       (Nx, Ny) 激励幅值
+        phase:     (Nx, Ny) 激励相位（弧度）
+        posx_2d:   (Nx, Ny) 各阵元 x 坐标
+        posy_2d:   (Nx, Ny) 各阵元 y 坐标
+    """
+    if theta_calc is None:
+        theta_calc = np.linspace(0, 90, 91)
+    if phi_calc is None:
+        phi_calc = np.linspace(0, 360, 361)
+
+    amp = _to_tensor(amp)
+    phase = _to_tensor(phase)
+    posx_2d = _to_tensor(posx_2d)
+    posy_2d = _to_tensor(posy_2d)
+    theta_calc = _to_tensor(theta_calc)
+    phi_calc = _to_tensor(phi_calc)
+
+    Nx, Ny = amp.shape
+    theta_rad = theta_calc * (math.pi / 180.0)
+    phi_rad = phi_calc * (math.pi / 180.0)
+    k = 2 * math.pi / lamb
+
+    sin_t = torch.sin(theta_rad)
+    cos_p = torch.cos(phi_rad)
+    sin_p = torch.sin(phi_rad)
+
+    # pos: (Nx, Ny, Nt, Np) = posx_2d * sin_t * cos_p + posy_2d * sin_t * sin_p
+    pos = (posx_2d.reshape(Nx, Ny, 1, 1) * sin_t.reshape(1, 1, -1, 1) * cos_p.reshape(1, 1, 1, -1)
+           + posy_2d.reshape(Nx, Ny, 1, 1) * sin_t.reshape(1, 1, -1, 1) * sin_p.reshape(1, 1, 1, -1))
+
+    psi = k * pos - phase.reshape(Nx, Ny, 1, 1)
+    real = torch.sum(amp.reshape(Nx, Ny, 1, 1) * torch.cos(psi), dim=(0, 1))
+    imag = torch.sum(amp.reshape(Nx, Ny, 1, 1) * torch.sin(psi), dim=(0, 1))
+
+    pattern = torch.sqrt(real ** 2 + imag ** 2)
+    peak = pattern.max()
+    ratio = torch.clamp(pattern / (peak + 1e-30), min=1e-12)
+    return 20 * torch.log10(ratio)
+
+
 def get_sll_1d(pattern_db, theta_deg,
                main_lobe_center=None, exclude_half_width=5.0):
     """一维方向图副瓣电平 (dB)。

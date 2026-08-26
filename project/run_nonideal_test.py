@@ -29,31 +29,35 @@ from mylib.antenna_calc import (
 )
 
 
-def quantize_amplitude(amp, n_bits):
-    """幅值量化到 n_bits 位。
+def quantize_amplitude(amp, step_db=0.5):
+    """幅值量化（dB 域步进）。
 
-    n_bits=1: {0, 1}
-    n_bits=2: {0, 0.33, 0.67, 1}
-    n_bits=6: 0.5dB 步进（竞赛标准）
+    竞赛标准: 0.5 dB 衰减步进。
+    将幅值转到 dB 域，按 step_db 量化，再转回线性。
     """
+    if step_db <= 0:
+        return amp
+    amp = np.clip(amp, 1e-6, 1.0)
+    amp_db = 20 * np.log10(amp)
+    quantized_db = np.round(amp_db / step_db) * step_db
+    return 10 ** (quantized_db / 20)
+
+
+def quantize_amplitude_bits(amp, n_bits):
+    """n-bit 幅值量化（线性均匀级）。"""
     if n_bits >= 16:
         return amp
     levels = 2 ** n_bits
-    quantized = np.round(amp * (levels - 1)) / (levels - 1)
-    return quantized
+    return np.round(amp * (levels - 1)) / (levels - 1)
 
 
 def quantize_phase(phase_rad, n_bits):
-    """相位量化到 n_bits 位。
-
-    n_bits=6: 5.625° 步进（竞赛标准）
-    """
+    """相位量化到 n_bits 位。n_bits=6: 5.625° 步进。"""
     if n_bits >= 16:
         return phase_rad
     levels = 2 ** n_bits
     step = 2 * np.pi / levels
-    quantized = np.round(phase_rad / step) * step
-    return quantized % (2 * np.pi)
+    return (np.round(phase_rad / step) * step) % (2 * np.pi)
 
 
 def apply_element_failure(amp_2d, phase_2d, failure_rate, seed=None):
@@ -140,28 +144,26 @@ def test_quantization_degradation():
 
     print("\n=== Quantization Degradation (32×32, broadside) ===")
     print(f"  Ideal SLL: {sll_ideal:.1f} dB")
-    print(f"  {'Bits':>5} {'Amp_SLL':>8} {'Phase_SLL':>10} {'Both_SLL':>10} {'Degradation':>12}")
+    print(f"  {'Method':>12} {'Amp_SLL':>8} {'Phase_SLL':>10} {'Both_SLL':>10} {'Degrade':>8}")
 
-    for n_bits in [1, 2, 3, 4, 6]:
-        amp_q = quantize_amplitude(amp_2d, n_bits)
-        phase_q = quantize_phase(phase_2d, n_bits)
+    # 竞赛标准: 0.5dB 衰减步进 + 5.625° 移相量化 (6bit)
+    amp_q = quantize_amplitude(amp_2d, step_db=0.5)
+    phase_q = quantize_phase(phase_2d, 6)
+    sll_amp = evaluate_pattern(amp_q, phase_2d, posx, posy, theta0, phi0, Nx)
+    sll_phase = evaluate_pattern(amp_2d, phase_q, posx, posy, theta0, phi0, Nx)
+    sll_both = evaluate_pattern(amp_q, phase_q, posx, posy, theta0, phi0, Nx)
+    degrade = sll_ideal - sll_both
+    print(f"  {'0.5dB+6bit':>12} {sll_amp:>8.1f} {sll_phase:>10.1f} {sll_both:>10.1f} {degrade:>8.1f} dB")
 
-        sll_amp = evaluate_pattern(amp_q, phase_2d, posx, posy, theta0, phi0, Nx)
-        sll_phase = evaluate_pattern(amp_2d, phase_q, posx, posy, theta0, phi0, Nx)
-        sll_both = evaluate_pattern(amp_q, phase_q, posx, posy, theta0, phi0, Nx)
-        degrade = sll_ideal - sll_both
+    # 也测线性量化对比
+    for n_bits in [2, 3, 4]:
+        amp_qb = quantize_amplitude_bits(amp_2d, n_bits)
+        phase_qb = quantize_phase(phase_2d, n_bits)
+        sll_b = evaluate_pattern(amp_qb, phase_qb, posx, posy, theta0, phi0, Nx)
+        print(f"  {f'{n_bits}bit linear':>12} {'':>8} {'':>10} {sll_b:>10.1f} {sll_ideal-sll_b:>8.1f} dB")
 
-        print(f"  {n_bits:>5} {sll_amp:>8.1f} {sll_phase:>10.1f} "
-              f"{sll_both:>10.1f} {degrade:>10.1f} dB")
-
-    # 竞赛标准: 0.5dB衰减 + 5.625°移相 (6bit)
-    amp_q6 = quantize_amplitude(amp_2d, 6)
-    phase_q6 = quantize_phase(phase_2d, 6)
-    sll_std = evaluate_pattern(amp_q6, phase_q6, posx, posy, theta0, phi0, Nx)
-    print(f"\n  Competition standard (6bit): SLL={sll_std:.1f} dB "
-          f"(degradation={sll_ideal - sll_std:.1f} dB)")
-    assert sll_std <= -30.0, f"6bit quantization SLL={sll_std:.1f}, expected ≤ -30"
-    print("  PASS: 6bit quantization degradation < 5 dB")
+    assert sll_both <= -30.0, f"Competition standard SLL={sll_both:.1f}, expected ≤ -30"
+    print(f"\n  PASS: 0.5dB + 6bit quantization SLL > -30 dBc")
 
 
 def test_failure_degradation():

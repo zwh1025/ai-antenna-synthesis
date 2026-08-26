@@ -22,6 +22,7 @@ from mylib.antenna_calc import (
     beam_steering_phase_2d,
     combine_2d_excitation,
     calculate_2d_pattern,
+    calculate_2d_pattern_arbitrary,
     get_2d_sll,
     angular_distance_deg,
 )
@@ -42,7 +43,12 @@ def eval_sll(amp, phase, posx, posy, theta0, phi0, Nx):
 
 
 def test_position_perturbation():
-    """位置扰动 ±λ/20 验证。"""
+    """位置扰动 ±λ/20 验证（固定移相器，不重算相位）。
+
+    竞赛场景: 移相器按理想位置设计，实际安装有位置误差。
+    方向图用扰动后位置计算，但激励相位保持理想值。
+    每个阵元独立 2D 扰动（不是行/列整体偏移）。
+    """
     Nx, Ny = 32, 32
     SLL = 35
     theta0, phi0 = 0.0, 0.0
@@ -50,12 +56,13 @@ def test_position_perturbation():
     posx = uniform_linear_array_pos(Nx)
     posy = uniform_linear_array_pos(Ny)
     amp_x, amp_y = taylor_2d_separable(Nx, Ny, SLL)
+    # 理想相位（按理想位置设计，固定不变）
     phase_x, phase_y = beam_steering_phase_2d(posx, posy, theta0, phi0)
     amp_2d, phase_2d = combine_2d_excitation(amp_x, amp_y, phase_x, phase_y)
 
     sll_ideal = eval_sll(amp_2d, phase_2d, posx, posy, theta0, phi0, Nx)
 
-    print("\n=== Position Perturbation (±λ/20) ===")
+    print("\n=== Position Perturbation (±λ/20, fixed phase) ===")
     print(f"  Ideal SLL: {sll_ideal:.1f} dB")
     print(f"  {'Perturb':>8} {'SLL':>8} {'Degrade':>8}")
 
@@ -63,21 +70,37 @@ def test_position_perturbation():
         slls = []
         for seed in range(10):
             np.random.seed(seed)
-            px = posx + np.random.uniform(-perturb, perturb, Nx)
-            py = posy + np.random.uniform(-perturb, perturb, Ny)
-            phx, phy = beam_steering_phase_2d(px, py, theta0, phi0)
-            amp_2d_p, phase_2d_p = combine_2d_excitation(amp_x, amp_y, phx, phy)
-            sll = eval_sll(amp_2d_p, phase_2d_p, px, py, theta0, phi0, Nx)
+            # 每个阵元独立的 2D 位置扰动
+            px_perturbed = posx[:, None] + np.random.uniform(-perturb, perturb, (Nx, Ny))
+            py_perturbed = posy[None, :] + np.random.uniform(-perturb, perturb, (Nx, Ny))
+            # 方向图用扰动位置计算，但激励保持理想设计
+            theta = np.linspace(0, 90, 181)
+            phi = np.linspace(0, 360, 361)
+            pat = calculate_2d_pattern_arbitrary(
+                amp_2d, phase_2d, px_perturbed, py_perturbed,
+                theta, phi).numpy()
+            exc = get_exclude_angle(Nx, theta0)
+            sll = get_2d_sll(pat, theta, phi, theta0, phi0, exc)
             slls.append(sll)
 
         avg = np.mean(slls)
-        print(f"  ±{perturb:.3f}λ {avg:>8.1f} {sll_ideal - avg:>8.1f} dB")
+        degrade = sll_ideal - avg
+        print(f"  ±{perturb:.3f}λ {avg:>8.1f} {degrade:>8.1f} dB")
 
-    print("  PASS: ±λ/20 perturbation degradation < 5 dB")
+    degrade_05 = sll_ideal - np.mean(slls[:10])
+    if degrade_05 <= 5.0:
+        print(f"  PASS: ±λ/20 perturbation degradation < 5 dB")
+    else:
+        print(f"  NOTE: ±λ/20 perturbation degradation = {degrade_05:.1f} dB (exceeds 5 dB)")
 
 
 def test_frequency_band():
-    """频带 ±10% 泛化验证。"""
+    """频带 ±10% 泛化验证（固定移相器）。
+
+    竞赛场景: 移相器按中心频率(λ=1)设计，工作频率偏离时
+    电相位关系变化（k=2π/λ 改变），但移相值固定不变。
+    这才是真正的宽带波束偏斜。
+    """
     Nx, Ny = 32, 32
     SLL = 35
     theta0, phi0 = 0.0, 0.0
@@ -85,15 +108,19 @@ def test_frequency_band():
     posx = uniform_linear_array_pos(Nx)
     posy = uniform_linear_array_pos(Ny)
     amp_x, amp_y = taylor_2d_separable(Nx, Ny, SLL)
+    # 按中心频率设计相位，固定不变
+    phase_x, phase_y = beam_steering_phase_2d(posx, posy, theta0, phi0, lamb=1.0)
+    amp_2d, phase_2d = combine_2d_excitation(amp_x, amp_y, phase_x, phase_y)
 
-    print("\n=== Frequency Band (±10%) ===")
+    sll_center = eval_sll(amp_2d, phase_2d, posx, posy, theta0, phi0, Nx)
+
+    print("\n=== Frequency Band (±10%, fixed phase) ===")
+    print(f"  Center freq SLL: {sll_center:.1f} dB")
     print(f"  {'freq_ratio':>10} {'SLL':>8} {'Degrade':>8}")
 
     for freq_ratio in [0.90, 0.95, 1.0, 1.05, 1.10]:
         lamb = 1.0 / freq_ratio
-        phx, phy = beam_steering_phase_2d(posx, posy, theta0, phi0, lamb=lamb)
-        amp_2d, phase_2d = combine_2d_excitation(amp_x, amp_y, phx, phy)
-
+        # 相位不变（固定移相器），仅 λ 变化
         theta = np.linspace(0, 90, 181)
         phi = np.linspace(0, 360, 361)
         pat = calculate_2d_pattern(
@@ -101,100 +128,102 @@ def test_frequency_band():
         exc = get_exclude_angle(Nx, theta0)
         sll = get_2d_sll(pat, theta, phi, theta0, phi0, exc)
 
-        degrade = 0 if freq_ratio == 1.0 else -34.0 - sll
+        degrade = sll_center - sll if freq_ratio != 1.0 else 0.0
         print(f"  {freq_ratio:>10.2f} {sll:>8.1f} {degrade:>8.1f} dB")
 
-    print("  PASS: ±10% frequency band SLL degradation < 3 dB")
+    degrade_10 = sll_center - sll
+    if degrade_10 <= 3.0:
+        print(f"  PASS: ±10% frequency degradation < 3 dB")
+    else:
+        print(f"  NOTE: -10% frequency degradation = {degrade_10:.1f} dB (exceeds 3 dB)")
 
 
 def test_npu_latency():
-    """NPU vs CPU 端到端时延对比。"""
-    print("\n=== NPU vs CPU Latency ===")
+    """NPU vs CPU 端到端时延对比（48×48 完整 2D 综合）。
 
-    from mylib.dataset import create_dataset, prepare_training_data, get_dataset_config
-    from mylib.models import Seq2SeqModel, count_parameters, predict_sequence
+    测量对象: 48×48 可分离 Taylor 综合 + Capon 置零 + 2D 方向图验证。
+    包含: 解析激励生成 + 2D 组合 + Capon 求解 + 方向图计算。
+    """
+    print("\n=== NPU vs CPU Latency (48×48 full synthesis) ===")
 
-    config = get_dataset_config(np.arange(15, 31, 1))
+    Nx, Ny = 48, 48
+    SLL = 35
+    posx = uniform_linear_array_pos(Nx)
+    posy = uniform_linear_array_pos(Ny)
 
-    main_n = [512, 512]
-    branch_n = [256, 256, 128, 128]
-    dense_n = [64, 32, 16]
-    model = Seq2SeqModel(32, 32, [main_n, branch_n, branch_n, dense_n, dense_n])
+    # 1. 解析 Taylor 激励 + 2D 组合
+    from mylib.sum_diff import capon_nulling_2d
+    null_dirs = [(30, 0), (30, 90), (30, 180), (30, 270)]
 
-    model_path = os.path.join(os.path.dirname(__file__), 'outputs', 'model_full_npu.pt')
-    if os.path.exists(model_path):
-        model.load_state_dict(
-            torch.load(model_path, map_location='cpu', weights_only=False))
-        print(f"  Loaded model: {count_parameters(model):,} params")
-    else:
-        print(f"  No saved model, using random weights")
-
-    # NPU 推理时延
-    dev_npu = get_device()
-    model_npu = model.to(dev_npu)
-    model_npu.eval()
-
-    X_test, _ = create_dataset([25], [90], [30], reference='Taylor')
-    input_seq = torch.as_tensor(X_test[:1], dtype=torch.float32, device=dev_npu)
+    def full_synthesis():
+        amp_x, amp_y = taylor_2d_separable(Nx, Ny, SLL)
+        phase_x, phase_y = beam_steering_phase_2d(posx, posy, 0, 0)
+        amp_2d, phase_2d = combine_2d_excitation(amp_x, amp_y, phase_x, phase_y)
+        amp_n, phase_n = capon_nulling_2d(posx, posy, amp_2d, phase_2d,
+                                          0, 0, null_dirs)
+        theta = np.linspace(0, 90, 91)
+        phi = np.linspace(0, 360, 181)
+        pat = calculate_2d_pattern(amp_n, phase_n, posx, posy, theta, phi).numpy()
+        return pat
 
     # 预热
     for _ in range(3):
-        with torch.no_grad():
-            _, _ = model_npu.encoder(input_seq)
+        full_synthesis()
 
-    # 计时
-    n_runs = 20
+    n_runs = 10
+    t0 = time.time()
+    for _ in range(n_runs):
+        pat = full_synthesis()
+    t1 = time.time()
+    synthesis_time = (t1 - t0) / n_runs * 1000
+
+    # SLL 验证
+    exc = get_exclude_angle(Nx, 0)
+    sll = get_2d_sll(pat, np.linspace(0, 90, 91), np.linspace(0, 360, 181),
+                     0, 0, exc)
+
+    print(f"  48×48 full synthesis (Taylor + Capon + pattern): {synthesis_time:.1f} ms")
+    print(f"  Resulting SLL: {sll:.1f} dB")
+
+    # LSTM 推理时延（1D，作为对比）
+    from mylib.models import Seq2SeqModel, count_parameters, predict_sequence
+    from mylib.dataset import create_dataset, get_dataset_config
+
+    config = get_dataset_config(np.arange(15, 31, 1))
+    model = Seq2SeqModel(32, 32, [[512,512],[256,256,128,128],[256,256,128,128],[64,32,16],[64,32,16]])
+    model_path = os.path.join(os.path.dirname(__file__), 'outputs', 'model_final.pt')
+    has_model = os.path.exists(model_path)
+    if has_model:
+        model.load_state_dict(torch.load(model_path, map_location='cpu', weights_only=False))
+
+    dev = get_device()
+    model = model.to(dev)
+    model.eval()
+    X_test, _ = create_dataset([48], [90], [35], reference='Taylor')
+    input_seq = torch.as_tensor(X_test[:1], dtype=torch.float32, device=dev)
+
+    for _ in range(3):
+        with torch.no_grad():
+            predict_sequence(model, input_seq, 32, (0.,1.), (0.,2*np.pi), max_steps=50)
+
     t0 = time.time()
     for _ in range(n_runs):
         with torch.no_grad():
-            _, states = model_npu.encoder(input_seq)
-            dec_input = torch.zeros(1, 1, 32, 2, device=dev_npu)
-            dec_input[0, 0, 31, :] = 1.0
-            for step in range(30):
-                dec_in = dec_input.reshape(1, 1, -1)
-                output, states = model_npu.decoder(dec_in, states)
-                if output[0, 0, -1, 0] > 0.5 or output[0, 0, -1, 1] > 0.5:
-                    break
-                dec_input = output.reshape(1, 1, 32, 2)
-    if dev_npu.type == 'npu':
+            predict_sequence(model, input_seq, 32, (0.,1.), (0.,2*np.pi), max_steps=50)
+    if dev.type == 'npu':
         torch.npu.synchronize()
     t1 = time.time()
-    npu_time = (t1 - t0) / n_runs * 1000
+    lstm_time = (t1 - t0) / n_runs * 1000
 
-    print(f"  NPU inference: {npu_time:.1f} ms/run")
+    print(f"\n  LSTM inference (1D, N={Nx}): {lstm_time:.1f} ms ({'trained' if has_model else 'RANDOM weights'})")
 
-    # CPU 推理时延
-    dev_cpu = torch.device('cpu')
-    model_cpu = model.to(dev_cpu)
-    model_cpu.eval()
-    input_cpu = torch.as_tensor(X_test[:1], dtype=torch.float32)
-
-    t0 = time.time()
-    for _ in range(n_runs):
-        with torch.no_grad():
-            _, states = model_cpu.encoder(input_cpu)
-            dec_input = torch.zeros(1, 1, 32, 2)
-            dec_input[0, 0, 31, :] = 1.0
-            for step in range(30):
-                dec_in = dec_input.reshape(1, 1, -1)
-                output, states = model_cpu.decoder(dec_in, states)
-                if output[0, 0, -1, 0] > 0.5 or output[0, 0, -1, 1] > 0.5:
-                    break
-                dec_input = output.reshape(1, 1, 32, 2)
-    t1 = time.time()
-    cpu_time = (t1 - t0) / n_runs * 1000
-
-    print(f"  CPU inference: {cpu_time:.1f} ms/run")
-    print(f"  Speedup: {cpu_time / npu_time:.1f}x")
-
-    # 对比传统方法
-    print(f"\n  Comparison with traditional methods:")
-    print(f"    AI (NPU):     {npu_time:.1f} ms")
-    print(f"    AI (CPU):     {cpu_time:.1f} ms")
-    print(f"    GA (200gen):  ~30000 ms (文献值)")
-    print(f"    PSO (200gen): ~30000 ms (文献值)")
-    print(f"    Taylor (解析): ~1 ms")
-    print(f"  NPU vs GA speedup: {30000/npu_time:.0f}x")
+    print(f"\n  Comparison:")
+    print(f"    Analytical synthesis (48×48): {synthesis_time:.1f} ms")
+    print(f"    LSTM inference (1D):         {lstm_time:.1f} ms")
+    print(f"    GA (200 gen, literature):     ~30000 ms")
+    print(f"    Analytical vs GA speedup:     {30000/synthesis_time:.0f}x")
+    print(f"    LSTM vs GA speedup:           {30000/lstm_time:.0f}x")
+    print(f"  Note: GA value from literature, not same hardware/config")
 
 
 def main():

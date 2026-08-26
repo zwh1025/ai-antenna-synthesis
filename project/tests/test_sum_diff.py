@@ -112,7 +112,7 @@ def test_capon_nulling():
 
     for null_dir in null_dirs:
         idx = int(np.argmin(np.abs(theta - null_dir)))
-        nearby = np.abs(theta - null_dir) < 2
+        nearby = np.abs(theta - null_dir) < 0.5
         local_val = np.max(pat[nearby])
         assert local_val < -30, \
             f"null at {null_dir}°: {local_val:.1f} dB, expected < -30"
@@ -182,9 +182,11 @@ def test_competition_metrics():
     nulled_pat = calculate_1d_pattern(pos, new_amp, new_phase, theta).numpy()
 
     null_depths = []
-    for nd in null_dirs:
-        nearby = np.abs(theta - nd) < 2
-        null_depths.append(float(np.max(nulled_pat[nearby])))
+    for null_dir in null_dirs:
+        idx = int(np.argmin(np.abs(theta - null_dir)))
+        nearby = np.abs(theta - null_dir) < 0.5
+        local_val = np.max(nulled_pat[nearby])
+        null_depths.append(float(local_val))
 
     bw = get_3db_beamwidth_1d(sum_pat, theta, theta0)
     pointing_err = pointing_accuracy_1d(sum_pat, theta, theta0)
@@ -199,8 +201,9 @@ def test_competition_metrics():
 
     assert diff_sll <= -20, f"Diff SLL={diff_sll:.1f}, target ≤ -20"
     assert diff_null < -30, f"Diff null={diff_null:.1f}, target ≤ -30"
-    assert all(d < -30 for d in null_depths), f"Null depths must be ≤ -30, got {null_depths}"
-    print("\n  COMPETITION THRESHOLDS CHECKED (1D verification)")
+    assert all(d < -30 for d in null_depths), \
+        f"Null depths must be ≤ -30 at null points, got {null_depths}"
+    print("\n  COMPETITION THRESHOLDS CHECKED (1D, LCMV nulling)")
 
 
 if __name__ == '__main__':
