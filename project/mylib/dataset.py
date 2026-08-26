@@ -139,7 +139,10 @@ def prepare_training_data(X, Y):
 
 
 def get_dataset_config(N_list):
-    """返回数据集配置参数（供推理使用）。"""
+    """返回数据集配置参数（供推理使用）。
+
+    位置编码范围固定为 [-1, 1]，不随 N 变化。
+    """
     N_units_max = int(np.max(N_list)) + 1
     return {
         'N_units_max': N_units_max,
@@ -150,6 +153,6 @@ def get_dataset_config(N_list):
         'amp_range': (0.0, 1.0),
         'phase_range': (0.0, 2 * np.pi),
         'theta0_range': (0.0, 180.0),
-        'pos_range': ((0.5 - N_units_max / 2) * 0.5,
-                      (N_units_max / 2 - 0.5) * 0.5),
+        'SLL_range': (0.0, 50.0),
+        'pos_range': (-1.0, 1.0),
     }

@@ -122,7 +122,8 @@ def test_capon_nulling():
         f"main lobe at {theta[peak_idx]:.1f}°, expected {theta0}°"
 
     sll = get_sll_1d(pat, theta, theta0, 8.0)
-    print(f"PASS: test_capon_nulling (4 nulls, SLL={sll:.1f} dB)")
+    assert sll <= -5, f"SLL after nulling={sll:.1f}, expected ≤ -5"
+    print(f"PASS: test_capon_nulling (4 nulls, SLL={sll:.1f} dB, note: degraded from Taylor baseline)")
 
 
 def test_monopulse_metrics():
@@ -199,6 +200,9 @@ def test_competition_metrics():
     print(f"  Null depths:   {[f'{d:.1f}' for d in null_depths]} dB  (target ≤ -30)")
     print(f"  3dB BW:        {bw:.2f}°")
     print(f"  Pointing err:  {pointing_err:.3f}° (target ≤ {bw/30:.3f}°)")
+
+    nulled_sll = get_sll_1d(nulled_pat, theta, theta0, 8.0)
+    print(f"  Nulled sum SLL:{nulled_sll:.1f} dB  (should be close to {sum_sll:.1f})")
 
     assert diff_sll <= -20, f"Diff SLL={diff_sll:.1f}, target ≤ -20"
     assert diff_null < -30, f"Diff null={diff_null:.1f}, target ≤ -30"

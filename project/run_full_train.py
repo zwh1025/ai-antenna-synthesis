@@ -52,9 +52,14 @@ def main():
     t1 = time.time()
     n_ep = len(history['loss'])
     print(f"\nDone: {n_ep} epochs in {t1-t0:.0f}s ({(t1-t0)/n_ep:.2f}s/epoch)")
-    print(f"Best acc: {max(history['accuracy']):.4f}")
+    print(f"Best val_loss: {min(history['val_loss']):.6f}")
 
-    torch.save(model.state_dict(), os.path.join(output_dir, 'model_final.pt'))
+    # 不覆盖最佳模型——重新加载训练中保存的最佳权重
+    if os.path.exists(save_path):
+        model.load_state_dict(
+            torch.load(save_path, map_location='cpu', weights_only=False))
+        print(f"Reloaded best model from {save_path}")
+
     np.savez(os.path.join(output_dir, 'history_final.npz'),
              **{k: np.array(v) for k, v in history.items()})
 

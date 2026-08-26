@@ -87,15 +87,15 @@ def test_position_perturbation():
         avg = np.mean(slls)
         std = np.std(slls)
         worst = np.max(slls)
-        degrade = sll_ideal - worst
-        print(f"  ±{perturb:.3f}λ {avg:>8.1f} {std:>8.1f} {worst:>8.1f} {degrade:>8.1f} dB")
+        degrade = worst - sll_ideal  # 正值=退化, 负值=改善
+        print(f"  ±{perturb:.3f}λ {avg:>8.1f} {std:>8.1f} {worst:>8.1f} {degrade:>+8.1f} dB")
 
-    # 正确判定：用 ±λ/20=0.05 的结果
-    degrade_05 = sll_ideal - np.max(all_results[0.05])
+    # 正确判定：用 ±λ/20=0.05 的最差结果
+    degrade_05 = np.max(all_results[0.05]) - sll_ideal
     if degrade_05 <= 5.0:
-        print(f"  PASS: ±λ/20 worst-case degradation < 5 dB")
+        print(f"  PASS: ±λ/20 worst-case degradation ≤ 5 dB")
     else:
-        print(f"  NOTE: ±λ/20 worst-case degradation = {degrade_05:.1f} dB")
+        print(f"  NOTE: ±λ/20 worst-case degradation = {degrade_05:.1f} dB (> 5 dB)")
 
 
 def test_frequency_band():
@@ -133,18 +133,18 @@ def test_frequency_band():
         sll = get_2d_sll(pat, theta, phi, theta0, phi0, exc)
         freq_results[freq_ratio] = sll
 
-        degrade = sll_center - sll if freq_ratio != 1.0 else 0.0
-        print(f"  {freq_ratio:>10.2f} {sll:>8.1f} {degrade:>8.1f} dB")
+        degrade = sll - sll_center if freq_ratio != 1.0 else 0.0
+        print(f"  {freq_ratio:>10.2f} {sll:>8.1f} {degrade:>+8.1f} dB")
 
-    # 正确判定：报告 -10% 和 +10% 中的最差结果
+    # 正确判定：报告 -10% 和 +10% 中的最差退化
     worst_degrade = max(
-        sll_center - freq_results[0.90],
-        sll_center - freq_results[1.10]
+        freq_results[0.90] - sll_center,
+        freq_results[1.10] - sll_center
     )
     if worst_degrade <= 3.0:
-        print(f"  PASS: ±10% worst-case degradation < 3 dB")
+        print(f"  PASS: ±10% worst-case degradation ≤ 3 dB")
     else:
-        print(f"  NOTE: ±10% worst-case degradation = {worst_degrade:.1f} dB")
+        print(f"  NOTE: ±10% worst-case degradation = {worst_degrade:.1f} dB (> 3 dB)")
 
 
 def test_npu_latency():
