@@ -111,29 +111,32 @@ def sum_diff_pattern_1d(pos, amp_sum, amp_diff, phase_sum, phase_diff,
 def capon_nulling(pos, amp, phase, theta0,
                   null_directions, theta_calc=None,
                   lamb=1.0):
-    """LCMV 自适应置零（1D）。
+    """LCMV 置零（1D，以参考权值为中心的最小修正）。
 
-    线性约束: 主瓣响应=1, 零陷方向响应=0。
-    解: w = R^{-1} C (C^H R^{-1} C)^{-1} f
-    其中 C=[a_main, a_null...], f=[1, 0, 0, ...], R=I (白噪声)
+    min ||w - w_ref||^2  s.t.  C^H w = f
+    解: w = w_ref + R^{-1} C (C^H R^{-1} C)^{-1} (f - C^H w_ref)
+    其中 R=I, w_ref = amp * exp(j*phase)
     """
     pos = np.asarray(pos, dtype=np.float64)
     N = len(pos)
     k = 2 * np.pi / lamb
 
+    w_ref = amp * np.exp(1j * phase)
     a_main = np.exp(1j * k * np.cos(np.deg2rad(theta0)) * pos)
-    null_dirs = list(null_directions)
-    A_null = np.zeros((len(null_dirs), N), dtype=complex)
-    for i, theta_null in enumerate(null_dirs):
-        A_null[i] = np.exp(1j * k * np.cos(np.deg2rad(theta_null)) * pos)
 
-    # 约束矩阵: C^H w = [1, 0, 0, ...]
-    C = np.column_stack([a_main] + [A_null[i] for i in range(len(null_dirs))])
-    f = np.zeros(len(null_dirs) + 1, dtype=complex)
+    null_dirs = list(null_directions)
+    cols = [a_main]
+    for theta_null in null_dirs:
+        cols.append(np.exp(1j * k * np.cos(np.deg2rad(theta_null)) * pos))
+
+    C = np.column_stack(cols)
+    f = np.zeros(len(cols), dtype=complex)
     f[0] = 1.0
 
-    R = np.eye(N, dtype=complex)
-    w_opt, _, _, _ = np.linalg.lstsq(C.conj().T, f, rcond=1e-10)
+    R_inv = np.eye(N, dtype=complex)
+    CR = C.conj().T @ R_inv @ C
+    residual = f - C.conj().T @ w_ref
+    w_opt = w_ref + R_inv @ C @ np.linalg.lstsq(CR, residual, rcond=1e-10)[0]
 
     new_amp = np.abs(w_opt)
     if new_amp.max() > 0:
@@ -144,10 +147,10 @@ def capon_nulling(pos, amp, phase, theta0,
 
 def capon_nulling_2d(posx, posy, amp_2d, phase_2d, theta0, phi0,
                      null_directions, lamb=1.0):
-    """2D LCMV 置零。
+    """2D LCMV 置零（以参考权值为中心的最小修正）。
 
-    线性约束: 主瓣=1, 零陷=0。
-    steering vector 与权值使用相同的 C-order flatten。
+    min ||w - w_ref||^2  s.t.  C^H w = f
+    w_ref = amp_2d * exp(j*phase_2d)，保留低副瓣结构。
     """
     posx = np.asarray(posx, dtype=np.float64)
     posy = np.asarray(posy, dtype=np.float64)
@@ -157,13 +160,14 @@ def capon_nulling_2d(posx, posy, amp_2d, phase_2d, theta0, phi0,
     posx_2d = np.tile(posx[:, None], (1, Ny))
     posy_2d = np.tile(posy[None, :], (Nx, 1))
 
+    w_ref = (amp_2d * np.exp(1j * phase_2d)).ravel()
+
     u0 = np.sin(np.deg2rad(theta0)) * np.cos(np.deg2rad(phi0))
     v0 = np.sin(np.deg2rad(theta0)) * np.sin(np.deg2rad(phi0))
     a_main = np.exp(1j * k * (posx_2d * u0 + posy_2d * v0)).ravel()
 
-    null_dirs = list(null_directions)
     cols = [a_main]
-    for tn, pn in null_dirs:
+    for tn, pn in null_directions:
         un = np.sin(np.deg2rad(tn)) * np.cos(np.deg2rad(pn))
         vn = np.sin(np.deg2rad(tn)) * np.sin(np.deg2rad(pn))
         cols.append(np.exp(1j * k * (posx_2d * un + posy_2d * vn)).ravel())
@@ -172,8 +176,10 @@ def capon_nulling_2d(posx, posy, amp_2d, phase_2d, theta0, phi0,
     f = np.zeros(len(cols), dtype=complex)
     f[0] = 1.0
 
-    R = np.eye(Nx * Ny, dtype=complex)
-    w_opt, _, _, _ = np.linalg.lstsq(C.conj().T, f, rcond=1e-10)
+    R_inv = np.eye(Nx * Ny, dtype=complex)
+    CR = C.conj().T @ R_inv @ C
+    residual = f - C.conj().T @ w_ref
+    w_opt = w_ref + R_inv @ C @ np.linalg.lstsq(CR, residual, rcond=1e-10)[0]
 
     w_mat = w_opt.reshape(Nx, Ny)
     new_amp = np.abs(w_mat)

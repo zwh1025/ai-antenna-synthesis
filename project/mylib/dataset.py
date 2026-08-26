@@ -33,6 +33,7 @@ def create_single_data(N_units, theta0, SLL,
       Y: (dec_seq, L_Y+1, 2)         输出序列（幅值/相位两路）
     """
     pos = uniform_linear_array_pos(N_units)
+    pos_norm = pos / np.max(np.abs(pos)) if np.max(np.abs(pos)) > 0 else pos
 
     dp_theta0 = np.linspace(theta0_range[0], theta0_range[1], L_X)
     dp_sll = np.linspace(SLL_range[0], SLL_range[1], L_X)
@@ -50,7 +51,7 @@ def create_single_data(N_units, theta0, SLL,
 
     sll_vec = map_num_to_vec_np(float(SLL), dp_sll, dtype=dtype)
     theta0_vecs = [map_num_to_vec_np(t, dp_theta0, dtype=dtype) for t in theta0]
-    pos_vecs = [map_num_to_vec_np(p, dp_pos, dtype=dtype) for p in pos]
+    pos_vecs = [map_num_to_vec_np(p, dp_pos, dtype=dtype) for p in pos_norm]
 
     X = np.stack(
         [sep_X] + [sll_vec] + [sep_X] +
@@ -101,8 +102,8 @@ def create_dataset(N_list, theta0_list, SLL_list,
     N_units_max = int(np.max(N_list)) + 1
     theta0_range = (0.0, 180.0)
     SLL_range = (0.0, 50.0)
-    pos_range = ((0.5 - N_units_max / 2) * 0.5,
-                 (N_units_max / 2 - 0.5) * 0.5)
+    # 固定位置编码范围，不随 N_list 变化
+    pos_range = (-1.0, 1.0)
     L_X = 31
     amp_range = (0.0, 1.0)
     phase_range = (0.0, 2 * np.pi)

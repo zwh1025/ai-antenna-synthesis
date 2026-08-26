@@ -64,16 +64,15 @@ def test_position_perturbation():
 
     print("\n=== Position Perturbation (±λ/20, fixed phase) ===")
     print(f"  Ideal SLL: {sll_ideal:.1f} dB")
-    print(f"  {'Perturb':>8} {'SLL':>8} {'Degrade':>8}")
+    print(f"  {'Perturb':>8} {'Mean':>8} {'Std':>8} {'Worst':>8} {'Degrade':>8}")
 
+    all_results = {}
     for perturb in [0.025, 0.05, 0.1]:
         slls = []
         for seed in range(10):
             np.random.seed(seed)
-            # 每个阵元独立的 2D 位置扰动
             px_perturbed = posx[:, None] + np.random.uniform(-perturb, perturb, (Nx, Ny))
             py_perturbed = posy[None, :] + np.random.uniform(-perturb, perturb, (Nx, Ny))
-            # 方向图用扰动位置计算，但激励保持理想设计
             theta = np.linspace(0, 90, 181)
             phi = np.linspace(0, 360, 361)
             pat = calculate_2d_pattern_arbitrary(
@@ -83,15 +82,20 @@ def test_position_perturbation():
             sll = get_2d_sll(pat, theta, phi, theta0, phi0, exc)
             slls.append(sll)
 
+        slls = np.array(slls)
+        all_results[perturb] = slls
         avg = np.mean(slls)
-        degrade = sll_ideal - avg
-        print(f"  ±{perturb:.3f}λ {avg:>8.1f} {degrade:>8.1f} dB")
+        std = np.std(slls)
+        worst = np.max(slls)
+        degrade = sll_ideal - worst
+        print(f"  ±{perturb:.3f}λ {avg:>8.1f} {std:>8.1f} {worst:>8.1f} {degrade:>8.1f} dB")
 
-    degrade_05 = sll_ideal - np.mean(slls[:10])
+    # 正确判定：用 ±λ/20=0.05 的结果
+    degrade_05 = sll_ideal - np.max(all_results[0.05])
     if degrade_05 <= 5.0:
-        print(f"  PASS: ±λ/20 perturbation degradation < 5 dB")
+        print(f"  PASS: ±λ/20 worst-case degradation < 5 dB")
     else:
-        print(f"  NOTE: ±λ/20 perturbation degradation = {degrade_05:.1f} dB (exceeds 5 dB)")
+        print(f"  NOTE: ±λ/20 worst-case degradation = {degrade_05:.1f} dB")
 
 
 def test_frequency_band():
@@ -118,24 +122,29 @@ def test_frequency_band():
     print(f"  Center freq SLL: {sll_center:.1f} dB")
     print(f"  {'freq_ratio':>10} {'SLL':>8} {'Degrade':>8}")
 
+    freq_results = {}
     for freq_ratio in [0.90, 0.95, 1.0, 1.05, 1.10]:
         lamb = 1.0 / freq_ratio
-        # 相位不变（固定移相器），仅 λ 变化
         theta = np.linspace(0, 90, 181)
         phi = np.linspace(0, 360, 361)
         pat = calculate_2d_pattern(
             amp_2d, phase_2d, posx, posy, theta, phi, lamb=lamb).numpy()
         exc = get_exclude_angle(Nx, theta0)
         sll = get_2d_sll(pat, theta, phi, theta0, phi0, exc)
+        freq_results[freq_ratio] = sll
 
         degrade = sll_center - sll if freq_ratio != 1.0 else 0.0
         print(f"  {freq_ratio:>10.2f} {sll:>8.1f} {degrade:>8.1f} dB")
 
-    degrade_10 = sll_center - sll
-    if degrade_10 <= 3.0:
-        print(f"  PASS: ±10% frequency degradation < 3 dB")
+    # 正确判定：报告 -10% 和 +10% 中的最差结果
+    worst_degrade = max(
+        sll_center - freq_results[0.90],
+        sll_center - freq_results[1.10]
+    )
+    if worst_degrade <= 3.0:
+        print(f"  PASS: ±10% worst-case degradation < 3 dB")
     else:
-        print(f"  NOTE: -10% frequency degradation = {degrade_10:.1f} dB (exceeds 3 dB)")
+        print(f"  NOTE: ±10% worst-case degradation = {worst_degrade:.1f} dB")
 
 
 def test_npu_latency():

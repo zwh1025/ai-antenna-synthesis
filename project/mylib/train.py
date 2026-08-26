@@ -38,25 +38,23 @@ def get_device(prefer='auto'):
 
 
 def custom_accuracy(y_true, y_pred, tolerance=1e-2, separator_threshold=0.5):
-    """自定义准确率（向量化，修正维度错位）。
+    """自定义准确率（向量化，正确维度）。
 
-    输入 (B, T, dim, 2)：分别检查 amp (channel 0) 和 phase (channel 1)。
-    padding（目标全零）不参与计算。
-    separator（目标末位=1）检查预测末位是否过阈值。
-    非分隔符：计算期望值绝对差是否 < tolerance。
+    输入 (B, T, vocab, 2)：vocab=32（词表大小+separator），2=amp/phase通道。
+    分别检查两个通道。padding（目标全零）不参与。
     """
     orig_shape = y_true.shape
     y_true = y_true.reshape(-1, orig_shape[-2], orig_shape[-1])
     y_pred = y_pred.reshape(-1, orig_shape[-2], orig_shape[-1])
 
-    dim = y_true.shape[-1]
-    x = np.linspace(0.0, 1.0, dim - 1)
+    vocab = y_true.shape[-2]  # 32, 不是 2
+    x = np.linspace(0.0, 1.0, vocab - 1)  # 31 个坐标
 
     correct_list = []
     total = 0
     for ch in range(orig_shape[-1]):
-        yt = y_true[:, :, ch]
-        yp = y_pred[:, :, ch]
+        yt = y_true[:, :, ch]  # (N, 32)
+        yp = y_pred[:, :, ch]  # (N, 32)
 
         is_pad = np.all(yt == 0, axis=-1)
         is_sep = yt[:, -1] > separator_threshold
@@ -82,16 +80,16 @@ def custom_accuracy(y_true, y_pred, tolerance=1e-2, separator_threshold=0.5):
 
 
 class EarlyStopping:
-    """早停（监控 accuracy，max 模式）。"""
+    """早停（监控 loss，min 模式）。"""
 
     def __init__(self, patience=12):
         self.patience = patience
-        self.best = -1.0
+        self.best = float('inf')
         self.no_improve = 0
         self.should_stop = False
 
     def step(self, metric):
-        if metric > self.best + 1e-8:
+        if metric < self.best - 1e-8:
             self.best = metric
             self.no_improve = 0
         else:
@@ -138,7 +136,7 @@ def train_model(model, encoder_input, decoder_input, decoder_output,
     model = model.to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='max', factor=0.5, patience=patience_lr)
+        optimizer, mode='min', factor=0.5, patience=patience_lr)
     early_stop = EarlyStopping(patience=patience_stop)
 
     n_samples = len(encoder_input)
@@ -147,14 +145,14 @@ def train_model(model, encoder_input, decoder_input, decoder_output,
     val_idx = indices[:n_val]
     train_idx = indices[n_val:]
 
-    history = {'loss': [], 'accuracy': [], 'lr': [], 'val_loss': [], 'val_acc': []}
+    history = {'loss': [], 'val_loss': [], 'lr': []}
+    best_val_loss = float('inf')
 
     for epoch in range(epochs):
         model.train()
         np.random.shuffle(train_idx)
 
         epoch_loss = 0.0
-        epoch_acc = 0.0
         n_batches = 0
 
         for start in range(0, len(train_idx), batch_size):
@@ -170,12 +168,9 @@ def train_model(model, encoder_input, decoder_input, decoder_output,
             optimizer.step()
 
             epoch_loss += loss.item()
-            epoch_acc += custom_accuracy(
-                dec_y.cpu().numpy(), pred.detach().cpu().numpy())
             n_batches += 1
 
         avg_loss = epoch_loss / n_batches
-        avg_acc = epoch_acc / n_batches
         cur_lr = optimizer.param_groups[0]['lr']
 
         # 验证集
@@ -185,32 +180,29 @@ def train_model(model, encoder_input, decoder_input, decoder_output,
             verbose=False)
 
         history['loss'].append(avg_loss)
-        history['accuracy'].append(avg_acc)
         history['lr'].append(cur_lr)
         history['val_loss'].append(val_loss)
-        history['val_acc'].append(val_acc)
 
-        scheduler.step(val_acc)
+        scheduler.step(val_loss)
 
         if verbose:
             print(f"Epoch {epoch+1:3d}/{epochs}: "
-                  f"loss={avg_loss:.6f}  acc={avg_acc:.4f}  "
-                  f"val_loss={val_loss:.6f}  val_acc={val_acc:.4f}  "
+                  f"loss={avg_loss:.6f}  val_loss={val_loss:.6f}  "
                   f"lr={cur_lr:.2e}")
 
-        if save_path and (epoch + 1) % save_every == 0:
-            torch.save(model.state_dict(), save_path)
-            if verbose:
-                print(f"  → checkpoint saved: {save_path}")
+        # 保存最佳模型（而非最后模型）
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            if save_path:
+                torch.save(model.state_dict(), save_path)
+                if verbose:
+                    print(f"  → best model saved: {save_path} (val_loss={val_loss:.6f})")
 
-        if early_stop.step(val_acc):
+        if early_stop.step(val_loss):
             if verbose:
                 print(f"Early stopping at epoch {epoch+1} "
-                      f"(best val_acc={early_stop.best:.4f})")
+                      f"(best val_loss={early_stop.best:.6f})")
             break
-
-    if save_path:
-        torch.save(model.state_dict(), save_path)
 
     return model, history
 
