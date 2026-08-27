@@ -22,7 +22,7 @@ from mylib.antenna_calc import (
     calculate_2d_pattern, get_2d_sll, angular_distance_deg,
     calculate_2d_pattern_arbitrary,
 )
-from mylib.evaluation import evaluate_2d_comprehensive
+from mylib.evaluation import evaluate_uv as evaluate_2d_comprehensive
 from mylib.sum_diff import capon_nulling_2d
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'outputs')

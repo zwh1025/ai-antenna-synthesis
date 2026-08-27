@@ -180,6 +180,7 @@ def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
 
     return {
         'sll_connected': sll_connected,
+        'sll_first_null': sll_connected,
         'sll_3bw': sll_3bw,
         'pointing_err': pointing_err,
         'peak_theta': float(peak_theta),

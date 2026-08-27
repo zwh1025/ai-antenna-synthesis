@@ -29,7 +29,7 @@ from mylib.antenna_calc import (
     combine_2d_excitation,
 )
 from mylib.sum_diff import bayliss_excitation, capon_nulling_2d
-from mylib.evaluation import evaluate_2d_comprehensive
+from mylib.evaluation import evaluate_uv as evaluate_2d_comprehensive
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'outputs')
 
