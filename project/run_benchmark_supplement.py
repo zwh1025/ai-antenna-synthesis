@@ -234,9 +234,9 @@ def main():
           f'P95={report["end_to_end"]["total"]["p95"]:.3f}ms P99={e2e_p99:.3f}ms')
     print(f'    vs pure NPU inference: overhead={e2e_mean-npu_mean:.3f}ms ({(e2e_mean-npu_mean)/e2e_mean*100:.1f}%)')
 
-    print(f'\n  vs SOCP (13,000ms):')
-    print(f'    Pure NPU inference: {npu_mean:.3f}ms = {13000/npu_mean:.0f}x')
-    print(f'    End-to-end:        {e2e_mean:.3f}ms = {13000/e2e_mean:.0f}x')
+    print(f'\n  vs SOCP (23,000ms):')
+    print(f'    Pure NPU inference: {npu_mean:.3f}ms = {23000/npu_mean:.0f}x')
+    print(f'    End-to-end:        {e2e_mean:.3f}ms = {23000/e2e_mean:.0f}x')
 
     # ============================================================
     # 5. 1024阵元主结果表
@@ -245,7 +245,7 @@ def main():
     print(f'    batch=1:  NPU {report["long_inference"]["mean"]:.3f}ms '
           f'({report["long_inference"]["throughput_sps"]:.0f}/s)')
     print(f'    E2E:      {e2e_mean:.3f}ms (含数据传输)')
-    print(f'    vs SOCP:  {13000/npu_mean:.0f}x (纯推理), {13000/e2e_mean:.0f}x (端到端)')
+    print(f'    vs SOCP:  {23000/npu_mean:.0f}x (纯推理), {23000/e2e_mean:.0f}x (端到端)')
 
     # 保存
     with open(OUTPUT, 'w') as f:

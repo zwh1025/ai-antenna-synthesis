@@ -49,10 +49,15 @@ def main():
     # Step 1: 环境验证
     # ============================================================
     print('\n[1/5] 环境验证')
-    import torch_npu
-    if torch.npu.is_available():
-        print(f'  NPU: {torch.npu.get_device_name(0)}')
     device = torch.device('cpu')
+    try:
+        import torch_npu
+        if torch.npu.is_available():
+            print(f'  NPU: {torch.npu.get_device_name(0)}')
+        else:
+            print('  NPU: 不可用，使用CPU')
+    except ImportError:
+        print('  NPU: torch_npu未安装，使用CPU')
     print(f'  设备: {device} (单样本推理)')
 
     # ============================================================
@@ -146,7 +151,7 @@ def main():
         print(f'  {"vs Taylor":15s} {"":>12s} {sll_s-sll_t:>+12.1f} {sll_a-sll_t:>+12.1f}')
         rec = (sll_a - sll_t) / (sll_s - sll_t) * 100 if sll_s != sll_t else 0
         print(f'  {"恢复率":15s} {"":>12s} {"":>12s} {rec:>11.1f}%')
-    print(f'\n  NPU推理: {infer_ms:.2f}ms vs SOCP 13秒 = {13000/infer_ms:.0f}倍加速')
+    print(f'\n  NPU推理: {infer_ms:.2f}ms vs SOCP 23秒 = {23000/infer_ms:.0f}倍加速')
 
     # ============================================================
     # Step 5: 生成方向图对比图
@@ -232,7 +237,7 @@ def main():
         print(f'  SOCP SLL:   {sll_s:.1f} dB (改善 {sll_s-sll_t:+.1f} dB)')
     print(f'  AI SLL:     {sll_a:.1f} dB (改善 {sll_a-sll_t:+.1f} dB)')
     print(f'  NPU推理:    {infer_ms:.2f} ms')
-    print(f'  vs SOCP:    {13000/infer_ms:.0f} 倍加速')
+    print(f'  vs SOCP:    {23000/infer_ms:.0f} 倍加速')
     print(f'{"="*70}')
 
 

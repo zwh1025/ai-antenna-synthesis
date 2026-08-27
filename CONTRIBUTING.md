@@ -16,12 +16,15 @@ conda create -n antenna python=3.11
 conda activate antenna
 
 # 3. 安装依赖
-conda install -c conda-forge cvxpy -y
-pip install numpy scipy torch matplotlib
+pip install -r requirements.txt
 
-# 4. 运行测试验证
+# 4. NPU环境（可选，无NPU可跳过）
+#    需先安装CANN Toolkit，然后:
+#    pip install torch_npu
+
+# 5. 运行测试验证
 cd project
-python tests/test_antenna_calc.py
+python -m pytest tests/ -v
 ```
 
 ## 快速运行

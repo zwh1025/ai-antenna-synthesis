@@ -58,7 +58,7 @@
 | Test (50) | -21.92 dB | -23.98 dB | -23.62 dB | 82.4% | 2.6 ms |
 
 - v1 单方向恢复率 >100%（AI 超越 SOCP 教师），v2 多方向恢复率 82-89%（满足 80% 目标）
-- 推理 0.504ms（纯）/0.658ms（端到端）vs SOCP 13s（25,810 倍纯推理 / 19,762 倍端到端）
+- 推理 0.504ms（纯）/0.658ms（端到端）vs SOCP 23s/阵列（45,635 倍纯推理 / 35,015 倍端到端）
 - NPU 训练加速 3.7-86.1 倍，精度完全一致（max_err=7.45e-08）
 - 排列等变 DeepSets 网络（116K-463K 参数）
 - 280×2 个 SOCP 教师标签（单方向 + 多方向）
@@ -130,15 +130,17 @@
 
 ```bash
 cd project
-python tests/test_*.py          # 61 测试（含9项DeepSets）
+python -m pytest tests/ -v       # 61 测试（含9项DeepSets）
 python run_acceptance_v2.py     # 73 方向验收
 python run_random_validation.py # 200 随机方向
 python run_curved_verify.py     # 曲面阵列SOCP验证(正结果)
 python run_generate_teacher.py  # 生成SOCP教师标签(280样本,~108min)
-python run_multi_scan_generate.py # 多扫描方向教师标签(280样本,~108min)
-python run_deepsets_train.py    # DeepSets训练(支持v1/v2数据)
+python run_multi_scan_generate.py # 多方向教师标签(280样本,~108min)
+python run_deepsets_train.py    # DeepSets训练(v1单方向)
+python run_deepsets_train.py --data_path outputs/teacher_labels_v2.npz --hidden_dim 256 --save_name deepsets_model_v2_256.pt  # v2多方向
 python run_cylindrical_verify.py # 圆柱面阵列SOCP验证
 python run_curved_nonideal.py   # 曲面+量化/失效联合实验
-python run_bounded_socp.py      # SOCP 失效补偿验证(负结果)
+python run_benchmark.py         # CPU/NPU标准基准(需NPU环境)
+python run_bounded_socp.py      # SOCP失效补偿验证(负结果)
 python run_nonuniform_verify.py # 非均匀阵列验证
 ```

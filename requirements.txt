@@ -2,23 +2,19 @@
 numpy>=1.24
 scipy>=1.10
 torch>=2.0
-
-# SOCP优化（曲面阵列脚本需要）
-cvxpy>=1.5
-
-# 可视化（方向图绘制）
+cvxpy>=1.5          # 含CLARABEL求解器(SOCP需要)
 matplotlib>=3.5
+pytest>=7.0         # 运行61项单元测试
+
+# NPU环境额外安装（可选，无NPU也可运行核心功能）
+# torch_npu需要先安装CANN Toolkit，然后:
+#   pip install torch_npu
+# 无NPU时自动降级到CPU运行
 
 # 安装方式:
 #   pip install -r requirements.txt
 #
-# 或单独安装:
-#   pip install numpy scipy torch cvxpy matplotlib
-#
-# NPU环境额外安装:
-#   pip install torch_npu
-#
 # 注意:
-#   - 没有GPU/NPU也能运行，自动使用CPU
-#   - torch安装CPU版本即可: pip install torch
-#   - 有NVIDIA GPU: pip install torch --index-url https://download.pytorch.org/whl/cu121
+#   - 没有GPU/NPU也能运行测试和解析基线，自动使用CPU
+#   - run_benchmark.py/run_demo.py需要NPU环境才能复现NPU数据
+#   - cvxpy 1.5+自带CLARABEL求解器，无需单独安装

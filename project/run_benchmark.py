@@ -467,7 +467,7 @@ def main():
     # vs SOCP
     if 'NPU' in report['throughput']:
         npu_infer = report['throughput']['NPU']['per_sample_ms']
-        print(f'\n  vs SOCP (13000ms): NPU推理{npu_infer:.2f}ms = {13000/npu_infer:.0f}x加速')
+        print(f'\n  vs SOCP (23000ms): NPU推理{npu_infer:.2f}ms = {23000/npu_infer:.0f}x加速')
 
     # 保存
     os.makedirs(os.path.dirname(OUTPUT), exist_ok=True)

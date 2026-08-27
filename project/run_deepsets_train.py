@@ -298,7 +298,32 @@ def main():
     np.savez(hist_path,
              loss=history['loss'], val_loss=history['val_loss'],
              lr=history['lr'])
+
+    # 保存评估结果到JSON（可验证恢复率）
+    results_json = {
+        'model_params': count_parameters(model),
+        'training_time_s': t_train,
+        'epochs_trained': len(history['loss']),
+        'teacher_sll': {'taylor': float(train_taylor_mean), 'socp': float(train_socp_mean)},
+        'evaluation': {},
+    }
+    for split_name, (feat, target, meta) in [('val', data['val']), ('test', data['test'])]:
+        sll_ai, sll_t, sll_s = evaluate_ai_weights(model, feat, meta, device)
+        results_json['evaluation'][split_name] = {
+            'n_samples': len(feat),
+            'taylor_mean': float(np.mean(sll_t)),
+            'socp_mean': float(np.mean(sll_s)),
+            'ai_mean': float(np.mean(sll_ai)),
+            'recovery_pct': float((np.mean(sll_ai) - np.mean(sll_t)) / (np.mean(sll_s) - np.mean(sll_t)) * 100)
+                                if abs(np.mean(sll_s) - np.mean(sll_t)) > 0.01 else 0,
+        }
+    import json as json_mod
+    results_path = os.path.join(OUTPUT_DIR, 'deepsets_results.json')
+    with open(results_path, 'w') as f:
+        json_mod.dump(results_json, f, indent=2, default=str)
+
     print(f"\nHistory saved: {hist_path}")
+    print(f"Results saved: {results_path}")
     print(f"Model saved: {save_path}")
     print("=" * 70)
 
