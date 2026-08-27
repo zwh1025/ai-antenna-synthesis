@@ -39,3 +39,6 @@ extracted/
 
 # Claude
 .claude
+*.pptx
+PPT大纲*.md
+!PPT大纲_v2.md
