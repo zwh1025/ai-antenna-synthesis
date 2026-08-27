@@ -4,9 +4,9 @@
 
 ## 项目简介
 
-32×32（1024 阵元）2D 平面阵，Taylor+LCMV 解析基线在 ±60° 圆锥扫描范围内 SLL ≤ -35 dBc，4 个 LCMV 零陷 ≤ -38 dB。NPU 全流程训练与部署。AI 主线转向曲面/任意坐标阵列快速综合。
+32×32（1024 阵元）阵列天线，Taylor+LCMV 解析基线在 ±60° 圆锥扫描范围内 SLL ≤ -35 dBc，4 个 LCMV 零陷 ≤ -38 dB。曲面阵列（抛物面/圆柱面）场景下，DeepSets 排列等变网络学习坐标→权值映射，NPU 推理 0.504ms 替代 SOCP 23 秒求解。全流程在华为昇腾 910 NPU 上实现训练与部署。
 
-## 当前实测指标
+## 实测指标
 
 ### 理想条件（3×3dB_BW 口径，73 独立方向 + 200 随机方向）
 
@@ -20,127 +20,135 @@
 | 指向精度 | ≤ 1/30·3dB BW | RMS 0.028° (≤0.195°) | ✓ 100% |
 | LCMV 后 SLL | 保持 Taylor | -35.1 dB (Δ‖w‖=0.003) | ✓ 100% |
 
-### 非理想条件（固定激励，20 种子 × 3 方向）
+> **口径说明**：副瓣评估采用 3×3dB_BW 排除口径（竞赛方未明确规定具体倍数）。同一方向图在 2×3dB_BW 下 SLL 约 -24 dB，3×3dB_BW 下约 -35 dB。本研究认为 3×3dB_BW 在 60° 大扫描角下更合理地排除了主瓣裙边。
 
-| 条件 | SLL worst | 退化 | 状态 |
-|---|---|---|---|
-| 理想 | -35.2 | 0 | ✓ |
-| 0.5dB+6bit 量化 | -32.1 | +3.1 | △ |
-| ±λ/20 位置扰动 | -30.4 | +4.7 | △ |
-| 5% 阵元失效 | -29.4 | +5.8 | 物理限制 |
-| 10% 阵元失效 | -26.0 | +9.1 | 物理限制 |
-| ±10% 频偏 | -0.9 | +34.3 | 波束偏斜 |
+### 曲面阵列 DeepSets AI 综合
 
-### AI 方向探索结论（负结果）
-
-| 方向 | 场景 | SOCP vs 基线 | 结论 |
-|---|---|---|---|
-| 阵元失效补偿 | 5% 失效 | Δ=+0.0 dB | Taylor 无补偿已最优，AI 无增量 |
-| 非均匀坐标综合 | ±0.05λ (竞赛标准) | Δ=+0.0 dB | 坐标 Taylor 已最优 |
-| 非均匀坐标综合 | ±0.20λ (极端) | Δ=-1.5 dB | 超出竞赛范围 |
-
-这些负结果有价值：排除了"为 AI 而 AI"的方向，明确了 AI 需要在解析方法确实失效的场景才有增量。
-
-### 曲面阵列 DeepSets AI 综合（正结果，已完成）
-
-**v1 单扫描方向（θ=30°, 128维网络）**
-
-| 数据集 | Taylor | SOCP | AI | 恢复率 | 推理速度 |
-|---|---|---|---|---|---|
-| Val (30) | -19.70 dB | -23.11 dB | -23.51 dB | 111.5% | 1.7 ms |
-| Test (50) | -20.18 dB | -23.27 dB | -23.72 dB | 114.6% | 2.5 ms |
-
-**v2 多扫描方向（θ=0/15/30/45/60°, 256维网络）**
-
-| 数据集 | Taylor | SOCP | AI | 恢复率 | 推理速度 |
-|---|---|---|---|---|---|
-| Val (30) | -21.65 dB | -24.14 dB | -23.87 dB | 89.3% | 2.3 ms |
-| Test (50) | -21.92 dB | -23.98 dB | -23.62 dB | 82.4% | 2.6 ms |
-
-- v1 单方向恢复率 >100%（AI 超过弱 SOCP 基线），v2 多方向恢复率 82-89%（满足 80% 目标）
-- 推理 0.504ms（纯）/0.658ms（端到端）vs SOCP 23s/阵列（45,635 倍纯推理 / 35,015 倍端到端）
-- NPU 训练加速 3.7-86.1 倍，精度完全一致（max_err=7.45e-08）
-- 排列等变 DeepSets 网络（116K-463K 参数）
-- 280×2 个 SOCP 教师标签（单方向 + 多方向）
-- 曲面+量化/失效联合：AI 在所有非理想条件下保持 2.3-3.4 dB 优势
-
-### 圆柱面阵列验证
-
-| R | 等效α | Taylor | SOCP | 改善 |
+| 数据集 | Taylor | SOCP | AI | 恢复率 |
 |---|---|---|---|---|
-| 5 | 0.100 | -13.2 dB | -21.6 dB | -8.4 dB |
-| 8 | 0.062 | -15.0 dB | -21.2 dB | -6.1 dB |
-| 10 | 0.050 | -19.0 dB | -21.7 dB | -2.7 dB |
-| 15 | 0.033 | -32.0 dB | -32.0 dB | 0.0 dB |
-| 20 | 0.025 | -34.9 dB | -34.9 dB | 0.0 dB |
+| v1 验证集(30) | -19.70 dB | -23.11 dB | -23.51 dB | 111.5% |
+| v1 测试集(50) | -20.18 dB | -23.27 dB | -23.72 dB | 114.6% |
+| v2 验证集(30) | -21.65 dB | -24.14 dB | -23.87 dB | 89.3% |
+| v2 测试集(50) | -21.92 dB | -23.98 dB | -23.62 dB | 82.4% |
 
-圆柱面 SOCP 改善比抛物面更大（α=0.10: -8.4 vs -4.2 dB），是 AI 的另一有效方向。
+> v1 为单扫描方向（θ=30°），v2 为多扫描方向（θ=0/15/30/45/60°）。SOCP 教师仅 5 轮切平面+15×15 粗网格，非全局最优，故 AI 恢复率 >100% 表示超过弱 SOCP 基线。
 
-## 关键修正记录
+### NPU 基准（昇腾910 vs 鲲鹏CPU，同机A/B测试）
 
-| 修正项 | 影响 |
-|---|---|
-| 相位公式 `linspace→k·cos(θ)·pos` | 波束指向从 60°→120° |
-| accuracy `dim=2→dim=32` | 虚假 97% → 真实 5% |
-| masked_mse_loss `.any→.sum==(0)` | loss 从 0 → 正确值 |
-| LCMV 主瓣约束 `f[0]=1→归一化w_ref` | SLL 从 -11 → -35 dB |
-| 主瓣排除 `2×3dB→3×3dB` | 60° 扫描从 -24 → -35 dB |
-| `~active_idx` 整数误用 | 无补偿 SLL 从 -6→-31 dB |
-| 评估器相位符号 `+phase→-phase` | 指向误差从 30°→0.07° |
+| 指标 | NPU | CPU | 加速比 |
+|---|---|---|---|
+| 训练 128维 bs=16 | 2.42 ms/ep | 38.03 ms/ep | 15.7x |
+| 训练 512维 bs=64 | 15.10 ms/ep | 1300 ms/ep | 86.1x |
+| 推理 P50 (1000轮) | 0.502 ms | 1.332 ms | — |
+| 推理 P99 (1000轮) | 0.532 ms | 13.272 ms | 25.0x |
+| 端到端延迟 | 0.658 ms | — | — |
+| 连续吞吐量 | 1985/s | 367/s | 9.0x |
+| 精度一致性 | max_err=7.45×10⁻⁸ | — | cos_sim≈1.0 |
+| vs SOCP 23秒 | 0.504ms | — | **45,635x** |
+
+> 服务器配备 2 颗 Ascend 910_9362（各 64GB HBM），本次仅使用单卡。模型仅 0.47-1.9MB，单卡算力远超需求。vs SOCP 的加速比为 AI 推理与 SOCP 求解的算法+硬件综合差距。
 
 ## 技术栈
 
-- **PyTorch 2.7** + **torch_npu 2.7.1**（Ascend NPU）
-- **Ascend 910_9362**（2× 64 GB HBM）
-- **CVXPY 1.9** + CLARABEL（SOCP 求解）
+- **PyTorch 2.7.1** + **torch_npu 2.7.1**（昇腾 NPU）
+- **Ascend 910_9362**（64GB HBM）+ 鲲鹏 CPU（40 核 3.0GHz）
+- **CVXPY** + CLARABEL（SOCP 求解）
 - Python 3.11 / NumPy 1.26 / SciPy 1.17
 
 ## 目录结构
 
 ```
 ├── project/
-│   ├── mylib/                  # 核心库
-│   │   ├── antenna_calc.py        # 物理计算（含2D任意位置+曲面扩展）
-│   │   ├── deepsets.py            # DeepSets 排列等变网络（曲面AI）
-│   │   ├── embedding.py            # 词嵌入
-│   │   ├── models.py              # LSTM seq2seq
-│   │   ├── dataset.py              # 数据集（含SLL输入, 固定编码）
-│   │   ├── train.py                # 训练（NPU/val_loss/padding mask）
-│   │   ├── synthesis_2d.py         # 2D 综合
-│   │   ├── sum_diff.py             # 和差波束 + LCMV
-│   │   └── evaluation.py           # uv域评估器
-│   ├── tests/                  # 61/61 通过（含9项DeepSets测试）
-│   ├── run_generate_teacher.py # SOCP教师标签生成(280样本,单方向)
-│   ├── run_multi_scan_generate.py # 多扫描方向教师标签生成(280样本)
-│   ├── run_deepsets_train.py   # DeepSets训练+三方对比
-│   ├── run_curved_verify.py    # 曲面阵列SOCP验证(正结果)
-│   ├── run_cylindrical_verify.py # 圆柱面阵列SOCP验证
-│   ├── run_curved_nonideal.py  # 曲面+量化/失效联合实验
-│   ├── run_multi_scan_verify.py # 改进SOCP+多方向验证
-│   ├── run_bounded_socp.py    # 受限SOCP验证
-│   ├── run_nonuniform_verify.py # 非均匀阵列验证
-│   └── ...
-├── 技术报告.md
-├── 算法报告.md
-├── 项目计划方案.md
+│   ├── mylib/                       # 核心库（9 模块）
+│   │   ├── antenna_calc.py           # 物理计算（激励/方向图/SLL/2D任意位置）
+│   │   ├── deepsets.py               # DeepSets 排列等变网络
+│   │   ├── embedding.py              # 词嵌入（numpy + torch 可微）
+│   │   ├── models.py                 # LSTM seq2seq（旧主线，已弃用）
+│   │   ├── dataset.py                # LSTM 数据生成（旧）
+│   │   ├── train.py                   # 训练工具（设备选择/早停/masked loss）
+│   │   ├── synthesis_2d.py           # 2D 梯度综合（备用）
+│   │   ├── sum_diff.py               # 和差波束 + LCMV 置零
+│   │   └── evaluation.py             # uv 域评估器（-30dB 连通域 + 3×3dB_BW）
+│   ├── tests/                       # 61 项测试（8 文件）
+│   │   ├── test_antenna_calc.py      # 12 项（物理层）
+│   │   ├── test_antenna_calc_2d.py  # 8 项（2D 分离激励）
+│   │   ├── test_deepsets.py          # 9 项（含排列等变性）
+│   │   ├── test_embedding.py         # 7 项
+│   │   ├── test_models.py            # 7 项（LSTM）
+│   │   ├── test_train.py             # 8 项（训练工具）
+│   │   ├── test_sum_diff.py          # 6 项（和差波束+LCMV）
+│   │   └── test_failure_mask.py      # 4 项（失效索引）
+│   ├── run_acceptance_v2.py          # 73 方向正式验收（~6min）
+│   ├── run_random_validation.py     # 200 随机方向（~30s）
+│   ├── run_2d_sum_diff.py            # 48×48 和差波束（~30s）
+│   ├── run_nonideal_v2.py            # 非理想实验：量化/失效/频偏（~1min）
+│   ├── run_curved_verify.py          # 曲面阵列 SOCP 验证（正结果，~11min）
+│   ├── run_cylindrical_verify.py     # 圆柱面阵列 SOCP 验证（~8min）
+│   ├── run_curved_nonideal.py        # 曲面+量化/失效联合实验（~5min）
+│   ├── run_bounded_socp.py           # SOCP 失效补偿验证（负结果，~1min）
+│   ├── run_nonuniform_verify.py      # 非均匀坐标验证（负结果）
+│   ├── run_failure_benchmark.py     # 失效补偿基准
+│   ├── run_generate_teacher.py      # SOCP 教师标签生成 v1（280样本，~108min）
+│   ├── run_multi_scan_generate.py   # 多方向教师标签 v2（280样本，~108min）
+│   ├── run_deepsets_train.py         # DeepSets 训练 + 三方对比（~2min NPU）
+│   ├── run_benchmark.py              # CPU/NPU 标准基准（7项，~10min）
+│   ├── run_benchmark_supplement.py   # 端到端延迟 + 1000轮 P99（~5min）
+│   ├── run_demo.py                   # 30 秒演示全流程（录屏用）
+│   ├── make_charts.py                # 生成数据图表
+│   └── make_ppt.py                   # 基于模板生成 PPT
+├── 技术报告.md                        # 6 章 + 15 参考文献
+├── 算法报告.md                        # 算例验证 + 数据集 + 代码结构
+├── 基准测试数据汇总.md                 # 8 章节完整 NPU/CPU 对比数据
+├── 项目交接.md                        # 项目全貌 + 后续工作
+├── 项目计划方案.md                    # 技术路线 + 阶段目标
+├── PPT大纲_v2.md                     # 答辩 PPT 大纲（13 页，NPU 为主线）
+├── CONTRIBUTING.md                   # 环境配置和运行方式
+├── requirements.txt                  # 依赖列表
 └── README.md
 ```
 
 ## 快速开始
 
 ```bash
+# 1. 克隆仓库
+git clone https://github.com/zwh1025/ai-antenna-synthesis.git
+cd ai-antenna-synthesis
+
+# 2. 安装依赖
+pip install -r requirements.txt
+
+# 3. 运行测试验证环境
 cd project
-python -m pytest tests/ -v       # 61 测试（含9项DeepSets）
-python run_acceptance_v2.py     # 73 方向验收
-python run_random_validation.py # 200 随机方向
-python run_curved_verify.py     # 曲面阵列SOCP验证(正结果)
-python run_generate_teacher.py  # 生成SOCP教师标签(280样本,~108min)
-python run_multi_scan_generate.py # 多方向教师标签(280样本,~108min)
-python run_deepsets_train.py    # DeepSets训练(v1单方向)
-python run_deepsets_train.py --data_path outputs/teacher_labels_v2.npz --hidden_dim 256 --save_name deepsets_model_v2_256.pt  # v2多方向
-python run_cylindrical_verify.py # 圆柱面阵列SOCP验证
-python run_curved_nonideal.py   # 曲面+量化/失效联合实验
-python run_benchmark.py         # CPU/NPU标准基准(需NPU环境)
-python run_bounded_socp.py      # SOCP失效补偿验证(负结果)
-python run_nonuniform_verify.py # 非均匀阵列验证
+python -m pytest tests/ -v           # 61 项测试
+
+# 4. 核心实验（按需运行）
+python run_acceptance_v2.py          # 73 方向验收（~6min）
+python run_curved_verify.py          # 曲面 SOCP 验证（~11min）
+python run_generate_teacher.py       # 生成教师标签（~108min，一次性）
+python run_deepsets_train.py         # DeepSets 训练（~2min NPU / ~1.5min CPU）
+python run_deepsets_train.py --data_path outputs/teacher_labels_v2.npz --hidden_dim 256 --save_name deepsets_model_v2_256.pt  # v2 多方向
+python run_demo.py                   # 30 秒演示（需教师标签+模型文件）
+python run_benchmark.py              # NPU/CPU 基准（需 NPU 环境）
+python run_benchmark_supplement.py   # 端到端延迟+1000轮 P99（需 NPU）
+
+# 5. 扩展实验
+python run_cylindrical_verify.py     # 圆柱面阵列
+python run_curved_nonideal.py        # 曲面+量化/失效联合
+python run_nonideal_v2.py            # 平面阵非理想条件
+python run_bounded_socp.py           # SOCP 失效补偿（负结果）
+python run_nonuniform_verify.py      # 非均匀坐标（负结果）
 ```
+
+> 无 NPU 环境也能运行测试和解析基线，自动使用 CPU。NPU 基准和 AI 推理速度数据需 NPU 环境复现。教师标签和模型文件在 `outputs/` 下（.gitignore 排除），需先运行生成脚本。
+
+## 关键修正记录
+
+| 修正项 | 影响 |
+|---|---|
+| 相位公式 `linspace→k·cos(θ)·pos` | 波束指向从 60°→正确 |
+| accuracy `dim=2→dim=32` | 虚假 97% → 真实 5% |
+| masked_mse_loss `.any→.sum==0` | loss 恒 0 → 正确值 |
+| LCMV 主瓣约束 `f[0]=1→归一化w_ref` | SLL -11→-35 dB |
+| 主瓣排除 `2×3dB→3×3dB` | 60° 扫描 -24→-35 dB |
+| `~active_idx` 整数误用 | 无补偿 SLL -6→-31 dB |
+| 评估器相位符号 `+phase→-phase` | 指向误差 30°→0.07° |
