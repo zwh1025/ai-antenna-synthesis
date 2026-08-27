@@ -28,11 +28,13 @@ python tests/test_antenna_calc.py
 
 | 脚本 | 耗时(CPU) | 作用 |
 |---|---|---|
-| `python tests/test_*.py` | <1min | 52项单元测试 |
+| `python tests/test_*.py` | <1min | 61项单元测试（含9项DeepSets） |
 | `python run_2d_sum_diff.py` | ~30s | 48×48和差波束竞赛指标 |
 | `python run_acceptance_v2.py` | ~6min | 73方向正式验收 |
 | `python run_nonideal_v2.py` | ~1min | 非理想实验(量化/失效/频偏) |
 | `python run_curved_verify.py` | ~11min | 曲面阵列SOCP验证 |
+| `python run_generate_teacher.py` | ~108min | 生成280个SOCP教师标签 |
+| `python run_deepsets_train.py` | ~2min | DeepSets训练+三方对比 |
 | `python run_bounded_socp.py` | ~1min | SOCP失效补偿验证(负结果) |
 
 ## 当前项目状态
@@ -43,10 +45,7 @@ python tests/test_antenna_calc.py
 - 73方向+200随机方向验证
 - 非理想实验(量化/失效/扰动/频偏)
 - SOCP负结果研究: 均匀平面阵下Taylor已接近最优
-
-### 进行中
-- 曲面阵列AI可行性验证(已确认SOCP改善4.2-4.6dB)
-- 下一步: DeepSets网络训练
+- 曲面阵列DeepSets AI训练: AI超越SOCP教师(恢复率111-115%)
 
 ### 负结果(有价值)
 - 阵元失效补偿: SOCP无法改善(物理限制)
@@ -62,14 +61,15 @@ python tests/test_antenna_calc.py
 
 ```
 project/
-├── mylib/              # 核心库(6模块)
+├── mylib/              # 核心库(7模块)
 │   ├── antenna_calc.py # 物理计算
+│   ├── deepsets.py     # DeepSets排列等变网络
 │   ├── evaluation.py   # uv域评估器
 │   ├── sum_diff.py     # 和差波束+LCMV
 │   ├── train.py        # 训练(NPU/GPU/CPU)
 │   ├── dataset.py      # 数据生成
 │   └── models.py       # LSTM seq2seq
-├── tests/              # 52项测试
+├── tests/              # 61项测试（含9项DeepSets）
 ├── run_*.py            # 实验脚本
 └── outputs/            # 结果JSON
 ```

@@ -41,13 +41,19 @@
 
 这些负结果有价值：排除了"为 AI 而 AI"的方向，明确了 AI 需要在解析方法确实失效的场景才有增量。
 
-### 当前 AI 主线
+### 曲面阵列 DeepSets AI 综合（正结果，已完成）
 
-**曲面/任意坐标阵列快速综合**
+**目标**：学习曲面阵列坐标 → SOCP 最优权值的映射，50ms 近似 13s 的 SOCP
 
-- 赛题要求"二维平面或曲面阵列"、"输入阵元坐标信息"
-- 曲面阵列无可分离 Taylor 闭式解 → AI 有明确增量价值
-- 先验证 SOCP 在曲面场景下能否改善解析基线
+| 数据集 | Taylor | SOCP | AI | 恢复率 | 推理速度 |
+|---|---|---|---|---|---|
+| Val (30) | -19.70 dB | -23.11 dB | -23.51 dB | 111.5% | 1.7 ms |
+| Test (50) | -20.18 dB | -23.27 dB | -23.72 dB | 114.6% | 2.5 ms |
+
+- AI 超越 SOCP 教师（恢复率 >100%），远超 80% 退出条件
+- 推理 2ms vs SOCP 13s（**5200 倍加速**）
+- 排列等变 DeepSets 网络（116K 参数），训练 83s（CPU）
+- 280 个 SOCP 教师标签（200 训练 + 30 验证 + 50 测试）
 
 ## 关键修正记录
 
@@ -74,6 +80,7 @@
 ├── project/
 │   ├── mylib/                  # 核心库
 │   │   ├── antenna_calc.py        # 物理计算（含2D任意位置+曲面扩展）
+│   │   ├── deepsets.py            # DeepSets 排列等变网络（曲面AI）
 │   │   ├── embedding.py            # 词嵌入
 │   │   ├── models.py              # LSTM seq2seq
 │   │   ├── dataset.py              # 数据集（含SLL输入, 固定编码）
@@ -81,7 +88,10 @@
 │   │   ├── synthesis_2d.py         # 2D 综合
 │   │   ├── sum_diff.py             # 和差波束 + LCMV
 │   │   └── evaluation.py           # uv域评估器
-│   ├── tests/                  # 52/52 通过
+│   ├── tests/                  # 61/61 通过（含9项DeepSets测试）
+│   ├── run_generate_teacher.py # SOCP教师标签生成(280样本)
+│   ├── run_deepsets_train.py   # DeepSets训练+三方对比
+│   ├── run_curved_verify.py    # 曲面阵列SOCP验证(正结果)
 │   ├── run_bounded_socp.py    # 受限SOCP验证
 │   ├── run_nonuniform_verify.py # 非均匀阵列验证
 │   └── ...
@@ -95,9 +105,12 @@
 
 ```bash
 cd project
-python tests/test_*.py          # 52 测试
+python tests/test_*.py          # 61 测试（含9项DeepSets）
 python run_acceptance_v2.py     # 73 方向验收
 python run_random_validation.py # 200 随机方向
+python run_curved_verify.py     # 曲面阵列SOCP验证(正结果)
+python run_generate_teacher.py  # 生成SOCP教师标签(280样本,~108min)
+python run_deepsets_train.py    # DeepSets训练+三方对比(Taylor vs SOCP vs AI)
 python run_bounded_socp.py      # SOCP 失效补偿验证(负结果)
 python run_nonuniform_verify.py # 非均匀阵列验证
 ```
