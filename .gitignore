@@ -1,29 +1,41 @@
+# .gitignore 更新
+
 # Python
 __pycache__/
 *.py[cod]
+*$py.class
 *.egg-info/
+dist/
+build/
 
-# 模型与输出
+# PyTorch / NPU
 *.pt
 *.pth
 *.om
 outputs/
 *.npz
 
-# 原始资料（体积大，不放仓库）
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.suo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 原始资料(体积大)
 *.pdf
 *.docx
 *.rar
 extracted/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# OS
-.DS_Store
-
 # 临时
 *.log
 .ipynb_checkpoints/
+
+# Claude
+.claude
