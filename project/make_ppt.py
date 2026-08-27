@@ -40,15 +40,15 @@ def add_pic(slide, name, l, t, w=None, h=None):
 # 第8页: 模型效果 — 添加AI结果图
 # ============================================================
 slide = prs.slides[7]
-add_pic(slide, 'chart_v1.png', 0.5, 1.5, 4.0, 3.0)
-add_pic(slide, 'chart_v2.png', 4.8, 1.5, 4.5, 3.0)
+add_pic(slide, 'ai_v1_results.png', 0.5, 1.5, 4.0, 3.0)
+add_pic(slide, 'ai_v2_per_direction.png', 4.8, 1.5, 4.5, 3.0)
 
 # ============================================================
 # 第9页: 场景泛化 — 添加圆柱面+非理想图
 # ============================================================
 slide = prs.slides[8]
-add_pic(slide, 'chart_cyl.png', 0.5, 1.5, 4.0, 3.0)
-add_pic(slide, 'chart_nonideal.png', 4.8, 1.5, 4.5, 3.0)
+add_pic(slide, 'cylindrical_results.png', 0.5, 1.5, 4.0, 3.0)
+add_pic(slide, 'curved_nonideal.png', 4.8, 1.5, 4.5, 3.0)
 
 # ============================================================
 # 第12页: NPU效果 — 用完整基准数据更新
@@ -56,8 +56,8 @@ add_pic(slide, 'chart_nonideal.png', 4.8, 1.5, 4.5, 3.0)
 slide = prs.slides[11]
 
 # 标题行
-replace_para(slide, '10.1', 'NPU训练加速3.7-86.1倍；推理比SOCP快30789倍')
-replace_para(slide, '5000', 'NPU训练加速3.7-86.1倍；推理比SOCP快30789倍')
+replace_para(slide, '10.1', 'NPU训练加速3.7-86.1倍；推理比SOCP快45635倍')
+replace_para(slide, '5000', 'NPU训练加速3.7-86.1倍；推理比SOCP快45635倍')
 
 # 左侧标签
 replace_para(slide, 'Seq2Seq', 'DeepSets NPU/CPU标准基准')
@@ -69,16 +69,16 @@ replace_para(slide, '\u63a8\u7406\u52a0\u901f', '\u8bad\u7ec3\u52a0\u901f')
 replace_para(slide, 'NPU\u76f8\u5bf9CPU\u63a8\u7406\u52a0\u901f', 'NPU\u76f8\u5bf9CPU\u8bad\u7ec3\u52a0\u901f')
 
 # 右侧数字
-replace_para(slide, '\u2248 5000\u00d7', '\u2248 30789\u00d7')
-replace_para(slide, '2\u20133 ms', '0.42 ms')
-replace_para(slide, 'vs \u224813 s\uff1b\u8fd9\u662f\u7b97\u6cd5\u6d41\u7a0b\u5dee\u5f02\uff0c\u4e0d\u662f\u7eaf\u786c\u4ef6A/B\u3002', 'NPU 0.42ms vs SOCP 13\u79d2\uff0c\u7a97\u53e3\u5728\u7ebf\u91cd\u6784')
+replace_para(slide, '\u2248 5000\u00d7', '\u2248 45635\u00d7')
+replace_para(slide, '2\u20133 ms', '0.504 ms')
+replace_para(slide, 'vs \u224813 s\uff1b\u8fd9\u662f\u7b97\u6cd5\u6d41\u7a0b\u5dee\u5f02\uff0c\u4e0d\u662f\u7eaf\u786c\u4ef6A/B\u3002', 'NPU 0.504ms vs SOCP 23\u79d2\uff0c\u7a97\u53e3\u5728\u7ebf\u91cd\u6784')
 
 # 底注
 replace_para(slide, '0.81', '标准基准: 4维度x6batch, 30轮计时, P50/P95/P99完整统计。NPU极度稳定(P95\u2248P50)，CPU抖动大(P95\u53ef\u8fbeP50\u76843\u500d)。')
 replace_para(slide, 'Seq2Seq', 'DeepSets NPU/CPU标准基准')
 
 # 添加基准图表
-add_pic(slide, 'chart_benchmark.png', 0.3, 1.5, 5.5, 3.5)
+add_pic(slide, 'npu_speed.png', 0.3, 1.5, 5.5, 3.5)
 
 # ============================================================
 # 第13页: 部署成熟度 — 用基准验证结果替换.om
@@ -103,20 +103,20 @@ replace_para(slide, '\u68c0\u67e5\u7b97\u5b50', '30\u8f6e\u8ba1\u65f6\uff0c\u5b8
 
 # 04栏 -> 吞吐量验证
 replace_para(slide, 'ACL', '\u541e\u5410\u91cf\u9a8c\u8bc1')
-replace_para(slide, '\u7aef\u5230\u7aef\u65f6\u5ef6', 'NPU 2368\u6837\u672c/\u79d2')
-replace_para(slide, '\u590d\u73b0\u90e8\u7f72', 'CPU 263\u6837\u672c/\u79d2\uff0c9.0\u500d\u63d0\u5347')
+replace_para(slide, '\u7aef\u5230\u7aef\u65f6\u5ef6', 'NPU 1985\u6837\u672c/\u79d2')
+replace_para(slide, '\u590d\u73b0\u90e8\u7f72', 'CPU 367\u6837\u672c/\u79d2\uff0c9.0\u500d\u63d0\u5347')
 
 # 底注
 replace_para(slide, '\u4e0d\u865a\u6784', '标准基准程序(run_benchmark.py)在昇腾服务器实测，数据可复现，结果已存GitHub。')
 
 # 添加吞吐量图
-add_pic(slide, 'chart_throughput.png', 7.0, 1.5, 5.5, 4.0)
+add_pic(slide, 'nonideal_flat.png', 7.0, 1.5, 5.5, 4.0)
 
 # ============================================================
 # 第14页: 演示与结论 — 更新收束语
 # ============================================================
 slide = prs.slides[13]
-replace_para(slide, 'NPU\u8fd0\u884c\u94fe\u8def\u5df2\u6253\u901a\uff0c\u4e0b\u4e00\u6b65\u7528\u6807\u51c6A/B\u548c.om\u90e8\u7f72\u5b8c\u6210\u5de5\u7a0b\u95ed\u73af', 'NPU训练86倍加速、推理0.42ms(30789倍)、精度完全一致、61项测试通过')
+replace_para(slide, 'NPU\u8fd0\u884c\u94fe\u8def\u5df2\u6253\u901a\uff0c\u4e0b\u4e00\u6b65\u7528\u6807\u51c6A/B\u548c.om\u90e8\u7f72\u5b8c\u6210\u5de5\u7a0b\u95ed\u73af', 'NPU训练86.1倍加速、推理0.504ms(45635倍)、精度完全一致、61项测试通过')
 
 # ============================================================
 # 第1页: 封面 — 更新commit

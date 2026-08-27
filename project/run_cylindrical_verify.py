@@ -19,7 +19,7 @@ from run_curved_verify import (
     solve_socp_3d, uv_to_uvw, eval_dense_3d,
 )
 from run_generate_teacher import normalize_weights
-from run_multi_scan_verify import run_socp_cutting, get_null_dirs
+from run_multi_scan_generate import run_socp_cutting, get_null_dirs
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'outputs')
 NX = NY = 32

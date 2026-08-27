@@ -43,7 +43,7 @@ def save_chart(fig, name):
 fig, ax = plt.subplots(figsize=(6, 4))
 models = ['128-dim\n(116K params)', '256-dim\n(463K params)']
 npu_times = [2.5, 2.5]
-cpu_times = [30.8, 80.0]
+cpu_times = [38.03, 214.97]
 x = np.arange(len(models))
 w = 0.35
 bars1 = ax.bar(x - w/2, npu_times, w, label='NPU (Ascend 910)', color=C_TEAL, edgecolor='white')
@@ -59,8 +59,8 @@ for bar, val in zip(bars1, npu_times):
     ax.text(bar.get_x() + bar.get_width()/2, val + 1, f'{val}', ha='center', fontsize=10, fontweight='bold', color=C_TEAL)
 for bar, val in zip(bars2, cpu_times):
     ax.text(bar.get_x() + bar.get_width()/2, val + 1, f'{val}', ha='center', fontsize=10, color=C_GRAY)
-ax.annotate('12.3x', xy=(0, 16), fontsize=14, fontweight='bold', color=C_GREEN, ha='center')
-ax.annotate('~32x', xy=(1, 45), fontsize=14, fontweight='bold', color=C_GREEN, ha='center')
+ax.annotate('15.7x', xy=(0, 20), fontsize=14, fontweight='bold', color=C_GREEN, ha='center')
+ax.annotate('68.6x', xy=(1, 120), fontsize=14, fontweight='bold', color=C_GREEN, ha='center')
 chart_npu_speed = save_chart(fig, 'npu_speed.png')
 
 # ============================================================
@@ -232,8 +232,8 @@ chart_negative = save_chart(fig, 'ai_negative_positive.png')
 # ============================================================
 fig, ax = plt.subplots(figsize=(6, 4))
 metrics = ['Sum\nSLL', 'After\nLCMV', 'Diff\nSLL', 'Null\nDepth', 'Pointing\nError']
-values = [-35.6, -35.6, -21.5, -45.5, -0.24]  # pointing error scaled
-targets = [-35, -35, -20, -30, -0.195]
+values = [-35.6, -35.6, -21.5, -45.5, 0.24]  # pointing error (absolute)
+targets = [-35, -35, -20, -30, 0.195]
 # Normalize for display (all as ratio to target)
 ratios = [v/t for v, t in zip(values, targets)]
 colors_r = [C_GREEN if r <= 1.0 else C_RED for r in ratios]
