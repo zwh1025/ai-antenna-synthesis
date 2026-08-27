@@ -43,17 +43,37 @@
 
 ### 曲面阵列 DeepSets AI 综合（正结果，已完成）
 
-**目标**：学习曲面阵列坐标 → SOCP 最优权值的映射，50ms 近似 13s 的 SOCP
+**v1 单扫描方向（θ=30°, 128维网络）**
 
 | 数据集 | Taylor | SOCP | AI | 恢复率 | 推理速度 |
 |---|---|---|---|---|---|
 | Val (30) | -19.70 dB | -23.11 dB | -23.51 dB | 111.5% | 1.7 ms |
 | Test (50) | -20.18 dB | -23.27 dB | -23.72 dB | 114.6% | 2.5 ms |
 
-- AI 超越 SOCP 教师（恢复率 >100%），远超 80% 退出条件
-- 推理 2ms vs SOCP 13s（**5200 倍加速**）
-- 排列等变 DeepSets 网络（116K 参数），训练 83s（CPU）
-- 280 个 SOCP 教师标签（200 训练 + 30 验证 + 50 测试）
+**v2 多扫描方向（θ=0/15/30/45/60°, 256维网络）**
+
+| 数据集 | Taylor | SOCP | AI | 恢复率 | 推理速度 |
+|---|---|---|---|---|---|
+| Val (30) | -21.65 dB | -24.14 dB | -23.87 dB | 89.3% | 2.3 ms |
+| Test (50) | -21.92 dB | -23.98 dB | -23.62 dB | 82.4% | 2.6 ms |
+
+- v1 单方向恢复率 >100%（AI 超越 SOCP 教师），v2 多方向恢复率 82-89%（满足 80% 目标）
+- 推理 2-3ms vs SOCP 13s（**5000 倍加速**）
+- 排列等变 DeepSets 网络（116K-463K 参数）
+- 280×2 个 SOCP 教师标签（单方向 + 多方向）
+- 曲面+量化/失效联合：AI 在所有非理想条件下保持 2.3-3.4 dB 优势
+
+### 圆柱面阵列验证
+
+| R | 等效α | Taylor | SOCP | 改善 |
+|---|---|---|---|---|
+| 5 | 0.100 | -13.2 dB | -21.6 dB | -8.4 dB |
+| 8 | 0.062 | -15.0 dB | -21.2 dB | -6.1 dB |
+| 10 | 0.050 | -19.0 dB | -21.7 dB | -2.7 dB |
+| 15 | 0.033 | -32.0 dB | -32.0 dB | 0.0 dB |
+| 20 | 0.025 | -34.9 dB | -34.9 dB | 0.0 dB |
+
+圆柱面 SOCP 改善比抛物面更大（α=0.10: -8.4 vs -4.2 dB），是 AI 的另一有效方向。
 
 ## 关键修正记录
 
@@ -89,9 +109,13 @@
 │   │   ├── sum_diff.py             # 和差波束 + LCMV
 │   │   └── evaluation.py           # uv域评估器
 │   ├── tests/                  # 61/61 通过（含9项DeepSets测试）
-│   ├── run_generate_teacher.py # SOCP教师标签生成(280样本)
+│   ├── run_generate_teacher.py # SOCP教师标签生成(280样本,单方向)
+│   ├── run_multi_scan_generate.py # 多扫描方向教师标签生成(280样本)
 │   ├── run_deepsets_train.py   # DeepSets训练+三方对比
 │   ├── run_curved_verify.py    # 曲面阵列SOCP验证(正结果)
+│   ├── run_cylindrical_verify.py # 圆柱面阵列SOCP验证
+│   ├── run_curved_nonideal.py  # 曲面+量化/失效联合实验
+│   ├── run_multi_scan_verify.py # 改进SOCP+多方向验证
 │   ├── run_bounded_socp.py    # 受限SOCP验证
 │   ├── run_nonuniform_verify.py # 非均匀阵列验证
 │   └── ...
@@ -110,7 +134,10 @@ python run_acceptance_v2.py     # 73 方向验收
 python run_random_validation.py # 200 随机方向
 python run_curved_verify.py     # 曲面阵列SOCP验证(正结果)
 python run_generate_teacher.py  # 生成SOCP教师标签(280样本,~108min)
-python run_deepsets_train.py    # DeepSets训练+三方对比(Taylor vs SOCP vs AI)
+python run_multi_scan_generate.py # 多扫描方向教师标签(280样本,~108min)
+python run_deepsets_train.py    # DeepSets训练(支持v1/v2数据)
+python run_cylindrical_verify.py # 圆柱面阵列SOCP验证
+python run_curved_nonideal.py   # 曲面+量化/失效联合实验
 python run_bounded_socp.py      # SOCP 失效补偿验证(负结果)
 python run_nonuniform_verify.py # 非均匀阵列验证
 ```
