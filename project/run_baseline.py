@@ -80,10 +80,10 @@ def main():
         patience_lr=3, patience_stop=12, verbose=True)
     t1 = time.time()
     print(f"      Trained in {t1-t0:.1f}s ({len(history['loss'])} epochs, "
-          f"best acc={max(history['accuracy']):.4f})")
+          f"best val_loss={min(history['val_loss']):.6f})")
 
     loss, acc = evaluate_model(model, enc_in, dec_in, dec_out, batch_size)
-    print(f"      Train: loss={loss:.6f}, acc={acc:.4f}")
+    print(f"      Train: loss={loss:.6f}")
 
     # 保存模型
     torch.save(model.state_dict(), os.path.join(output_dir, 'baseline_model.pt'))
