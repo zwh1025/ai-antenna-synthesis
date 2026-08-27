@@ -106,32 +106,29 @@ def eval_dense_3d(w, px, py, pz, theta0, phi0, null_dirs, n_eval=81):
     dist = np.sqrt((ug - u0)**2 + (vg - v0)**2)
     sl_mask = (dist >= exc_uv) & vis
 
-    u_flat = ug[sl_mask]
-    v_flat = vg[sl_mask]
-    w_flat = wg[sl_mask]
-
-    pat = np.zeros(len(u_flat))
-    for i in range(len(u_flat)):
-        psi = k * (px * u_flat[i] + py * v_flat[i] + pz * w_flat[i])
-        pat[i] = np.abs(np.sum(np.conj(w) * np.exp(1j * psi)))
+    # 一次性计算全可见域方向图（避免两次循环）
+    vis_flat = vis.ravel()
+    ug_flat = ug.ravel()
+    vg_flat = vg.ravel()
+    wg_flat = wg.ravel()
+    n_vis = int(vis_flat.sum())
+    pat_all = np.zeros(len(ug_flat))
+    for i in range(len(ug_flat)):
+        if vis_flat[i]:
+            psi = k * (px * ug_flat[i] + py * vg_flat[i] + pz * wg_flat[i])
+            pat_all[i] = np.abs(np.sum(np.conj(w) * np.exp(1j * psi)))
 
     psi_main = k * (px * u0 + py * v0 + pz * w0)
     main_resp = np.abs(np.sum(np.conj(w) * np.exp(1j * psi_main)))
     if main_resp < 1e-10:
         return float('nan'), 0, [], []
 
-    sll = 20 * np.log10(np.max(pat) / (main_resp + 1e-30))
+    # 从全方向图提取副瓣
+    sl_flat_mask = sl_mask.ravel()
+    pat_sl = pat_all[sl_flat_mask]
+    sll = 20 * np.log10(np.max(pat_sl) / (main_resp + 1e-30))
 
-    # 指向误差：在全可见域找主瓣峰值（非副瓣区）
-    vis_flat = vis.ravel()
-    ug_flat = ug.ravel()
-    vg_flat = vg.ravel()
-    wg_flat = wg.ravel()
-    pat_all = np.zeros(len(ug_flat))
-    for i in range(len(ug_flat)):
-        if vis_flat[i]:
-            psi = k * (px * ug_flat[i] + py * vg_flat[i] + pz * wg_flat[i])
-            pat_all[i] = np.abs(np.sum(np.conj(w) * np.exp(1j * psi)))
+    # 指向误差：全可见域峰值
     peak_idx_all = np.argmax(pat_all)
     peak_u = ug_flat[peak_idx_all]
     peak_v = vg_flat[peak_idx_all]
@@ -148,8 +145,11 @@ def eval_dense_3d(w, px, py, pz, theta0, phi0, null_dirs, n_eval=81):
         nd = 20 * np.log10(np.abs(np.sum(np.conj(w) * np.exp(1j * psi_n))) / (main_resp + 1e-30))
         null_depths.append(float(nd))
 
-    sorted_idx = np.argsort(pat)[::-1][:10]
-    worst = [(u_flat[i], v_flat[i], w_flat[i]) for i in sorted_idx]
+    sl_u_flat = ug_flat[sl_flat_mask]
+    sl_v_flat = vg_flat[sl_flat_mask]
+    sl_w_flat = wg_flat[sl_flat_mask]
+    sorted_idx = np.argsort(pat_sl)[::-1][:10]
+    worst = [(sl_u_flat[i], sl_v_flat[i], sl_w_flat[i]) for i in sorted_idx]
 
     return sll, pt_err, null_depths, worst
 

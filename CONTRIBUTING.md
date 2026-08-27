@@ -52,7 +52,7 @@ python -m pytest tests/ -v
 - 73方向+200随机方向验证
 - 非理想实验(量化/失效/扰动/频偏)
 - SOCP负结果研究: 均匀平面阵下Taylor已接近最优
-- 曲面阵列DeepSets AI训练: AI超越SOCP教师(恢复率111-115%)
+- 曲面阵列DeepSets AI训练: AI超过弱SOCP基线(恢复率82-115%)
 
 ### 负结果(有价值)
 - 阵元失效补偿: SOCP无法改善(物理限制)

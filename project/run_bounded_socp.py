@@ -95,11 +95,19 @@ def eval_dense(w_full, posx, posy, theta0, phi0, null_dirs, n_eval=101):
 
     sll = 20 * np.log10(np.max(pat_sl) / (main_resp + 1e-30))
 
-    # 全局峰值位置
-    peak_idx = np.argmax(pat_sl)
+    # 指向误差：在全可见域找主瓣峰值
+    vis_flat = vis.ravel()
+    ug_flat = ug.ravel()
+    vg_flat = vg.ravel()
+    pat_all = np.zeros(len(ug_flat))
+    for i in range(len(ug_flat)):
+        if vis_flat[i]:
+            psi = k * (px2d.ravel()[i] * ug_flat[i] + py2d.ravel()[i] * vg_flat[i])
+            pat_all[i] = np.abs(np.sum(np.conj(w_full) * np.exp(1j * psi)))
+    peak_all_idx = np.argmax(pat_all)
     pt_err = angular_distance_deg(
-        np.degrees(np.arcsin(np.clip(np.sqrt(u_flat[peak_idx]**2 + v_flat[peak_idx]**2), 0, 1))),
-        np.degrees(np.arctan2(v_flat[peak_idx], u_flat[peak_idx])) % 360,
+        np.degrees(np.arcsin(np.clip(np.sqrt(ug_flat[peak_all_idx]**2 + vg_flat[peak_all_idx]**2), 0, 1))),
+        np.degrees(np.arctan2(vg_flat[peak_all_idx], ug_flat[peak_all_idx])) % 360,
         theta0, phi0)
 
     # 零陷

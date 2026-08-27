@@ -155,20 +155,20 @@ def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
                 'actual_depth': actual_depth,
             })
 
-    # ---- 3dB 波束宽度（沿主瓣方向截面） ----
+    # ---- 3dB 波束宽度（过主瓣峰值的截面） ----
     du = 2.0 / (n_uv - 1)
-    # 沿 u 方向取过主瓣峰值的截面
-    peak_u_idx = int(round((peak_u - (-1.0)) / du))
-    peak_u_idx = max(0, min(n_uv - 1, peak_u_idx))
-    pat_u = pat[peak_u_idx, :]
+    peak_u_idx = idx_peak[0]
+    peak_v_idx = idx_peak[1]
+    # 沿 v 方向取过峰值的截面（固定 u=peak_u_idx）
+    pat_v = pat[peak_u_idx, :]
     threshold = peak_val - 3.0
     left = 0
-    for i in range(peak_u_idx - 1, -1, -1):
-        if pat_u[i] <= threshold:
+    for i in range(peak_v_idx - 1, -1, -1):
+        if pat_v[i] <= threshold:
             left = i; break
     right = n_uv - 1
-    for i in range(peak_u_idx + 1, n_uv):
-        if pat_u[i] <= threshold:
+    for i in range(peak_v_idx + 1, n_uv):
+        if pat_v[i] <= threshold:
             right = i; break
     bw_3db = float((right - left) * du * 180 / np.pi)
 

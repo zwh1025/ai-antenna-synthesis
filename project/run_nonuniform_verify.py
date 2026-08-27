@@ -113,10 +113,18 @@ def eval_dense_nonuniform(w, px_flat, py_flat, theta0, phi0, null_dirs,
 
     sll = 20 * np.log10(np.max(pat) / (main_resp + 1e-30))
 
-    # 指向误差
-    peak_idx = np.argmax(pat)
-    peak_u = u_flat[peak_idx]
-    peak_v = v_flat[peak_idx]
+    # 指向误差：在全可见域找主瓣峰值
+    vis_flat = vis.ravel()
+    ug_flat = ug.ravel()
+    vg_flat = vg.ravel()
+    pat_all = np.zeros(len(ug_flat))
+    for i in range(len(ug_flat)):
+        if vis_flat[i]:
+            psi = k * (px_flat * ug_flat[i] + py_flat * vg_flat[i])
+            pat_all[i] = np.abs(np.sum(np.conj(w) * np.exp(1j * psi)))
+    peak_all_idx = np.argmax(pat_all)
+    peak_u = ug_flat[peak_all_idx]
+    peak_v = vg_flat[peak_all_idx]
     peak_theta = np.degrees(np.arcsin(np.clip(np.sqrt(peak_u**2 + peak_v**2), 0, 1)))
     peak_phi = np.degrees(np.arctan2(peak_v, peak_u)) % 360
     pt_err = angular_distance_deg(peak_theta, peak_phi, theta0, phi0)
