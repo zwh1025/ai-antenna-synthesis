@@ -1,0 +1,24 @@
+# 核心依赖（必须安装）
+numpy>=1.24
+scipy>=1.10
+torch>=2.0
+
+# SOCP优化（曲面阵列脚本需要）
+cvxpy>=1.5
+
+# 可视化（方向图绘制）
+matplotlib>=3.5
+
+# 安装方式:
+#   pip install -r requirements.txt
+#
+# 或单独安装:
+#   pip install numpy scipy torch cvxpy matplotlib
+#
+# NPU环境额外安装:
+#   pip install torch_npu
+#
+# 注意:
+#   - 没有GPU/NPU也能运行，自动使用CPU
+#   - torch安装CPU版本即可: pip install torch
+#   - 有NVIDIA GPU: pip install torch --index-url https://download.pytorch.org/whl/cu121
