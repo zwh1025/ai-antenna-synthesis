@@ -92,6 +92,18 @@ def load_teacher_labels(path=None):
     }
 
 
+def _get_null_dirs(theta0, phi0):
+    """根据扫描方向计算零陷方向（与 run_multi_scan_generate 一致）。"""
+    if theta0 < 10:
+        return [(30, 0), (30, 90), (30, 180), (30, 270)]
+    return [
+        (theta0, (phi0 + 90) % 360),
+        (theta0, (phi0 + 180) % 360),
+        (theta0, (phi0 + 270) % 360),
+        (min(theta0 + 25, 85), (phi0 + 45) % 360),
+    ]
+
+
 def evaluate_ai_weights(model, feat, meta, device, n_samples=None):
     """用 AI 权值计算 SLL，返回 (sll_list, taylor_list, socp_list)。"""
     model.eval()
@@ -109,11 +121,13 @@ def evaluate_ai_weights(model, feat, meta, device, n_samples=None):
             w_im = meta['w_taylor_im'][i] + delta[:, 1] / WEIGHT_SCALE
             w_ai = w_re + 1j * w_im
 
+            th0 = float(meta['theta0'][i])
+            ph0 = float(meta['phi0'][i])
+            null_dirs = _get_null_dirs(th0, ph0)
+
             sll, _, _, _ = eval_dense_3d(
                 w_ai, meta['px'][i], meta['py'][i], meta['pz'][i],
-                float(meta['theta0'][i]),
-                float(meta['phi0'][i]),
-                [(30, 90), (30, 180), (30, 270), (55, 45)])
+                th0, ph0, null_dirs)
             sll_ai_list.append(float(sll) if not np.isnan(sll) else -100.0)
 
     return sll_ai_list, sll_taylor_list, sll_socp_list
