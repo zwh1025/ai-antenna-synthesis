@@ -33,8 +33,12 @@ python tests/test_antenna_calc.py
 | `python run_acceptance_v2.py` | ~6min | 73方向正式验收 |
 | `python run_nonideal_v2.py` | ~1min | 非理想实验(量化/失效/频偏) |
 | `python run_curved_verify.py` | ~11min | 曲面阵列SOCP验证 |
-| `python run_generate_teacher.py` | ~108min | 生成280个SOCP教师标签 |
+| `python run_cylindrical_verify.py` | ~8min | 圆柱面阵列SOCP验证 |
+| `python run_curved_nonideal.py` | ~5min | 曲面+量化/失效联合实验 |
+| `python run_generate_teacher.py` | ~108min | 生成280个SOCP教师标签(v1) |
+| `python run_multi_scan_generate.py` | ~108min | 多方向教师标签(v2) |
 | `python run_deepsets_train.py` | ~2min | DeepSets训练+三方对比 |
+| `python run_benchmark.py` | ~10min | CPU/NPU标准基准 |
 | `python run_bounded_socp.py` | ~1min | SOCP失效补偿验证(负结果) |
 
 ## 当前项目状态
