@@ -16,7 +16,7 @@ from mylib.antenna_calc import (
     calculate_2d_pattern, angular_distance_deg,
 )
 from mylib.sum_diff import capon_nulling_2d
-from mylib.evaluation import evaluate_2d_comprehensive
+from mylib.evaluation import evaluate_uv as evaluate_2d_comprehensive
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'outputs')
 NX = NY = 32

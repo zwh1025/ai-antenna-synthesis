@@ -122,9 +122,19 @@ def eval_dense_3d(w, px, py, pz, theta0, phi0, null_dirs, n_eval=81):
 
     sll = 20 * np.log10(np.max(pat) / (main_resp + 1e-30))
 
-    peak_idx = np.argmax(pat)
-    peak_u = u_flat[peak_idx]
-    peak_v = v_flat[peak_idx]
+    # 指向误差：在全可见域找主瓣峰值（非副瓣区）
+    vis_flat = vis.ravel()
+    ug_flat = ug.ravel()
+    vg_flat = vg.ravel()
+    wg_flat = wg.ravel()
+    pat_all = np.zeros(len(ug_flat))
+    for i in range(len(ug_flat)):
+        if vis_flat[i]:
+            psi = k * (px * ug_flat[i] + py * vg_flat[i] + pz * wg_flat[i])
+            pat_all[i] = np.abs(np.sum(np.conj(w) * np.exp(1j * psi)))
+    peak_idx_all = np.argmax(pat_all)
+    peak_u = ug_flat[peak_idx_all]
+    peak_v = vg_flat[peak_idx_all]
     peak_theta = np.degrees(np.arcsin(np.clip(np.sqrt(peak_u**2 + peak_v**2), 0, 1)))
     peak_phi = np.degrees(np.arctan2(peak_v, peak_u)) % 360
     pt_err = angular_distance_deg(peak_theta, peak_phi, theta0, phi0)

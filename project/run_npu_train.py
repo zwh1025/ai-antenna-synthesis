@@ -68,7 +68,7 @@ def main():
     t1 = time.time()
     n_ep = len(history['loss'])
     print(f"\n    Trained {n_ep} epochs in {t1-t0:.1f}s ({(t1-t0)/n_ep:.2f}s/epoch)")
-    print(f"    Best acc: {max(history['accuracy']):.4f}")
+    print(f"    Best val_loss: {min(history['val_loss']):.6f}")
     print(f"    Final loss: {history['loss'][-1]:.6f}")
 
     loss, acc = evaluate_model(model, enc_in, dec_in, dec_out, batch_size=32, device=dev)

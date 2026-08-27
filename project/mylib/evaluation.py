@@ -73,7 +73,6 @@ def _pattern_on_uv_grid(amp, phase, posx, posy, n_uv=201, lamb=1.0):
 
     return pattern_db, u_grid, v_grid, visible
 
-
 def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
                 null_dirs=None, lamb=1.0, n_uv=201):
     """在 u-v 均匀网格上综合评估方向图。
@@ -84,6 +83,7 @@ def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
 
     返回 dict。
     """
+
     pat, u_grid, v_grid, visible = _pattern_on_uv_grid(
         amp, phase, posx, posy, n_uv, lamb)
 
@@ -104,7 +104,6 @@ def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
 
     # ---- 主瓣: -30dB 连通域 ----
     main_lobe_mask = pat > -30.0
-    # 8连通（含对角）
     structure = np.ones((3, 3), dtype=int)
     labels_img, n_labels = label(main_lobe_mask, structure=structure)
     peak_label = labels_img[idx_peak]
@@ -132,11 +131,9 @@ def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
             vn = np.sin(np.deg2rad(tn)) * np.sin(np.deg2rad(pn))
             dist_null = np.sqrt((u_grid - un)**2 + (v_grid - vn)**2)
 
-            # 目标点响应
             idx_n = np.unravel_index(np.argmin(dist_null), pat.shape)
             target_resp = float(pat[idx_n])
 
-            # ±1°/±3° 最大值（转换到uv距离）
             d1 = np.sin(np.deg2rad(1.0))
             d3 = np.sin(np.deg2rad(3.0))
             near1 = (dist_null <= d1) & visible
@@ -144,7 +141,6 @@ def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
             max1 = float(np.max(pat[near1])) if np.any(near1) else float('nan')
             max3 = float(np.max(pat[near3])) if np.any(near3) else float('nan')
 
-            # 实际最深零点
             near5 = (dist_null <= np.sin(np.deg2rad(5.0))) & visible
             if np.any(near5):
                 idx_min = np.unravel_index(np.argmin(pat[near5]), pat.shape)
@@ -159,24 +155,22 @@ def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
                 'actual_depth': actual_depth,
             })
 
-    # ---- 3dB 波束宽度（主瓣方向截面） ----
-    # 沿 u 方向取截面
-    du = u[1] - u[0] if 'u' in dir() else 2.0 / (n_uv - 1)
+    # ---- 3dB 波束宽度（沿主瓣方向截面） ----
     du = 2.0 / (n_uv - 1)
-    pat_u = pat[:, n_uv//2]  # v=0 截面
-    u_axis = np.linspace(-1, 1, n_uv)
-    # 找峰值两侧 -3dB 点
-    peak_u_idx = np.argmax(pat_u)
-    threshold = pat_u[peak_u_idx] - 3.0
+    # 沿 u 方向取过主瓣峰值的截面
+    peak_u_idx = int(round((peak_u - (-1.0)) / du))
+    peak_u_idx = max(0, min(n_uv - 1, peak_u_idx))
+    pat_u = pat[peak_u_idx, :]
+    threshold = peak_val - 3.0
     left = 0
-    for i in range(peak_u_idx-1, -1, -1):
+    for i in range(peak_u_idx - 1, -1, -1):
         if pat_u[i] <= threshold:
             left = i; break
     right = n_uv - 1
-    for i in range(peak_u_idx+1, n_uv):
+    for i in range(peak_u_idx + 1, n_uv):
         if pat_u[i] <= threshold:
             right = i; break
-    bw_3db = float((right - left) * du * 180 / np.pi)  # uv→度
+    bw_3db = float((right - left) * du * 180 / np.pi)
 
     return {
         'sll_connected': sll_connected,
@@ -190,3 +184,7 @@ def evaluate_uv(amp, phase, posx, posy, theta0, phi0,
         'null_results': null_results,
         'main_lobe_pixels': int(np.sum(main_lobe)),
     }
+
+
+# 向后兼容别名
+evaluate_2d_comprehensive = evaluate_uv

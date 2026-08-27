@@ -14,7 +14,7 @@ from mylib.antenna_calc import (
     beam_steering_phase_2d, combine_2d_excitation,
 )
 from mylib.sum_diff import bayliss_excitation, capon_nulling_2d
-from mylib.evaluation import evaluate_2d_comprehensive
+from mylib.evaluation import evaluate_uv as evaluate_2d_comprehensive
 
 NX = NY = 32
 
