@@ -1,0 +1,176 @@
+{
+  "schema_version": "stage5a-portable-evidence-v1",
+  "stage5a_version": "1.0.0",
+  "stage": "Stage 5A — AI Sample Efficiency & Convergence Closure",
+  "gate": "STAGE_5A_GO",
+  "directly_comparable_to_upstream_v3": false,
+  "claim_boundary": "Empirical sample efficiency for one fixed reconstructed 32x32 1024-element curved-array task and the frozen 8/2/4 parent split only. D4 rows are correlated augmentations, not independent teachers.",
+  "study": {
+    "train_parent_counts": [2, 4, 6, 8],
+    "d4_rows_by_parent_count": {"2": 16, "4": 32, "6": 48, "8": 64},
+    "validation_independent_parents": 2,
+    "validation_correlated_d4_rows": 16,
+    "test_independent_parents": 4,
+    "test_correlated_d4_rows": 32,
+    "seeds": [0, 1, 2],
+    "nested_subsets": true,
+    "d4_rows_are_correlated": true,
+    "selection": "validation_only",
+    "test_used_for_selection": false,
+    "train_only_normalization": true,
+    "train_only_residual_scale": true,
+    "teacher_calls_are_offline": true
+  },
+  "evaluator_boundary": {
+    "local_stage3c1_stage5a": "run_curved_verify.py eval_dense_3d; dense 81x81 visible-uv domain",
+    "upstream_v3": "mylib.evaluation.evaluate_uv legacy 201x201 uv evaluator with connected -30 dB and 3x3 dB beamwidth rules",
+    "comparison": "NOT_DIRECTLY_COMPARABLE_TO_UPSTREAM_V3",
+    "same_task_claim": false
+  },
+  "levels": {
+    "2": {
+      "independent_train_parents": 2,
+      "correlated_d4_rows": 16,
+      "selected_seed": 2,
+      "test_used_for_selection": false,
+      "test": {
+        "improves_count": 3,
+        "total_independent_parents": 4,
+        "improvement_criterion": "parent-mean gain > 0 dB",
+        "mean_gain_db": 4.957204646771629e-10,
+        "median_gain_db": 1.5412382481372333e-10,
+        "worst_gain_db": -5.276934444964354e-11,
+        "mean_regret_vs_teacher_db": 3.271893606273564
+      },
+      "convergence": {
+        "best_epoch": 1,
+        "early_stop_epoch": 16,
+        "epoch_to_90pct_final_gain": "NOT_REACHED",
+        "teacher_proximity_epoch": "NOT_REACHED",
+        "teacher_proximity_threshold_db": 0.5,
+        "teacher_proximity_status": "PARTIAL; all-row gate NOT_REACHED",
+        "best_validation_physical_mse": 3.089293768772727e-07
+      },
+      "training_runtime_s": {"mean": 18.651524166666906, "std": 0.12099989341182639, "p95": 18.742597240000396},
+      "teacher_generation": {"calls_required": 2, "new_calls": 0, "reused_wall_clock_s": 28.633430400164798, "mean_per_call_s": 14.316715200082399}
+    },
+    "4": {
+      "independent_train_parents": 4,
+      "correlated_d4_rows": 32,
+      "selected_seed": 2,
+      "test_used_for_selection": false,
+      "test": {
+        "improves_count": 4,
+        "total_independent_parents": 4,
+        "improvement_criterion": "parent-mean gain > 0 dB",
+        "mean_gain_db": 0.8367735560042517,
+        "median_gain_db": 0.6103572656881944,
+        "worst_gain_db": 0.0645547141817775,
+        "mean_regret_vs_teacher_db": 2.435120050765033
+      },
+      "convergence": {
+        "best_epoch": 77,
+        "early_stop_epoch": 80,
+        "epoch_to_90pct_final_gain": 70,
+        "teacher_proximity_epoch": "NOT_REACHED",
+        "teacher_proximity_threshold_db": 0.5,
+        "teacher_proximity_status": "PARTIAL; all-row gate NOT_REACHED",
+        "best_validation_physical_mse": 1.5373510181695628e-07
+      },
+      "training_runtime_s": {"mean": 106.69392490000003, "std": 6.876136116715255, "p95": 114.96846591000012},
+      "teacher_generation": {"calls_required": 4, "new_calls": 0, "reused_wall_clock_s": 56.415710100205615, "mean_per_call_s": 14.103927525051404}
+    },
+    "6": {
+      "independent_train_parents": 6,
+      "correlated_d4_rows": 48,
+      "selected_seed": 0,
+      "test_used_for_selection": false,
+      "test": {
+        "improves_count": 3,
+        "total_independent_parents": 4,
+        "improvement_criterion": "parent-mean gain > 0 dB",
+        "mean_gain_db": 1.350924736570804,
+        "median_gain_db": 1.4364623190554715,
+        "worst_gain_db": -0.027183723364708534,
+        "mean_regret_vs_teacher_db": 1.920968870198481
+      },
+      "convergence": {
+        "best_epoch": 80,
+        "early_stop_epoch": 80,
+        "epoch_to_90pct_final_gain": 55,
+        "teacher_proximity_epoch": "NOT_REACHED",
+        "teacher_proximity_threshold_db": 0.5,
+        "teacher_proximity_status": "PARTIAL; all-row gate NOT_REACHED",
+        "best_validation_physical_mse": 1.2966829691126855e-07
+      },
+      "training_runtime_s": {"mean": 133.35801723333316, "std": 2.7398146667665273, "p95": 136.2094645999996},
+      "teacher_generation": {"calls_required": 6, "new_calls": 0, "reused_wall_clock_s": 84.11481410008855, "mean_per_call_s": 14.019135683348091}
+    },
+    "8": {
+      "independent_train_parents": 8,
+      "correlated_d4_rows": 64,
+      "selected_seed": 0,
+      "test_used_for_selection": false,
+      "test": {
+        "improves_count": 4,
+        "total_independent_parents": 4,
+        "improvement_criterion": "parent-mean gain > 0 dB",
+        "mean_gain_db": 1.3258180385592806,
+        "median_gain_db": 1.2462058718065974,
+        "worst_gain_db": 0.0028798799265676855,
+        "mean_regret_vs_teacher_db": 1.9460755682100042
+      },
+      "convergence": {
+        "best_epoch": 67,
+        "early_stop_epoch": 80,
+        "epoch_to_90pct_final_gain": 55,
+        "teacher_proximity_epoch": "NOT_REACHED",
+        "teacher_proximity_threshold_db": 0.5,
+        "teacher_proximity_status": "PARTIAL; all-row gate NOT_REACHED",
+        "best_validation_physical_mse": 1.2618058056076124e-07
+      },
+      "training_runtime_s": {"mean": 152.67375669999942, "std": 2.4470251044885547, "p95": 155.60999530999942},
+      "teacher_generation": {"calls_required": 8, "new_calls": 0, "reused_wall_clock_s": 111.20531260012649, "mean_per_call_s": 13.900664075015811}
+    }
+  },
+  "complexity": {
+    "N": 1024,
+    "architecture": "DeepSetsV2: shared Phi, mean/max pooling, Rho, shared per-element output head",
+    "input_dim": 9,
+    "output_dim": 2,
+    "hidden_dim": 256,
+    "parameter_count": 597250,
+    "MACs_per_sample": 405733376,
+    "FLOPs_at_2_per_MAC": 811466752,
+    "scope": "neural forward only; preprocessing and antenna evaluation excluded",
+    "all_sample_size_models_same_architecture": true
+  },
+  "online_latency_ms": {
+    "environment": "CPU, batch=1, single thread, N=1024",
+    "inference_only": {"mean": 9.1569740138948, "median": 9.174899896606803, "p95": 9.80843998258933},
+    "end_to_end": {"mean": 9.75568998605013, "median": 9.762300061993301, "p95": 10.4736450128257},
+    "end_to_end_definition": "Taylor baseline + feature build + model + reconstruction + main-response normalization; no SOCP and no dense evaluator",
+    "teacher_generation_included": false
+  },
+  "allowed_claims": [
+    "Nontrivial held-out improvement is demonstrated from four independent teacher parents on the fixed task.",
+    "Six to eight independent teacher parents provide approximately 1.3 dB mean held-out improvement on the fixed task.",
+    "Training trajectory, validation-only selection, offline teacher cost, and model complexity are quantified.",
+    "The study does not demonstrate unseen-geometry generalization or direct superiority over upstream v3."
+  ],
+  "source_artifacts": [
+    "results/stage5a_sample_efficiency_convergence/summary.json",
+    "results/stage5a_sample_efficiency_convergence/convergence_summary.json",
+    "results/stage5a_sample_efficiency_convergence/offline_cost.json",
+    "results/stage5a_sample_efficiency_convergence/sample_efficiency_manifest.json",
+    "results/stage3c1_1024_ai_feasibility/stage3c1_split_manifest.json",
+    "results/stage3b_1024_scale_applicability/complexity_scaling.json"
+  ],
+  "source_hashes": {
+    "geometry_sha256": "515978d79fd63c95a630708cb307ddc0736194a69ffe2224db196bbea02d2548",
+    "stage5a_manifest_file_sha256": "94ecb9e2dbc5879e08309374ca4f607d0b414366ad993d10c72ee2284b1da199",
+    "stage5a_manifest_content_sha256": "a4152037734e8ce39f64a82ad6fbdf6e3851678342f9321c7af8e99ec8f361c9",
+    "stage3c1_split_manifest_sha256": "3c87ec46613e1c59275ca8d7ab3977e3c2eefa0901bf82b322569f34cb937104",
+    "stage3b_complexity_sha256": "1461951bebbf5a92ee3869dd69b5f5f3588c53b6a4a672d06b86716aff032f50"
+  }
+}
