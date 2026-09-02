@@ -1,0 +1,2785 @@
+{
+  "stage": "STAGE_2_BASELINE",
+  "metric_version": "1.0.0",
+  "baseline_table": [
+    {
+      "metric": "Sum SLL (Taylor)",
+      "aggregate": {
+        "cases": 273,
+        "pass": 273,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": -35.15657588421298,
+        "best": -35.223249345206604,
+        "mean": -35.179946510564726,
+        "median": -35.177393562726394,
+        "p5": -35.22324934520655,
+        "p95": -35.15678238926691
+      },
+      "requirement": "<= -35 dBc"
+    },
+    {
+      "metric": "Sum SLL (LCMV, regular)",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": -35.01898201214488,
+        "best": -35.22324722906526,
+        "mean": -35.15778834854467,
+        "median": -35.15696350132078,
+        "p5": -35.22323331469633,
+        "p95": -35.028792537261936
+      },
+      "requirement": "<= -35 dBc"
+    },
+    {
+      "metric": "Diff SLL",
+      "aggregate": {
+        "cases": 273,
+        "pass": 273,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": -21.84303541408765,
+        "best": -21.95241492591527,
+        "mean": -21.879589911808395,
+        "median": -21.869399511175512,
+        "p5": -21.933356462142484,
+        "p95": -21.843751619433277
+      },
+      "requirement": "<= -20 dBc"
+    },
+    {
+      "metric": "Diff intrinsic null center",
+      "aggregate": {
+        "cases": 273,
+        "pass": 273,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": -289.36172157079955,
+        "best": -300.0,
+        "mean": -299.20720927055794,
+        "median": -300.0,
+        "p5": -300.0,
+        "p95": -294.6453477984372
+      },
+      "requirement": "<= -30 dBc"
+    },
+    {
+      "metric": "Diff pointing",
+      "aggregate": {
+        "cases": 273,
+        "pass": 273,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": 1.2074182697257333e-06,
+        "best": 0.0,
+        "mean": 1.5529565389733723e-07,
+        "median": 0.0,
+        "p5": 0.0,
+        "p95": 8.537736462515939e-07
+      },
+      "requirement": "<= BW_sum/30"
+    },
+    {
+      "metric": "Sum adaptive null center",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": -300.0,
+        "best": -300.0,
+        "requirement": -30.0
+      },
+      "requirement": "4 nulls, each <= -30 dBc and Sum SLL <= -35 for joint gate"
+    },
+    {
+      "metric": "Sum strict null center",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": -300.0,
+        "best": -300.0,
+        "requirement": -65.0
+      },
+      "requirement": "4 nulls, each <= -65 dBc and Sum SLL <= -35 for joint gate"
+    },
+    {
+      "metric": "Diff adaptive null",
+      "aggregate": {
+        "cases": 73,
+        "pass": 0,
+        "fail": 0,
+        "not_tested": 73
+      },
+      "requirement": "4 nulls, each <= -30 dBc; BASELINE_NOT_IMPLEMENTED"
+    },
+    {
+      "metric": "Diff strict null",
+      "aggregate": {
+        "cases": 73,
+        "pass": 0,
+        "fail": 0,
+        "not_tested": 73
+      },
+      "requirement": "4 nulls, each <= -50 dBc; BASELINE_NOT_IMPLEMENTED"
+    }
+  ],
+  "worst_10": {
+    "sum_taylor_sll": [
+      {
+        "set": "random",
+        "case_id": "random_191",
+        "method": "taylor",
+        "theta0_deg": 3.423283269075259,
+        "phi0_deg": 101.58734688955205,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15657588421298,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.2555679404937585,
+        "pointing_error_deg": 0.14317984555960267,
+        "pointing_threshold_deg": 0.14185226468312528,
+        "peak_direction": {
+          "theta_deg": 3.4873189797874087,
+          "phi_deg": 99.46232220802563
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.324894832318524,
+          "sll_3bw_db": -35.424806754286266,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            -0.010000000000000009,
+            0.06000000000000005
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_058",
+        "method": "taylor",
+        "theta0_deg": 12.38002310434755,
+        "phi0_deg": 131.13714997730716,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15659748994428,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.3828480495562605,
+        "pointing_error_deg": 0.10560422215304567,
+        "pointing_threshold_deg": 0.14609493498520867,
+        "peak_direction": {
+          "theta_deg": 12.27493355339029,
+          "phi_deg": 131.18592516570968
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.265823226158336,
+          "sll_3bw_db": -35.46734020605419,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            -0.14,
+            0.15999999999999992
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_101",
+        "method": "taylor",
+        "theta0_deg": 59.87604663200025,
+        "phi0_deg": 126.25625356261565,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15659768293893,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 8.602313764883156,
+        "pointing_error_deg": 0.203433022954461,
+        "pointing_threshold_deg": 0.2867437921627719,
+        "peak_direction": {
+          "theta_deg": 60.00661638792583,
+          "phi_deg": 126.0760115563686
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.219382894656025,
+          "sll_3bw_db": -36.478263180857596,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            -0.51,
+            0.7
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_158",
+        "method": "taylor",
+        "theta0_deg": 23.818891024457006,
+        "phi0_deg": 160.99291458174085,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15660203756449,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.65370895339467,
+        "pointing_error_deg": 0.14757009612705643,
+        "pointing_threshold_deg": 0.15512363177982233,
+        "peak_direction": {
+          "theta_deg": 23.67959877674146,
+          "phi_deg": 161.1139126302907
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.45115405316401,
+          "sll_3bw_db": -35.47509164210933,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            -0.38,
+            0.13000000000000012
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_188",
+        "method": "taylor",
+        "theta0_deg": 20.070677324515927,
+        "phi0_deg": 9.430815071543325,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15661608279876,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.520959385054425,
+        "pointing_error_deg": 0.23557461910957028,
+        "pointing_threshold_deg": 0.15069864616848083,
+        "peak_direction": {
+          "theta_deg": 20.197272946361398,
+          "phi_deg": 10.007979801441344
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.061483836411753,
+          "sll_3bw_db": -35.473720415058374,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.3400000000000001,
+            0.06000000000000005
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_082",
+        "method": "taylor",
+        "theta0_deg": 12.308378428920431,
+        "phi0_deg": 68.64757943891996,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15661614986288,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.360030856762011,
+        "pointing_error_deg": 0.1625386502229985,
+        "pointing_threshold_deg": 0.14533436189206703,
+        "peak_direction": {
+          "theta_deg": 12.439382266165357,
+          "phi_deg": 68.19859051364817
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.029674318762662,
+          "sll_3bw_db": -35.473719838181374,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.08000000000000007,
+            0.19999999999999996
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_130",
+        "method": "taylor",
+        "theta0_deg": 29.200136485482172,
+        "phi0_deg": 314.4323657093978,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15662103855306,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.906247453785522,
+        "pointing_error_deg": 0.12831010417596111,
+        "pointing_threshold_deg": 0.16354158179285072,
+        "peak_direction": {
+          "theta_deg": 29.20625253944296,
+          "phi_deg": 314.16968451374197
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.610368027780794,
+          "sll_3bw_db": -35.475278990285936,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.3400000000000001,
+            -0.35
+          ],
+          "u_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "v_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_002",
+        "method": "taylor",
+        "theta0_deg": 27.364199053022155,
+        "phi0_deg": 282.6633461014849,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15662128481043,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.785557901375228,
+        "pointing_error_deg": 0.1059653290456115,
+        "pointing_threshold_deg": 0.1595185967125076,
+        "peak_direction": {
+          "theta_deg": 27.45018390230324,
+          "phi_deg": 282.5288077091515
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.187966829460606,
+          "sll_3bw_db": -35.46506457501661,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.10000000000000009,
+            -0.44999999999999996
+          ],
+          "u_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "v_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_112",
+        "method": "taylor",
+        "theta0_deg": 0.3831523030100148,
+        "phi0_deg": 103.33372794296861,
+        "metric_version": "1.0.0",
+        "sll_db": -35.156637728337905,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.2496333655740095,
+        "pointing_error_deg": 0.21878141813496613,
+        "pointing_threshold_deg": 0.14165444551913364,
+        "peak_direction": {
+          "theta_deg": 0.5729673448571532,
+          "phi_deg": 90.0
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.07721271687075,
+          "sll_3bw_db": -35.271132513225396,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.0,
+            0.010000000000000009
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_147",
+        "method": "taylor",
+        "theta0_deg": 57.77561251425479,
+        "phi0_deg": 174.0764328191729,
+        "metric_version": "1.0.0",
+        "sll_db": -35.15664220365468,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 8.01223242486413,
+        "pointing_error_deg": 0.2043852401418292,
+        "pointing_threshold_deg": 0.2670744141621377,
+        "peak_direction": {
+          "theta_deg": 57.65133520809214,
+          "phi_deg": 173.8844964337146
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.0991706578116,
+          "sll_3bw_db": -35.4956376749301,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            -0.84,
+            0.09000000000000008
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      }
+    ],
+    "sum_lcmv_sll": [
+      {
+        "set": "regular",
+        "case_id": "regular_002",
+        "method": "lcmv",
+        "theta0_deg": 10.0,
+        "phi0_deg": 30.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.01898201214488,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.337862360928003,
+        "pointing_error_deg": 0.18374918222956915,
+        "pointing_threshold_deg": 0.14459541203093346,
+        "peak_direction": {
+          "theta_deg": 10.074500585868563,
+          "phi_deg": 30.96375653207352
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.170270745638046,
+          "sll_3bw_db": -35.35783315230633,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.15000000000000013,
+            0.09000000000000008
+          ],
+          "u_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_008",
+        "method": "lcmv",
+        "theta0_deg": 10.0,
+        "phi0_deg": 210.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.018982012144924,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.337862360928005,
+        "pointing_error_deg": 0.18374918222956915,
+        "pointing_threshold_deg": 0.1445954120309335,
+        "peak_direction": {
+          "theta_deg": 10.074500585868554,
+          "phi_deg": 210.9637565320735
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.170270745638,
+          "sll_3bw_db": -35.35783315230633,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            -0.15000000000000002,
+            -0.08999999999999997
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_011",
+        "method": "lcmv",
+        "theta0_deg": 10.0,
+        "phi0_deg": 300.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.01898201214502,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.337862360928008,
+        "pointing_error_deg": 0.18374918222956915,
+        "pointing_threshold_deg": 0.1445954120309336,
+        "peak_direction": {
+          "theta_deg": 10.074500585868556,
+          "phi_deg": 300.96375653207355
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.170270745638078,
+          "sll_3bw_db": -35.35783315230639,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.09000000000000008,
+            -0.15000000000000002
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_005",
+        "method": "lcmv",
+        "theta0_deg": 10.0,
+        "phi0_deg": 120.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.01898201214503,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.337862360928009,
+        "pointing_error_deg": 0.18374918222956915,
+        "pointing_threshold_deg": 0.14459541203093362,
+        "peak_direction": {
+          "theta_deg": 10.07450058586856,
+          "phi_deg": 120.96375653207349
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.170270745638014,
+          "sll_3bw_db": -35.3578331523063,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            -0.08999999999999997,
+            0.15000000000000013
+          ],
+          "u_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "v_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_019",
+        "method": "lcmv",
+        "theta0_deg": 20.0,
+        "phi0_deg": 180.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.03533288733987,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.5163953525569305,
+        "pointing_error_deg": 0.12312592991935552,
+        "pointing_threshold_deg": 0.15054651175189768,
+        "peak_direction": {
+          "theta_deg": 19.876874070078827,
+          "phi_deg": 180.0
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.19448447012207,
+          "sll_3bw_db": -35.43292667286066,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            -0.33999999999999997,
+            0.0
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_013",
+        "method": "lcmv",
+        "theta0_deg": 20.0,
+        "phi0_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.03533288733988,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.516395352556927,
+        "pointing_error_deg": 0.12312592991935552,
+        "pointing_threshold_deg": 0.15054651175189757,
+        "peak_direction": {
+          "theta_deg": 19.876874070078838,
+          "phi_deg": 0.0
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.19448447012205,
+          "sll_3bw_db": -35.43292667286058,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.3400000000000001,
+            0.0
+          ],
+          "u_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_022",
+        "method": "lcmv",
+        "theta0_deg": 20.0,
+        "phi0_deg": 270.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.035332887339905,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.516395352556941,
+        "pointing_error_deg": 0.12312592991935552,
+        "pointing_threshold_deg": 0.15054651175189804,
+        "peak_direction": {
+          "theta_deg": 19.876874070078827,
+          "phi_deg": 270.0
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.19448447012199,
+          "sll_3bw_db": -35.43292667286062,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.0,
+            -0.33999999999999997
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.1100000000000001
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_016",
+        "method": "lcmv",
+        "theta0_deg": 20.0,
+        "phi0_deg": 90.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.03533288733996,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 4.516395352556941,
+        "pointing_error_deg": 0.12312592991935552,
+        "pointing_threshold_deg": 0.15054651175189804,
+        "peak_direction": {
+          "theta_deg": 19.876874070078838,
+          "phi_deg": 90.0
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.194484470122074,
+          "sll_3bw_db": -35.4329266728606,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.0,
+            0.3400000000000001
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.1100000000000001
+          ],
+          "v_bounds_relative": [
+            -0.09999999999999998,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_061",
+        "method": "lcmv",
+        "theta0_deg": 60.0,
+        "phi0_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.08681517182285,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 8.563188747967004,
+        "pointing_error_deg": 0.45863949985670516,
+        "pointing_threshold_deg": 0.28543962493223346,
+        "peak_direction": {
+          "theta_deg": 60.45863949985723,
+          "phi_deg": 0.0
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.512252161027394,
+          "sll_3bw_db": -35.08681517182285,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.8700000000000001,
+            0.0
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_064",
+        "method": "lcmv",
+        "theta0_deg": 60.0,
+        "phi0_deg": 90.0,
+        "metric_version": "1.0.0",
+        "sll_db": -35.08681517182286,
+        "sll_threshold_db": -35.0,
+        "sll_pass": true,
+        "beamwidth_3db_deg": 8.56318874796699,
+        "pointing_error_deg": 0.45863949985670516,
+        "pointing_threshold_deg": 0.285439624932233,
+        "peak_direction": {
+          "theta_deg": 60.45863949985723,
+          "phi_deg": 90.0
+        },
+        "diagnostic": {
+          "sll_connected_db": -30.512252161027327,
+          "sll_3bw_db": -35.08681517182286,
+          "grid_size": 201,
+          "normalization": "visible-domain max field amplitude"
+        },
+        "main_lobe": {
+          "definition": "axis-aligned first-null envelope in uv",
+          "peak_uv": [
+            0.0,
+            0.8700000000000001
+          ],
+          "u_bounds_relative": [
+            -0.10999999999999999,
+            0.1100000000000001
+          ],
+          "v_bounds_relative": [
+            -0.10999999999999999,
+            0.10000000000000009
+          ],
+          "boundary_methods": {
+            "u_left": "first_local_minimum",
+            "u_right": "first_local_minimum",
+            "v_left": "first_local_minimum",
+            "v_right": "first_local_minimum"
+          }
+        }
+      }
+    ],
+    "difference_sll": [
+      {
+        "set": "random",
+        "case_id": "random_170",
+        "theta0_deg": 27.68864787748405,
+        "phi0_deg": 229.39253165098094,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.84303541408765,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 4.835491009093722,
+        "pointing_threshold_deg": 0.16118303363645742,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 27.688647877484055,
+          "phi_deg": 229.39253165098097
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.30243903562498586,
+            -0.35276860675854776
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.118,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.12200000000000011
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10299999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10299999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_189",
+        "theta0_deg": 52.36381502907611,
+        "phi0_deg": 303.0960840450511,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.843036726611732,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 7.025488855562735,
+        "pointing_threshold_deg": 0.23418296185209114,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 52.363815029076115,
+          "phi_deg": 303.0960840450511
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            0.432415067839161,
+            -0.6634224838322405
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.122,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.1180000000000001
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10400000000000009
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10400000000000009
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_082",
+        "theta0_deg": 12.308378428920431,
+        "phi0_deg": 68.64757943891996,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.843067046724023,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 4.360030856762011,
+        "pointing_threshold_deg": 0.14533436189206703,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 12.30837842892043,
+          "phi_deg": 68.64757943891996
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            0.0776171280896086,
+            0.1985407252254709
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.118,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.12200000000000011
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10899999999999999,
+            0.10200000000000009
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10899999999999999,
+            0.10200000000000009
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_051",
+        "theta0_deg": 59.79821022443432,
+        "phi0_deg": 199.9554140169459,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.843092739051016,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 8.540491131511004,
+        "pointing_threshold_deg": 0.28468303771703346,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 59.79821022443431,
+          "phi_deg": 199.9554140169459
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.8123676650004364,
+            -0.2949619447394392
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.118,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.12200000000000011
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10499999999999998,
+            0.10499999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10499999999999998,
+            0.10499999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_103",
+        "theta0_deg": 59.26334338416189,
+        "phi0_deg": 153.99832814491043,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.843181425638694,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 8.537736462515939e-07,
+        "beamwidth_3db_sum_deg": 8.417277812394822,
+        "pointing_threshold_deg": 0.2805759270798274,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 59.263343384161885,
+          "phi_deg": 153.99832814491043
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.7725253723002996,
+            0.3768137040849515
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.118,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.12200000000000011
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10299999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10299999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_110",
+        "theta0_deg": 51.03490374565452,
+        "phi0_deg": 312.22591234552885,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.843239618974486,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -295.4937048667571,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 6.828844185004812,
+        "pointing_threshold_deg": 0.2276281395001604,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 51.03490374565451,
+          "phi_deg": 312.22591234552885
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            0.5225428103112812,
+            -0.5757609335644026
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.122,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.1180000000000001
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10399999999999998,
+            0.1060000000000001
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10399999999999998,
+            0.1060000000000001
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_123",
+        "theta0_deg": 37.089344059087146,
+        "phi0_deg": 252.88738939587742,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.843263695386813,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 5.336850117336702,
+        "pointing_threshold_deg": 0.1778950039112234,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 37.089344059087146,
+          "phi_deg": 252.8873893958774
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.17745071257179884,
+            -0.5763611506691071
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.122,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.1180000000000001
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10399999999999998,
+            0.1060000000000001
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10399999999999998,
+            0.1060000000000001
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_166",
+        "theta0_deg": 22.065561052637378,
+        "phi0_deg": 149.08671091041373,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.84328667489767,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 4.610720122380201,
+        "pointing_threshold_deg": 0.1536906707460067,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 22.065561052637374,
+          "phi_deg": 149.08671091041373
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.3223021581263797,
+            0.19299540673034338
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.118,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.12200000000000011
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10299999999999998,
+            0.10699999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10299999999999998,
+            0.10699999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_100",
+        "theta0_deg": 53.15866489417123,
+        "phi0_deg": 221.71074774562965,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.843332333762163,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 7.167591718688492,
+        "pointing_threshold_deg": 0.23891972395628305,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 53.158664894171245,
+          "phi_deg": 221.71074774562965
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.5974339188829927,
+            -0.5324952702669419
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.123,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.1180000000000001
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10799999999999998,
+            0.10299999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10799999999999998,
+            0.10299999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_125",
+        "theta0_deg": 3.1182770190883446,
+        "phi0_deg": 194.86668070838536,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.8433790109987,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 0.0,
+        "beamwidth_3db_sum_deg": 4.257696246429356,
+        "pointing_threshold_deg": 0.14192320821431187,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 3.1182770190883446,
+          "phi_deg": 194.86668070838536
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.05257641101746441,
+            -0.01395676688668866
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.118,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.123
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10599999999999998,
+            0.10400000000000009
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10599999999999998,
+            0.10400000000000009
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      }
+    ],
+    "difference_pointing": [
+      {
+        "set": "random",
+        "case_id": "random_013",
+        "theta0_deg": 31.127437304601965,
+        "phi0_deg": 253.08682520226404,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.90692906045136,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 1.2074182697257333e-06,
+        "beamwidth_3db_sum_deg": 4.971445777180904,
+        "pointing_threshold_deg": 0.16571485923936347,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 31.127437304601965,
+          "phi_deg": 253.08682520226404
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.15039028493547138,
+            -0.49458381428975673
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.12,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.1200000000000001
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10599999999999998,
+            0.10499999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10599999999999998,
+            0.10499999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_050",
+        "theta0_deg": 58.19486386887619,
+        "phi0_deg": 303.1628123288551,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.942687788305044,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 1.2074182697257333e-06,
+        "beamwidth_3db_sum_deg": 8.170556561180504,
+        "pointing_threshold_deg": 0.27235188537268346,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 58.19486386887619,
+          "phi_deg": 303.1628123288551
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            0.4648824664363028,
+            -0.7114222267184792
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.11499999999999999,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.11499999999999999
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10899999999999999,
+            0.10200000000000009
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10899999999999999,
+            0.10200000000000009
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_089",
+        "theta0_deg": 38.00869318956884,
+        "phi0_deg": 92.83956675595282,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.899985659658164,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 1.2074182697257333e-06,
+        "beamwidth_3db_sum_deg": 5.388346783820936,
+        "pointing_threshold_deg": 0.17961155946069784,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 38.00869318956884,
+          "phi_deg": 92.83956675595282
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.030505486633777227,
+            0.6150249514924987
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.12,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.121
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10499999999999998,
+            0.10499999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10499999999999998,
+            0.10499999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "random",
+        "case_id": "random_133",
+        "theta0_deg": 39.404199872477534,
+        "phi0_deg": 117.06842312089016,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.868906889804155,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 1.2074182697257333e-06,
+        "beamwidth_3db_sum_deg": 5.5280831283457985,
+        "pointing_threshold_deg": 0.18426943761152662,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 39.404199872477534,
+          "phi_deg": 117.06842312089016
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.28886257552706385,
+            0.5652549367130996
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.121,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.119
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10499999999999998,
+            0.10499999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10499999999999998,
+            0.10499999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_001",
+        "theta0_deg": 10.0,
+        "phi0_deg": 0.0,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.867035092380842,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 8.537736462515939e-07,
+        "beamwidth_3db_sum_deg": 4.307224374896211,
+        "pointing_threshold_deg": 0.14357414582987368,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 10.000000000000002,
+          "phi_deg": 0.0
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            0.17364817766693033,
+            0.0
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.123,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.11699999999999999
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10999999999999999,
+            0.1100000000000001
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10999999999999999,
+            0.1100000000000001
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_002",
+        "theta0_deg": 10.0,
+        "phi0_deg": 30.0,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.90733571848333,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 8.537736462515939e-07,
+        "beamwidth_3db_sum_deg": 4.3370651538442155,
+        "pointing_threshold_deg": 0.14456883846147386,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 10.000000000000002,
+          "phi_deg": 29.999999999999993
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            0.1503837331804353,
+            0.08682408883346515
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.12,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.1200000000000001
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10299999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10299999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_003",
+        "theta0_deg": 10.0,
+        "phi0_deg": 60.0,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.851966907751237,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 8.537736462515939e-07,
+        "beamwidth_3db_sum_deg": 4.33706515384422,
+        "pointing_threshold_deg": 0.144568838461474,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 10.0,
+          "phi_deg": 59.99999999999999
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            0.08682408883346518,
+            0.15038373318043527
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.11699999999999999,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.123
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10099999999999998,
+            0.10899999999999999
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10099999999999998,
+            0.10899999999999999
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_004",
+        "theta0_deg": 10.0,
+        "phi0_deg": 90.0,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.933356462142456,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 8.537736462515939e-07,
+        "beamwidth_3db_sum_deg": 4.307224374896209,
+        "pointing_threshold_deg": 0.14357414582987363,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 10.0,
+          "phi_deg": 90.0
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            1.0632884247878856e-17,
+            0.17364817766693033
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.12,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.1200000000000001
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10399999999999998,
+            0.1060000000000001
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10399999999999998,
+            0.1060000000000001
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_005",
+        "theta0_deg": 10.0,
+        "phi0_deg": 120.0,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.85196690775124,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 8.537736462515939e-07,
+        "beamwidth_3db_sum_deg": 4.337065153844221,
+        "pointing_threshold_deg": 0.14456883846147403,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 10.0,
+          "phi_deg": 119.99999999999999
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.08682408883346512,
+            0.1503837331804353
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.123,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.11699999999999999
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10099999999999998,
+            0.10899999999999999
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10099999999999998,
+            0.10899999999999999
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_006",
+        "theta0_deg": 10.0,
+        "phi0_deg": 150.0,
+        "difference_axis_phi_deg": 0.0,
+        "metric_version": "1.0.0",
+        "sll_db": -21.90733571848334,
+        "sll_threshold_db": -20.0,
+        "sll_pass": true,
+        "intrinsic_null_center_db": -300.0,
+        "intrinsic_null_threshold_db": -30.0,
+        "intrinsic_null_pass": true,
+        "pointing_error_deg": 8.537736462515939e-07,
+        "beamwidth_3db_sum_deg": 4.337065153844214,
+        "pointing_threshold_deg": 0.14456883846147378,
+        "pointing_pass": true,
+        "zero_crossing_direction": {
+          "theta_deg": 10.000000000000002,
+          "phi_deg": 150.0
+        },
+        "main_lobe": {
+          "definition": "two difference lobes bounded by first-null envelopes",
+          "target_uv": [
+            -0.1503837331804353,
+            0.08682408883346515
+          ],
+          "difference_axis_phi_deg": 0.0,
+          "negative_lobe_q_bounds": [
+            -0.12,
+            0.0
+          ],
+          "positive_lobe_q_bounds": [
+            0.0,
+            0.1200000000000001
+          ],
+          "negative_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10299999999999998
+          ],
+          "positive_lobe_r_bounds": [
+            -0.10699999999999998,
+            0.10299999999999998
+          ],
+          "boundary_methods": {
+            "negative_q": "first_local_minimum",
+            "positive_q": "first_local_minimum",
+            "negative_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            },
+            "positive_r": {
+              "left": "first_local_minimum",
+              "right": "first_local_minimum"
+            }
+          }
+        }
+      }
+    ],
+    "sum_adaptive_joint_minus30": [
+      {
+        "set": "regular",
+        "case_id": "regular_000",
+        "theta0_deg": 0.0,
+        "phi0_deg": 0.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 90.0,
+            "distance_from_target_deg": 29.999999999999993,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 180.0,
+            "distance_from_target_deg": 29.999999999999993,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 270.0,
+            "distance_from_target_deg": 29.999999999999993,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 25.0,
+            "phi_deg": 45.0,
+            "distance_from_target_deg": 25.000000000000004,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.223143155159356,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -38.361532593474045,
+          -38.361887999415586,
+          -38.36189402270543,
+          -74.22799344122626
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_001",
+        "theta0_deg": 10.0,
+        "phi0_deg": 0.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 90.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 180.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 270.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 45.0,
+            "distance_from_target_deg": 28.70127523388934,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.15303903476407,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -73.80463087363937,
+          -38.55292772413843,
+          -73.74268125440817,
+          -70.82937106328208
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_002",
+        "theta0_deg": 10.0,
+        "phi0_deg": 30.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 120.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 210.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 300.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 75.0,
+            "distance_from_target_deg": 28.70127523388935,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.01898201214488,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -72.07121870001271,
+          -74.30623567330282,
+          -52.9942421250636,
+          -37.89212545281809
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_003",
+        "theta0_deg": 10.0,
+        "phi0_deg": 60.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 150.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 240.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 330.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 105.0,
+            "distance_from_target_deg": 28.70127523388935,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.19084834500643,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -52.990346200286844,
+          -74.12724313720479,
+          -74.05014019475803,
+          -71.48566680788225
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_004",
+        "theta0_deg": 10.0,
+        "phi0_deg": 90.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 180.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 270.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 0.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 135.0,
+            "distance_from_target_deg": 28.70127523388934,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.15303903476411,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -73.80463087363852,
+          -38.55292772413857,
+          -73.74268125440767,
+          -70.82937106328322
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_005",
+        "theta0_deg": 10.0,
+        "phi0_deg": 120.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 210.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 300.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 30.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 165.0,
+            "distance_from_target_deg": 28.70127523388934,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.01898201214503,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -72.07121870001356,
+          -74.30623567330096,
+          -52.99424212506341,
+          -37.892125452818036
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_006",
+        "theta0_deg": 10.0,
+        "phi0_deg": 150.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 240.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 330.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 60.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 195.0,
+            "distance_from_target_deg": 28.70127523388934,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.19084834500636,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -52.99034620028682,
+          -74.1272431372042,
+          -74.05014019475912,
+          -71.4856668078817
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_007",
+        "theta0_deg": 10.0,
+        "phi0_deg": 180.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 270.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 0.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 90.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 225.0,
+            "distance_from_target_deg": 28.70127523388934,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.15303903476421,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -73.8046308736392,
+          -38.55292772413846,
+          -73.74268125440585,
+          -70.82937106328252
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_008",
+        "theta0_deg": 10.0,
+        "phi0_deg": 210.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 300.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 30.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 120.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 255.0,
+            "distance_from_target_deg": 28.70127523388934,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.018982012144924,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -72.07121870001389,
+          -74.30623567330254,
+          -52.99424212506359,
+          -37.892125452818114
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      },
+      {
+        "set": "regular",
+        "case_id": "regular_009",
+        "theta0_deg": 10.0,
+        "phi0_deg": 240.0,
+        "metric_version": "1.0.0",
+        "null_count": 4,
+        "nulls": [
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 330.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 60.0,
+            "distance_from_target_deg": 39.99999999999999,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 30.0,
+            "phi_deg": 150.0,
+            "distance_from_target_deg": 31.47494888918549,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          },
+          {
+            "theta_deg": 35.0,
+            "phi_deg": 285.0,
+            "distance_from_target_deg": 28.70127523388934,
+            "outside_main_lobe": true,
+            "outside_generation_guard_15deg": true
+          }
+        ],
+        "sum_sll_db": -35.190848345006415,
+        "sum_sll_pass": true,
+        "center_db": [
+          -300.0,
+          -300.0,
+          -300.0,
+          -300.0
+        ],
+        "window_worst_db": [
+          -52.990346200286844,
+          -74.12724313720577,
+          -74.05014019475888,
+          -71.48566680788223
+        ],
+        "all_center_pass_minus30": true,
+        "all_center_pass_strict_minus65": true,
+        "joint_pass_minus30": true,
+        "joint_pass_strict_minus65": true,
+        "window_role": "robustness diagnostic; never substitutes for center_db"
+      }
+    ]
+  },
+  "counts": {
+    "regular_cases": 73,
+    "random_cases": 200,
+    "sum_taylor_rows": 273,
+    "sum_lcmv_rows": 73,
+    "difference_rows": 273,
+    "sum_adaptive_rows": 73,
+    "difference_adaptive_rows": 73
+  },
+  "diagnostic_only": true,
+  "formal_headline_status": "not yet a final competition headline; baseline artifact for Stage 2 comparison"
+}

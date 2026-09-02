@@ -1,0 +1,3141 @@
+[
+  {
+    "set": "regular",
+    "case_id": "regular_000",
+    "theta0_deg": 0.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 29.999999999999993,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 29.999999999999993,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 29.999999999999993,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 25.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 25.000000000000004,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_001",
+    "theta0_deg": 10.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_002",
+    "theta0_deg": 10.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 28.70127523388935,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_003",
+    "theta0_deg": 10.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 28.70127523388935,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_004",
+    "theta0_deg": 10.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_005",
+    "theta0_deg": 10.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_006",
+    "theta0_deg": 10.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_007",
+    "theta0_deg": 10.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_008",
+    "theta0_deg": 10.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_009",
+    "theta0_deg": 10.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_010",
+    "theta0_deg": 10.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_011",
+    "theta0_deg": 10.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_012",
+    "theta0_deg": 10.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 28.70127523388935,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_013",
+    "theta0_deg": 20.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_014",
+    "theta0_deg": 20.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_015",
+    "theta0_deg": 20.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_016",
+    "theta0_deg": 20.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_017",
+    "theta0_deg": 20.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 35.53134776280418,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_018",
+    "theta0_deg": 20.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 35.53134776280417,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_019",
+    "theta0_deg": 20.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_020",
+    "theta0_deg": 20.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 35.53134776280418,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_021",
+    "theta0_deg": 20.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 35.53134776280417,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_022",
+    "theta0_deg": 20.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_023",
+    "theta0_deg": 20.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_024",
+    "theta0_deg": 20.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_025",
+    "theta0_deg": 30.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_026",
+    "theta0_deg": 30.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_027",
+    "theta0_deg": 30.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 38.15468467307557,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_028",
+    "theta0_deg": 30.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_029",
+    "theta0_deg": 30.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 41.40962210927086,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_030",
+    "theta0_deg": 30.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 41.40962210927084,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_031",
+    "theta0_deg": 30.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_032",
+    "theta0_deg": 30.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 41.40962210927086,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_033",
+    "theta0_deg": 30.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 41.40962210927084,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_034",
+    "theta0_deg": 30.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_035",
+    "theta0_deg": 30.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_036",
+    "theta0_deg": 30.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 38.15468467307557,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_037",
+    "theta0_deg": 40.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_038",
+    "theta0_deg": 40.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 42.63538546922826,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_039",
+    "theta0_deg": 40.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 42.63538546922827,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_040",
+    "theta0_deg": 40.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_041",
+    "theta0_deg": 40.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_042",
+    "theta0_deg": 40.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 48.43923742984066,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_043",
+    "theta0_deg": 40.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_044",
+    "theta0_deg": 40.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_045",
+    "theta0_deg": 40.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 48.43923742984066,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_046",
+    "theta0_deg": 40.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_047",
+    "theta0_deg": 40.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_048",
+    "theta0_deg": 40.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 42.63538546922827,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_049",
+    "theta0_deg": 50.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_050",
+    "theta0_deg": 50.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_051",
+    "theta0_deg": 50.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_052",
+    "theta0_deg": 50.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_053",
+    "theta0_deg": 50.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_054",
+    "theta0_deg": 50.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 56.17415502943026,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_055",
+    "theta0_deg": 50.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_056",
+    "theta0_deg": 50.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_057",
+    "theta0_deg": 50.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 56.17415502943026,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_058",
+    "theta0_deg": 50.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_059",
+    "theta0_deg": 50.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_060",
+    "theta0_deg": 50.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_061",
+    "theta0_deg": 60.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_062",
+    "theta0_deg": 60.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 49.18490289741554,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_063",
+    "theta0_deg": 60.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 49.18490289741554,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_064",
+    "theta0_deg": 60.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_065",
+    "theta0_deg": 60.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_066",
+    "theta0_deg": 60.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 64.3410937267447,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_067",
+    "theta0_deg": 60.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_068",
+    "theta0_deg": 60.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_069",
+    "theta0_deg": 60.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 64.3410937267447,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_070",
+    "theta0_deg": 60.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_071",
+    "theta0_deg": 60.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_072",
+    "theta0_deg": 60.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "status": "BASELINE_NOT_IMPLEMENTED",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 49.18490289741554,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "center_db": null,
+    "window_worst_db": null,
+    "threshold_minus30_db": -30.0,
+    "threshold_minus50_db": -50.0
+  }
+]

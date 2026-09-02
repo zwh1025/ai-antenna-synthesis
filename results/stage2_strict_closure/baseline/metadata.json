@@ -1,0 +1,65 @@
+{
+  "stage": "STAGE_2_BASELINE",
+  "status": "BASELINE_FORMAL_EVALUATION",
+  "created_at_utc": "2026-09-02T13:02:05Z",
+  "git": {
+    "branch": "main",
+    "commit": "a4e82feb2cf2c746ebe06e6d3dfb14198f4bba69",
+    "dirty": true,
+    "dirty_files": [
+      "?? \"8x8\\345\\205\\250\\346\\263\\242\\351\\252\\214\\350\\257\\201\\350\\257\\264\\346\\230\\216.md\"",
+      "?? \"\\346\\212\\200\\346\\234\\257\\346\\212\\245\\345\\221\\212_\\346\\257\\224\\350\\265\\233\\346\\217\\220\\344\\272\\244\\347\\211\\210.md\"",
+      "?? \"\\347\\256\\227\\346\\263\\225\\346\\212\\245\\345\\221\\212_\\346\\257\\224\\350\\265\\233\\346\\217\\220\\344\\272\\244\\347\\211\\210.md\""
+    ]
+  },
+  "python": "3.10.20",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "array": {
+    "nx": 32,
+    "ny": 32,
+    "elements": 1024,
+    "spacing_wavelengths": 0.5,
+    "wavelength": 1.0,
+    "coordinate_definition": "uniform_linear_array_pos in x/y, centered"
+  },
+  "design": {
+    "sum": "Taylor",
+    "difference": "Bayliss x Taylor",
+    "sll_design_db": 35
+  },
+  "evaluator": {
+    "metric_version": "1.0.0",
+    "grid_size": 201,
+    "sum_sll": "official first-null uv envelope",
+    "difference_sll": "official two-lobe first-null envelopes",
+    "null_center": "continuous target response",
+    "null_window": "3 degree spherical cap, diagnostic only"
+  },
+  "scan_sets": {
+    "regular": {
+      "cases": 73,
+      "definition": "theta=0 once; theta=10..60 by 10 and phi=0..330 by 30",
+      "theta_range_deg": [
+        0,
+        60
+      ],
+      "phi_range_deg": [
+        0,
+        330
+      ]
+    },
+    "random": {
+      "cases": 200,
+      "seed": 42,
+      "distribution": "theta uniform [0,60), phi uniform [0,360)",
+      "duplicate_check": "target pairs checked in artifact"
+    }
+  },
+  "methods": {
+    "sum_taylor": "current taylor_2d_separable + steering phase",
+    "sum_lcmv": "current capon_nulling_2d, regular set only for adaptive null",
+    "difference": "current bayliss_2d_separable equivalent: Bayliss x Taylor y",
+    "difference_adaptive": "BASELINE_NOT_IMPLEMENTED"
+  },
+  "scope_note": "Formal baseline only; no closure fix, training, robustness, or large benchmark beyond this artifact."
+}

@@ -1,0 +1,4163 @@
+[
+  {
+    "set": "regular",
+    "case_id": "regular_000",
+    "theta0_deg": 0.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 29.999999999999993,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 29.999999999999993,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 29.999999999999993,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 25.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 25.000000000000004,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.223143155159356,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -38.361532593474045,
+      -38.361887999415586,
+      -38.36189402270543,
+      -74.22799344122626
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_001",
+    "theta0_deg": 10.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.15303903476407,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -73.80463087363937,
+      -38.55292772413843,
+      -73.74268125440817,
+      -70.82937106328208
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_002",
+    "theta0_deg": 10.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 28.70127523388935,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.01898201214488,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -72.07121870001271,
+      -74.30623567330282,
+      -52.9942421250636,
+      -37.89212545281809
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_003",
+    "theta0_deg": 10.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 28.70127523388935,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.19084834500643,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -52.990346200286844,
+      -74.12724313720479,
+      -74.05014019475803,
+      -71.48566680788225
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_004",
+    "theta0_deg": 10.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.15303903476411,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -73.80463087363852,
+      -38.55292772413857,
+      -73.74268125440767,
+      -70.82937106328322
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_005",
+    "theta0_deg": 10.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.01898201214503,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -72.07121870001356,
+      -74.30623567330096,
+      -52.99424212506341,
+      -37.892125452818036
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_006",
+    "theta0_deg": 10.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.19084834500636,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -52.99034620028682,
+      -74.1272431372042,
+      -74.05014019475912,
+      -71.4856668078817
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_007",
+    "theta0_deg": 10.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.15303903476421,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -73.8046308736392,
+      -38.55292772413846,
+      -73.74268125440585,
+      -70.82937106328252
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_008",
+    "theta0_deg": 10.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.018982012144924,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -72.07121870001389,
+      -74.30623567330254,
+      -52.99424212506359,
+      -37.892125452818114
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_009",
+    "theta0_deg": 10.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.190848345006415,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -52.990346200286844,
+      -74.12724313720577,
+      -74.05014019475888,
+      -71.48566680788223
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_010",
+    "theta0_deg": 10.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.15303903476425,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -73.80463087363927,
+      -38.552927724138534,
+      -73.742681254409,
+      -70.82937106328346
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_011",
+    "theta0_deg": 10.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 28.70127523388934,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.01898201214502,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -72.07121870001295,
+      -74.30623567330112,
+      -52.994242125063664,
+      -37.892125452818064
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_012",
+    "theta0_deg": 10.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 39.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 31.47494888918549,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 35.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 28.70127523388935,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.19084834500638,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -52.99034620028685,
+      -74.12724313720418,
+      -74.05014019475763,
+      -71.4856668078826
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_013",
+    "theta0_deg": 20.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.03533288733988,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -74.70724873836889,
+      -40.600328452199,
+      -74.70724873836855,
+      -73.35202011032747
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_014",
+    "theta0_deg": 20.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.1420433591063,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -73.39188673598865,
+      -77.61542132949619,
+      -41.24660260061855,
+      -51.48958989224851
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_015",
+    "theta0_deg": 20.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.14213076354034,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -41.245570544594,
+      -77.61065953575152,
+      -73.37958214228001,
+      -71.34596244950328
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_016",
+    "theta0_deg": 20.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.03533288733996,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -74.70724873836762,
+      -40.600328452199,
+      -74.70724873836849,
+      -73.35202011032617
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_017",
+    "theta0_deg": 20.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 35.53134776280418,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.14204335910623,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -73.3918867359885,
+      -77.61542132949833,
+      -41.24660260061844,
+      -51.489589892248596
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_018",
+    "theta0_deg": 20.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 35.53134776280417,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.14213076354042,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -41.245570544594045,
+      -77.610659535751,
+      -73.37958214227721,
+      -71.34596244950376
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_019",
+    "theta0_deg": 20.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.03533288733987,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -74.70724873836866,
+      -40.600328452198994,
+      -74.7072487383686,
+      -73.35202011032621
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_020",
+    "theta0_deg": 20.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 35.53134776280418,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.14204335910629,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -73.39188673598868,
+      -77.61542132949859,
+      -41.2466026006184,
+      -51.48958989224855
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_021",
+    "theta0_deg": 20.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 35.53134776280417,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.1421307635403,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -41.245570544594095,
+      -77.6106595357537,
+      -73.37958214228058,
+      -71.34596244950137
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_022",
+    "theta0_deg": 20.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.035332887339905,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -74.70724873836804,
+      -40.60032845219898,
+      -74.70724873836849,
+      -73.35202011032939
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_023",
+    "theta0_deg": 20.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.142043359106246,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -73.39188673598844,
+      -77.61542132949862,
+      -41.2466026006185,
+      -51.489589892248546
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_024",
+    "theta0_deg": 20.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 49.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 35.531347762804174,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 45.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 33.33486763208728,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.14213076354038,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -41.24557054459406,
+      -77.61065953575203,
+      -73.37958214228026,
+      -71.34596244950266
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_025",
+    "theta0_deg": 30.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.21592629299192,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.62564198642853,
+      -41.45017803407829,
+      -77.27054425958018,
+      -43.09001677007794
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_026",
+    "theta0_deg": 30.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22295372815759,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.99917196406922,
+      -79.54538976159182,
+      -75.27661388262443,
+      -74.25979156105078
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_027",
+    "theta0_deg": 30.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 38.15468467307557,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.223099367822634,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.33271651661576,
+      -79.39604088143977,
+      -75.98600579788722,
+      -74.00794654369597
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_028",
+    "theta0_deg": 30.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.21592629299205,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.62564198642978,
+      -41.45017803407832,
+      -77.27054425958082,
+      -43.09001677007801
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_029",
+    "theta0_deg": 30.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 41.40962210927086,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22295372815759,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.99917196406753,
+      -79.54538976159336,
+      -75.2766138826235,
+      -74.25979156105237
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_030",
+    "theta0_deg": 30.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 41.40962210927084,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22309936782249,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.33271651661488,
+      -79.39604088143959,
+      -75.98600579788572,
+      -74.00794654369784
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_031",
+    "theta0_deg": 30.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.21592629299196,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.62564198642896,
+      -41.45017803407835,
+      -77.27054425957908,
+      -43.09001677007801
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_032",
+    "theta0_deg": 30.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 41.40962210927086,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22295372815756,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.99917196406568,
+      -79.54538976159202,
+      -75.2766138826254,
+      -74.2597915610522
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_033",
+    "theta0_deg": 30.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 41.40962210927084,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.223099367822414,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.33271651661464,
+      -79.39604088144092,
+      -75.98600579788571,
+      -74.00794654369591
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_034",
+    "theta0_deg": 30.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.21592629299204,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.6256419864282,
+      -41.45017803407842,
+      -77.27054425958237,
+      -43.09001677007806
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_035",
+    "theta0_deg": 30.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 38.154684673075565,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22295372815754,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.99917196406773,
+      -79.54538976159036,
+      -75.27661388262243,
+      -74.25979156105245
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_036",
+    "theta0_deg": 30.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 59.999999999999986,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 41.40962210927085,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 55.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 38.15468467307557,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22309936782253,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.33271651661585,
+      -79.39604088143953,
+      -75.98600579788689,
+      -74.00794654369557
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_037",
+    "theta0_deg": 40.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.088580839411854,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.69971608927406,
+      -39.332052958184846,
+      -78.40006580929595,
+      -38.394010678264486
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_038",
+    "theta0_deg": 40.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 42.63538546922826,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.1569616919815,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -53.83240476507841,
+      -79.8974274649033,
+      -77.12213892326267,
+      -74.42984011802652
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_039",
+    "theta0_deg": 40.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 42.63538546922827,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.15696350132083,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.0836375299183,
+      -79.93553870350254,
+      -53.83261788410874,
+      -76.13211689536047
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_040",
+    "theta0_deg": 40.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.08858083941183,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.6997160892749,
+      -39.332052958184846,
+      -78.40006580929607,
+      -38.39401067826464
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_041",
+    "theta0_deg": 40.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.156961691981465,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -53.83240476507845,
+      -79.89742746490309,
+      -77.12213892326068,
+      -74.42984011803378
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_042",
+    "theta0_deg": 40.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 48.43923742984066,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.156963501320845,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.08363752991757,
+      -79.93553870350163,
+      -53.83261788410892,
+      -76.13211689536203
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_043",
+    "theta0_deg": 40.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.08858083941186,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.6997160892721,
+      -39.332052958184896,
+      -78.40006580929585,
+      -38.39401067826449
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_044",
+    "theta0_deg": 40.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.15696169198148,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -53.83240476507821,
+      -79.89742746490168,
+      -77.12213892325731,
+      -74.42984011802727
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_045",
+    "theta0_deg": 40.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 48.43923742984066,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.156963501320824,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.08363752991794,
+      -79.93553870349925,
+      -53.83261788410888,
+      -76.1321168953645
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_046",
+    "theta0_deg": 40.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.08858083941178,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -75.69971608927452,
+      -39.332052958184846,
+      -78.40006580929551,
+      -38.39401067826451
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_047",
+    "theta0_deg": 40.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 42.635385469228254,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.15696169198152,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -53.83240476507841,
+      -79.89742746490066,
+      -77.12213892325991,
+      -74.42984011802471
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_048",
+    "theta0_deg": 40.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 48.43923742984068,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 70.0,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 48.43923742984067,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 65.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 42.63538546922827,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.15696350132078,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.08363752991708,
+      -79.93553870350162,
+      -53.83261788410866,
+      -76.13211689535935
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_049",
+    "theta0_deg": 50.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.126556041674945,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -78.46969623368804,
+      -38.86186788324503,
+      -78.51178543247862,
+      -45.36836026271545
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_050",
+    "theta0_deg": 50.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.208571009681116,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -42.85007593721059,
+      -80.33832427585548,
+      -77.45194246467274,
+      -80.49908501903731
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_051",
+    "theta0_deg": 50.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.208576257867605,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.5689959855015,
+      -80.33109090488546,
+      -42.85011765434678,
+      -74.41396516848019
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_052",
+    "theta0_deg": 50.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.12655604167487,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -78.46969623368909,
+      -38.861867883244976,
+      -78.511785432479,
+      -45.36836026271544
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_053",
+    "theta0_deg": 50.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.208571009681144,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -42.85007593721063,
+      -80.33832427585409,
+      -77.45194246467676,
+      -80.49908501903687
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_054",
+    "theta0_deg": 50.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 56.17415502943026,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.20857625786754,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.56899598549967,
+      -80.33109090488807,
+      -42.85011765434681,
+      -74.41396516848009
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_055",
+    "theta0_deg": 50.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.126556041674945,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -78.46969623369017,
+      -38.861867883245,
+      -78.51178543247867,
+      -45.36836026271536
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_056",
+    "theta0_deg": 50.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.20857100968112,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -42.850075937210725,
+      -80.33832427585475,
+      -77.45194246467378,
+      -80.49908501903195
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_057",
+    "theta0_deg": 50.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 56.17415502943026,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.20857625786765,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.56899598550126,
+      -80.33109090488824,
+      -42.85011765434682,
+      -74.4139651684797
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_058",
+    "theta0_deg": 50.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.1265560416749,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -78.46969623368796,
+      -38.861867883245004,
+      -78.51178543247909,
+      -45.368360262715264
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_059",
+    "theta0_deg": 50.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.20857100968116,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -42.850075937210704,
+      -80.3383242758465,
+      -77.45194246467464,
+      -80.49908501903117
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_060",
+    "theta0_deg": 50.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 56.17415502943029,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 79.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 56.17415502943028,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 75.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 46.40283109168238,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.2085762578677,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -77.56899598550154,
+      -80.33109090488503,
+      -42.85011765434656,
+      -74.41396516848171
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_061",
+    "theta0_deg": 60.0,
+    "phi0_deg": 0.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 45.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.08681517182285,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -80.20018985821876,
+      -38.090525703269215,
+      -80.18460470401976,
+      -79.52446856396048
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_062",
+    "theta0_deg": 60.0,
+    "phi0_deg": 30.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 75.0,
+        "distance_from_target_deg": 49.18490289741554,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22322403845053,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -41.434699554418195,
+      -81.6570267936555,
+      -80.1969657633542,
+      -76.61744502485276
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_063",
+    "theta0_deg": 60.0,
+    "phi0_deg": 60.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 105.0,
+        "distance_from_target_deg": 49.18490289741554,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22324722906517,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -80.27710674633039,
+      -81.5985710997039,
+      -41.434759648905114,
+      -74.98003425802528
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_064",
+    "theta0_deg": 60.0,
+    "phi0_deg": 90.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 135.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.08681517182286,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -80.20018985821758,
+      -38.09052570326935,
+      -80.18460470402202,
+      -79.52446856396426
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_065",
+    "theta0_deg": 60.0,
+    "phi0_deg": 120.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 165.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.223224038450404,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -41.43469955441836,
+      -81.65702679365802,
+      -80.19696576335599,
+      -76.61744502485558
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_066",
+    "theta0_deg": 60.0,
+    "phi0_deg": 150.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 64.3410937267447,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 195.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22324722906503,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -80.27710674633425,
+      -81.59857109969822,
+      -41.43475964890489,
+      -74.98003425802617
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_067",
+    "theta0_deg": 60.0,
+    "phi0_deg": 180.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 270.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 225.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.08681517182286,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -80.2001898582178,
+      -38.090525703269236,
+      -80.18460470401912,
+      -79.52446856396905
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_068",
+    "theta0_deg": 60.0,
+    "phi0_deg": 210.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 300.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 255.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.2232240384504,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -41.43469955441839,
+      -81.65702679365624,
+      -80.19696576335372,
+      -76.61744502485577
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_069",
+    "theta0_deg": 60.0,
+    "phi0_deg": 240.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 330.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 64.3410937267447,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 285.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.223247229065194,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -80.2771067463304,
+      -81.59857109970372,
+      -41.43475964890504,
+      -74.98003425802534
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_070",
+    "theta0_deg": 60.0,
+    "phi0_deg": 270.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 0.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 90.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 180.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 315.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.08681517182287,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -80.2001898582181,
+      -38.09052570326929,
+      -80.1846047040233,
+      -79.5244685639628
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_071",
+    "theta0_deg": 60.0,
+    "phi0_deg": 300.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 30.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 120.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 210.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 345.0,
+        "distance_from_target_deg": 49.18490289741553,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.223224038450475,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -41.43469955441837,
+      -81.65702679365985,
+      -80.19696576335505,
+      -76.61744502485357
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  },
+  {
+    "set": "regular",
+    "case_id": "regular_072",
+    "theta0_deg": 60.0,
+    "phi0_deg": 330.0,
+    "metric_version": "1.0.0",
+    "null_count": 4,
+    "nulls": [
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 60.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 150.0,
+        "distance_from_target_deg": 89.99999999999999,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 30.0,
+        "phi_deg": 240.0,
+        "distance_from_target_deg": 64.34109372674472,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      },
+      {
+        "theta_deg": 85.0,
+        "phi_deg": 15.0,
+        "distance_from_target_deg": 49.18490289741554,
+        "outside_main_lobe": true,
+        "outside_generation_guard_15deg": true
+      }
+    ],
+    "sum_sll_db": -35.22324722906526,
+    "sum_sll_pass": true,
+    "center_db": [
+      -300.0,
+      -300.0,
+      -300.0,
+      -300.0
+    ],
+    "window_worst_db": [
+      -80.27710674633092,
+      -81.59857109970226,
+      -41.43475964890516,
+      -74.98003425802816
+    ],
+    "all_center_pass_minus30": true,
+    "all_center_pass_strict_minus65": true,
+    "joint_pass_minus30": true,
+    "joint_pass_strict_minus65": true,
+    "window_role": "robustness diagnostic; never substitutes for center_db"
+  }
+]
