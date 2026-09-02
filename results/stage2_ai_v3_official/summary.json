@@ -1,0 +1,104 @@
+{
+  "stage": "STAGE_2_AI_V3_OFFICIAL",
+  "metric_version": "1.0.0",
+  "model": "deepsets_model_v3_256.pt",
+  "arms": [
+    "ai_direct",
+    "ai_lcmv"
+  ],
+  "case_source": "results/stage2_strict_closure/baseline/case_manifest.json",
+  "baseline_reference": {
+    "sum_taylor_sll_worst": -35.15657588421298,
+    "sum_taylor_pass": "273/273",
+    "sum_lcmv_sll_worst": -35.01898201214488,
+    "sum_lcmv_pass": "73/73"
+  },
+  "table": [
+    {
+      "metric": "AI direct SLL (regular 73)",
+      "aggregate": {
+        "cases": 73,
+        "pass": 69,
+        "fail": 4,
+        "not_tested": 0,
+        "worst": -34.72597395641111,
+        "best": -35.24366985110751,
+        "mean": -35.11369685381251
+      },
+      "requirement": "<= -35 dBc"
+    },
+    {
+      "metric": "AI direct SLL (random 200)",
+      "aggregate": {
+        "cases": 200,
+        "pass": 196,
+        "fail": 4,
+        "not_tested": 0,
+        "worst": -34.935825670006494,
+        "best": -35.25158566120307,
+        "mean": -35.1264730827898
+      },
+      "requirement": "<= -35 dBc"
+    },
+    {
+      "metric": "AI+LCMV SLL (regular 73)",
+      "aggregate": {
+        "cases": 73,
+        "pass": 61,
+        "fail": 12,
+        "not_tested": 0,
+        "worst": -34.62610670088905,
+        "best": -35.225706587979445,
+        "mean": -35.08436230166475
+      },
+      "requirement": "<= -35 dBc"
+    },
+    {
+      "metric": "AI+LCMV SLL (random 200)",
+      "aggregate": {
+        "cases": 200,
+        "pass": 186,
+        "fail": 14,
+        "not_tested": 0,
+        "worst": -34.039456121704255,
+        "best": -35.25146168695437,
+        "mean": -35.10202429380778
+      },
+      "requirement": "<= -35 dBc"
+    },
+    {
+      "metric": "AI+LCMV adaptive null center (regular 73)",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": -300.0,
+        "requirement": -30.0
+      },
+      "requirement": "4 nulls, each <= -30 dBc"
+    },
+    {
+      "metric": "AI+LCMV strict null center (regular 73)",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "not_tested": 0,
+        "worst": -300.0,
+        "requirement": -65.0
+      },
+      "requirement": "4 nulls, each <= -65 dBc"
+    }
+  ],
+  "counts": {
+    "regular": 73,
+    "random": 200
+  },
+  "provenance": {
+    "created_at_utc": "2026-09-02T13:13:07Z",
+    "python": "3.10.20",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.5.1+cu121"
+  }
+}

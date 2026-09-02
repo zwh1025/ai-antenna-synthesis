@@ -1,0 +1,51 @@
+{
+  "stage": "STAGE_2B_DIFF_ADAPTIVE_CLOSURE",
+  "metric_version": "1.0.0",
+  "method": "capon_nulling_difference_2d on frozen Bayliss weights",
+  "baseline_reference": "closes BASELINE_NOT_IMPLEMENTED in stage2_strict_closure/baseline",
+  "table": [
+    {
+      "metric": "Diff SLL after nulling",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "worst": -21.754833333739747,
+        "requirement": -20.0
+      }
+    },
+    {
+      "metric": "Diff adaptive null (4x <= -30)",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "worst_center": -300.0,
+        "requirement": -30.0
+      }
+    },
+    {
+      "metric": "Diff strict null (4x <= -50)",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "worst_center": -300.0,
+        "requirement": -50.0
+      }
+    },
+    {
+      "metric": "Diff joint gate (-20 & -30)",
+      "aggregate": {
+        "cases": 73,
+        "pass": 73,
+        "fail": 0,
+        "requirement": "diff SLL <= -20 and 4 adaptive nulls <= -30"
+      }
+    }
+  ],
+  "provenance": {
+    "created_at_utc": "2026-09-02T13:14:54Z",
+    "python": "3.10.20"
+  }
+}
