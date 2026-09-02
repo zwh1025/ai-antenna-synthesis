@@ -19,13 +19,16 @@
 
 ### Track P：1024 阵元物理硬指标
 
-固定 official evaluator 1.0.0 的补充物理验收结果为：
+固定 official evaluator 1.0.0 的物理验收结果（全量 273 方向基线已落盘 `results/stage2_strict_closure/`，commit 8dcc5d3）：
 
-- Sum SLL：273/273 通过，最差 `-35.156576 dBc`；
+- Sum SLL（Taylor）：273/273 通过，最差 `-35.156576 dBc`（第一零点严格口径，非经验 3×3dB_BW）；
+- Sum SLL（LCMV，regular 73）：73/73 通过，最差 `-35.018982 dBc`；
 - Azimuth Difference SLL：273/273 通过，最差 `-21.754833 dBc`；
 - Elevation Difference SLL：273/273 通过，最差 `-21.638634 dBc`；
-- 理想 adaptive null：Sum strict null 在 73/73 cases 通过，Difference strict null 在 273/273 cases 通过；
-- 理想 intrinsic null 达到模型的数值精度下限，展示时应写作低于 `-100 dBc` 的 numerical floor，而不是硬件性能。
+- 差波束指向：273/273，最差 `1.2e-6°`（≤ BW/30）；
+- 理想 adaptive null：Sum strict null（−65 dBc）73/73 通过，全部 `-300 dBc`（机器精度）；
+- **差波束自适应零陷已闭环**（`results/stage2b_diff_adaptive_closure/`，commit d19f736）：SLL 73/73 保持最差 `-21.755 dBc`，4 零陷 −30/−50 双门槛全过，联合门槛 73/73——此前 baseline 中 `BASELINE_NOT_IMPLEMENTED` 项已关闭；
+- 理想 intrinsic null 达到模型数值精度下限，展示时应写作低于 `-100 dBc` 的 numerical floor，而不是硬件性能。
 
 这里的硬指标结果属于 Track P 的 Taylor/Bayliss + LCMV physics pipeline，不是 DeepSets 单独输出。
 
@@ -34,8 +37,9 @@
 upstream v3 在 1024 阵元任务上报告了以下当前结果：
 
 - 平面增广后，服务器复现的 40 个方向平面退化最大值为 `+0.34 dB`；
-- 同一 v3 实验的曲面测试恢复率为 `120.2%`；
-- 平面验收中，v3 direct arm 为标准方向 `70/73`、随机方向 `199/200`，v3+LCMV arm 为 `69/73`、`194/200`；这些是 arm-specific results，不应改写为 DeepSets direct output 在所有方向上 100% 通过；
+- 同一 v3 模型的曲面测试恢复率为 `120.2%`；
+- **官方口径平面验收**（`results/stage2_ai_v3_official/`，commit d19f736，official evaluator 1.0.0，与 Track P 基线同 273 方向）：v3 direct arm 标准方向 `69/73`（最差 `-34.726`）、随机方向 `196/200`；v3+LCMV arm 为 `61/73`（最差 `-34.626`）、`186/200`；自适应零陷 73/73 全过（`-300 dBc`）；
+- legacy 3×3dB_BW 口径对照（`acceptance_v3_ai.json`）：direct `70/73`、`199/200`，LCMV `69/73`、`194/200`——**第一零点口径更严**，LCMV 置零在该口径下有 0.05–1.1 dB 代价，多方向裕量本就 <0.1 dB；未达标方向由安全门控回退 Taylor 兜底；
 - NPU benchmark 使用真实 v3 权重，在 Ascend 910 上得到纯推理 mean `0.499 ms`、端到端 mean `0.632 ms`、纯推理 P99 `0.532 ms`，batch=64 吞吐 `27,649 samples/s`；
 - 4096 阵元结果是 DeepSets 计算规模测试，不是 4096 阵元 HFSS 全波验证。
 
@@ -77,8 +81,10 @@ DeepSets 使用逐阵元共享编码、mean/max pooling 和逐阵元 residual he
 cd project
 python run_planar_generalization.py
 python run_planar_fix_train.py
-python run_acceptance_v3_ai.py
-python run_benchmark_v3.py
+python run_acceptance_v3_ai.py        # legacy 3x3dB_BW 口径
+python run_stage2_ai_v3_official.py   # official 第一零点口径（273 方向）
+python run_stage2b_diff_adaptive_closure.py  # 差波束自适应零陷闭环
+python run_benchmark_v3.py            # 需 Ascend 910
 ```
 
 teacher generation、训练和模型文件属于离线或环境相关步骤。默认的 v3 评估器是 `project/mylib/evaluation.py` 的 legacy uv-domain path；上述 Track P 补充证据使用 official evaluator 1.0.0，二者不应无说明地混用。
@@ -104,4 +110,4 @@ python -m pytest tests/ -v
 
 ## 证据定位
 
-最新 v3 machine-readable outputs 位于 `project/outputs/`，包括 `acceptance_v3_ai.json`、`benchmark_v3.json`、`planar_fix_v3.json` 和 `random200_taylor_3bw.json`。Track P、robustness、failure reconstruction 和 fixed-task sample-efficiency 的完整冻结证据属于相应研究证据包；README 只保留其可审查摘要，不要求普通 clone 携带全部中间结果。
+最新 v3 machine-readable outputs 位于 `project/outputs/`，包括 `acceptance_v3_ai.json`（legacy 口径）、`benchmark_v3.json`、`planar_fix_v3.json` 和 `random200_taylor_3bw.json`。official evaluator 口径的正式结果位于 `results/`：`stage2_strict_closure/`（Track P 全量基线）、`stage2_ai_v3_official/`（v3 三臂官方口径验收）、`stage2b_diff_adaptive_closure/`（差波束零陷闭环）。Track P、robustness、failure reconstruction 和 fixed-task sample-efficiency 的完整冻结证据属于相应研究证据包；README 只保留其可审查摘要，不要求普通 clone 携带全部中间结果。
