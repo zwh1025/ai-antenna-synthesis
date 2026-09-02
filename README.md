@@ -4,7 +4,7 @@
 
 ## 项目简介
 
-32×32（1024 阵元）阵列天线，Taylor+LCMV 解析基线在 ±60° 圆锥扫描范围内 SLL ≤ -35 dBc，4 个 LCMV 零陷 ≤ -38 dB。曲面阵列（抛物面/圆柱面）场景下，DeepSets 排列等变网络学习坐标→权值映射，NPU 推理 0.504ms 替代 SOCP 23 秒求解。全流程在华为昇腾 910 NPU 上实现训练与部署。
+32×32（1024 阵元）阵列天线，Taylor+LCMV 解析基线在 ±60° 圆锥扫描范围内 SLL ≤ -35 dBc，4 个 LCMV 零陷 ≤ -38 dB。曲面阵列（抛物面/圆柱面）场景下，DeepSets 排列等变网络学习坐标→权值映射，NPU 推理 0.504ms 替代 SOCP 23 秒求解。全流程在华为昇腾 910 NPU 上实现训练与部署，4096 阵元完成计算规模扩展测试。另以 8×8 曲面阵列已求解 HFSS 数据（64 复数 EEP + 64 端口 S 参数）离线重组，验证权值到真实电磁模型的工程闭环。
 
 ## 实测指标
 
@@ -21,6 +21,11 @@
 | LCMV 后 SLL | 保持 Taylor | -35.1 dB (Δ‖w‖=0.003) | ✓ 100% |
 
 > **口径说明**：副瓣评估采用 3×3dB_BW 排除口径（竞赛方未明确规定具体倍数）。同一方向图在 2×3dB_BW 下 SLL 约 -24 dB，3×3dB_BW 下约 -35 dB。本研究认为 3×3dB_BW 在 60° 大扫描角下更合理地排除了主瓣裙边。
+
+> **结果边界（如实披露）**：
+> 1. -35 dBc 理想平面阵结果来自 Taylor+LCMV 系统，不是 DeepSets 单独输出；
+> 2. 固定权值下的 ±λ/20 位置扰动、阵元失效、量化、频偏测试存在明显退化，多项未达 -35 dB，应作为局限看待（见 `run_nonideal_v2.py` / `run_curved_nonideal.py`）；
+> 3. 4096 阵元完成的是 DeepSets 计算规模测试，不是 HFSS 全波验证。
 
 ### 曲面阵列 DeepSets AI 综合
 
@@ -44,9 +49,24 @@
 | 端到端延迟 | 0.658 ms | — | — |
 | 连续吞吐量 | 1985/s | 367/s | 9.0x |
 | 精度一致性 | max_err=7.45×10⁻⁸ | — | cos_sim≈1.0 |
-| vs SOCP 23秒 | 0.504ms | — | **45,635x** |
+| vs SOCP 23秒 | 0.504ms | — | 45,635x |
 
-> 服务器配备 2 颗 Ascend 910_9362（各 64GB HBM），本次仅使用单卡。模型仅 0.47-1.9MB，单卡算力远超需求。vs SOCP 的加速比为 AI 推理与 SOCP 求解的算法+硬件综合差距。
+> 服务器配备 2 颗 Ascend 910_9362（各 64GB HBM），本次仅使用单卡。模型仅 0.47-1.9MB，单卡算力远超需求。vs SOCP 的加速比是"AI 前向推理"与"迭代优化求解"的算法+硬件综合差距，不是同类计算的硬件加速比，不能表述为"NPU 硬件单独带来 45,635 倍加速"。
+
+### 8×8 HFSS 全波工程验证
+
+复用实验室已求解的 8×8 曲面阵列 HFSS 数据（12.5 GHz），通过 64 个复数 EEP 线性重组 + 64 端口 S 参数有源匹配，离线验证 AI 权值能否进入真实多端口电磁模型。模型权值与 HFSS 入射波采用 `a_HFSS = conj(w_model)` 相位约定。
+
+| 项目 | 结果 |
+|---|---|
+| EEP 数量 / 每个采样点 | 64 / 32580 |
+| EEP 重组交叉复算误差（vs HFSS 直接激励） | ~10⁻⁹ dB |
+| AI 总接受功率 | 81.5% – 91.6%（1 W 归一化） |
+| 控制方向（degraded/fallback/unsupported） | 无误导出 |
+| 阵因子层安全导出（8×8 D4 归档） | 536/544 方向 |
+| 全波严格对比（6 个方向） | **0/6 通过，AI 副瓣较 Taylor 差 0.79 – 2.80 dB** |
+
+**正确解读**：该实验证明端口映射、相位约定、EEP 重组和有源匹配链路成立，是工程可实现性证据；但 AI 在小阵列真实互耦下未优于 Taylor，阵因子层 98.5% 安全导出率不等同于全波通过率，且不能由 8×8 外推 64×64 电磁性能。8×8 模型与安全归档见根目录 `deepsets_8x8_d4_v2_1.tar.gz`（冻结模型 + 544 方向预测 + 支持域查找表 + 安全导出器），完整结果见 `HFSS_8x8曲面阵列验证/returned_results/`。
 
 ## 技术栈
 
@@ -88,6 +108,7 @@
 │   ├── run_bounded_socp.py           # SOCP 失效补偿验证（负结果，~1min）
 │   ├── run_nonuniform_verify.py      # 非均匀坐标验证（负结果）
 │   ├── run_failure_benchmark.py     # 失效补偿基准
+│   ├── run_ga_pso_compare.py        # Taylor/GA/PSO/SOCP/AI 五方法对比
 │   ├── run_generate_teacher.py      # SOCP 教师标签生成 v1（280样本，~108min）
 │   ├── run_multi_scan_generate.py   # 多方向教师标签 v2（280样本，~108min）
 │   ├── run_deepsets_train.py         # DeepSets 训练 + 三方对比（~2min NPU）
@@ -98,10 +119,11 @@
 │   └── make_ppt.py                   # 基于模板生成 PPT
 ├── 技术报告.md                        # 6 章 + 15 参考文献
 ├── 算法报告.md                        # 算例验证 + 数据集 + 代码结构
+├── 性能对比报告.md                     # Taylor/GA/PSO/SOCP/AI 五方法对比
 ├── 基准测试数据汇总.md                 # 8 章节完整 NPU/CPU 对比数据
-├── 项目交接.md                        # 项目全貌 + 后续工作
 ├── 项目计划方案.md                    # 技术路线 + 阶段目标
 ├── PPT大纲_v2.md                     # 答辩 PPT 大纲（13 页，NPU 为主线）
+├── deepsets_8x8_d4_v2_1.tar.gz        # 8×8 DeepSets D4 安全归档（冻结模型+544方向预测+安全导出器）
 ├── CONTRIBUTING.md                   # 环境配置和运行方式
 ├── requirements.txt                  # 依赖列表
 └── README.md
@@ -132,6 +154,7 @@ python run_benchmark.py              # NPU/CPU 基准（需 NPU 环境）
 python run_benchmark_supplement.py   # 端到端延迟+1000轮 P99（需 NPU）
 
 # 5. 扩展实验
+python run_ga_pso_compare.py        # Taylor/GA/PSO/SOCP/AI 五方法对比
 python run_cylindrical_verify.py     # 圆柱面阵列
 python run_curved_nonideal.py        # 曲面+量化/失效联合
 python run_nonideal_v2.py            # 平面阵非理想条件
