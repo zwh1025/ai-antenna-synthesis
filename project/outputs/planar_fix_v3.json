@@ -1,0 +1,62 @@
+{
+  "description": "v3 planar-augmented model, fixes shortcut learning",
+  "dataset": {
+    "curved": 280,
+    "planar_added": 120,
+    "seed": 456
+  },
+  "training": {
+    "epochs_max": 300,
+    "batch": 16,
+    "lr": 0.001,
+    "hidden": 256,
+    "time_s": 238.04372429847717,
+    "best_val_loss": 0.06320615112781525
+  },
+  "planar_ood": {
+    "by_theta": {
+      "theta=0": {
+        "taylor": null,
+        "degradation_mean": 0.03514654327103983,
+        "degradation_max": 0.03514654327103983,
+        "degradation_within_1dB": 8
+      },
+      "theta=15": {
+        "taylor": null,
+        "degradation_mean": 0.02695442479831467,
+        "degradation_max": 0.12817156465146695,
+        "degradation_within_1dB": 8
+      },
+      "theta=30": {
+        "taylor": null,
+        "degradation_mean": 0.016016896717561124,
+        "degradation_max": 0.04926013804795559,
+        "degradation_within_1dB": 8
+      },
+      "theta=45": {
+        "taylor": null,
+        "degradation_mean": 0.05510345850117293,
+        "degradation_max": 0.13365722913323452,
+        "degradation_within_1dB": 8
+      },
+      "theta=60": {
+        "taylor": null,
+        "degradation_mean": 0.0825553150712306,
+        "degradation_max": 0.34445535655783743,
+        "degradation_within_1dB": 8
+      }
+    },
+    "degradation_mean": 0.04315532767186383,
+    "degradation_max": 0.34445535655783743
+  },
+  "curved_test": {
+    "taylor_mean": -21.921703411892405,
+    "socp_mean": -23.980967301456015,
+    "ai_mean": -24.39681043147639,
+    "recovery_pct": 120.19377565584844
+  },
+  "reference": {
+    "v2_planar_degradation": "theta>=30: +10.2~+15.7 dB",
+    "v2_curved_recovery_pct": 82.4
+  }
+}

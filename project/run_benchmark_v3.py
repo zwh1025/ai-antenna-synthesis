@@ -135,9 +135,11 @@ def bench_batch_throughput(model, dev, batch_sizes=(1, 8, 16, 64), n_iter=200):
 
 def check_consistency(model, dev_npu):
     """NPU/CPU 数值一致性（真实 v3 权重）。"""
+    import copy
+    model_cpu = copy.deepcopy(model).to('cpu').eval()
     x = torch.randn(1, N_ELEMENTS, INPUT_DIM)
     with torch.no_grad():
-        y_cpu = model(x).numpy().flatten()
+        y_cpu = model_cpu(x).numpy().flatten()
         y_npu = model(x.to(dev_npu)).to('cpu').numpy().flatten()
     max_err = float(np.max(np.abs(y_cpu - y_npu)))
     cos = float(np.dot(y_cpu, y_npu) /

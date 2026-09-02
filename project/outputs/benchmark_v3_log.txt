@@ -1,0 +1,46 @@
+# v3 NPU 基准补测 - 服务器运行日志 (2026-09-02)
+# 环境: Ascend 910, npu-smi 25.5.5, torch 2.7.1+cpu, torch_npu
+# 权重: 服务器重建训练的 v3 (run_planar_fix_train.py, SEED=456, 463,106 params, early-stop ep212)
+# 重建质量: 平面OOD 40方向最差退化 +0.34dB; 曲面恢复率 120.2% (本地原版: +0.51dB / 128%)
+# 注: DataLoader shuffle 未固定 torch seed, 重建权重与本地原版数值有差异, 但结构相同(9->256->2), 测速与一致性结论有效
+
+/opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/utils/_path_manager.py:66: UserWarning: Permission mismatch: The owner of /opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/lib/libop_plugin_atb.so does not match.
+  warnings.warn(f"Permission mismatch: The owner of {path} does not match.")
+Loaded v3 model: outputs/deepsets_model_v3_256.pt (463,106 params)
+==============================================================================
+1) NPU pure inference
+
+  NPU pure inference (1000 iters):
+    mean=0.499ms P50=0.497ms P95=0.517ms P99=0.532ms throughput=2003/s
+
+2) NPU end-to-end
+
+  End-to-end (200 iters):
+    total mean=0.632ms P50=0.626ms P99=0.664ms
+    H2D=0.066ms infer=0.523ms D2H=0.043ms
+
+3) CPU comparison
+
+  CPU pure inference (1000 iters):
+    mean=2.762ms P50=1.674ms P95=7.107ms P99=12.296ms throughput=362/s
+
+4) NPU/CPU consistency
+
+  Consistency (real v3 weights): max_err=2.474e-06 cos_sim=1.00000000
+
+5) NPU batch throughput
+    batch  : throughput
+    batch= 1:     2474 samples/s
+    batch= 8:    13699 samples/s
+    batch=16:    21608 samples/s
+    batch=64:    27649 samples/s
+
+==============================================================================
+SUMMARY
+  NPU vs CPU (mean): 5.5x
+  NPU vs CPU (P99):  23.1x
+  NPU vs SOCP 23s:   46,080x
+  (对照 v2 128-dim: NPU mean 0.504ms, CPU P50 1.332ms)
+
+Saved: /mnt/workspace/gitCode/cann/tiaozhansai/project/outputs/benchmark_v3.json
+==============================================================================
