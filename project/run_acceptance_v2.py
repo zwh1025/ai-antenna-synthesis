@@ -29,7 +29,12 @@ from mylib.antenna_calc import (
     combine_2d_excitation,
 )
 from mylib.sum_diff import bayliss_excitation, capon_nulling_2d
-from mylib.evaluation import evaluate_uv as evaluate_2d_comprehensive
+from mylib.official_evaluator import (
+    OFFICIAL_EVALUATOR_VERSION,
+    SUM_SLL_THRESHOLD_DB,
+    ADAPTIVE_NULL_THRESHOLD_DB,
+    evaluate_official_case,
+)
 
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), 'outputs')
 
@@ -72,7 +77,8 @@ def main():
     print("=" * 80)
     print(f"Formal Acceptance v2 ({NX}×{NY} = {NX*NY} elements)")
     print(f"Directions: {len(dirs)} independent (θ=0→1, θ>0→12 each)")
-    print(f"SLL: direction-adaptive first-null (primary) + 3×3dB_BW (reference)")
+    print(f"Official evaluator: {OFFICIAL_EVALUATOR_VERSION}")
+    print(f"SLL: first-null uv envelope (official) + 3×3dB_BW (diagnostic)")
     print("=" * 80)
 
     posx = uniform_linear_array_pos(NX)
@@ -91,40 +97,55 @@ def main():
         null_dirs = get_null_dirs(theta0, phi0)
 
         # Taylor
-        r_t = evaluate_2d_comprehensive(
+        r_t = evaluate_official_case(
             amp_sum, phase_sum, posx, posy, theta0, phi0, null_dirs=null_dirs)
-        results_taylor.append({'theta0': theta0, 'phi0': phi0, **r_t})
+        t_sum = r_t['sum']
+        results_taylor.append({
+            'theta0': theta0, 'phi0': phi0,
+            'metric_version': r_t['metric_version'],
+            'sll_official': t_sum['sll_db'],
+            'sll_3bw_diagnostic': t_sum['diagnostic']['sll_3bw_db'],
+            'pointing_err': t_sum['pointing_error_deg'],
+            'bw_3db': t_sum['beamwidth_3db_deg'],
+            'official': r_t,
+        })
 
         # LCMV
         amp_l, phase_l = capon_nulling_2d(
             posx, posy, amp_sum, phase_sum, theta0, phi0, null_dirs)
-        r_l = evaluate_2d_comprehensive(
+        r_l = evaluate_official_case(
             amp_l, phase_l, posx, posy, theta0, phi0, null_dirs=null_dirs)
+        l_sum = r_l['sum']
 
         w_t = (amp_sum * np.exp(1j*phase_sum)).ravel()
         w_l = (amp_l * np.exp(1j*phase_l)).ravel()
         dw = np.linalg.norm(w_l/np.abs(w_l).max() - w_t/np.abs(w_t).max()) / \
              np.linalg.norm(w_t/np.abs(w_t).max())
 
-        null_depths = [nr['max_3deg'] for nr in r_l['null_results']]
+        null_depths = r_l['adaptive_null']['sum']['center_db']
         worst_null = max(null_depths)
 
         results_lcmv.append({
             'theta0': theta0, 'phi0': phi0,
-            'sll_fn': r_l['sll_first_null'], 'sll_3bw': r_l['sll_3bw'],
-            'pointing_err': r_l['pointing_err'], 'bw_3db': r_l['bw_3db'],
-            'worst_null': worst_null, 'delta_w': dw,
-            'null_details': r_l['null_results'],
+            'metric_version': r_l['metric_version'],
+            'sll_official': l_sum['sll_db'],
+            'sll_3bw_diagnostic': l_sum['diagnostic']['sll_3bw_db'],
+            'pointing_err': l_sum['pointing_error_deg'],
+            'bw_3db': l_sum['beamwidth_3db_deg'],
+            'worst_null_center_db': worst_null,
+            'null_window_worst_db': r_l['adaptive_null']['sum']['window_worst_db'],
+            'delta_w': dw,
+            'official': r_l,
         })
 
-        st = "✓" if r_t['sll_first_null'] <= -35 else "✗"
-        sl = "✓" if r_l['sll_first_null'] <= -35 else "✗"
-        sn = "✓" if worst_null <= -30 else "✗"
+        st = "✓" if t_sum['sll_db'] <= SUM_SLL_THRESHOLD_DB else "✗"
+        sl = "✓" if l_sum['sll_db'] <= SUM_SLL_THRESHOLD_DB else "✗"
+        sn = "✓" if worst_null <= ADAPTIVE_NULL_THRESHOLD_DB else "✗"
         print(f"  {i+1:3d}/{len(dirs)} θ={theta0:>3.0f}° φ={phi0:>3.0f}°: "
-              f"Taylor={r_t['sll_first_null']:>6.1f}{st} "
-              f"LCMV={r_l['sll_first_null']:>6.1f}{sl} "
+              f"Taylor={t_sum['sll_db']:>6.1f}{st} "
+              f"LCMV={l_sum['sll_db']:>6.1f}{sl} "
               f"null={worst_null:>6.1f}{sn} "
-              f"Δw={dw:.3f} pt={r_l['pointing_err']:.2f}°")
+              f"Δw={dw:.3f} pt={l_sum['pointing_error_deg']:.2f}°")
 
     t1 = time.time()
     print(f"\n  Time: {t1-t0:.1f}s")
@@ -147,8 +168,8 @@ def main():
     print(f"{'='*80}")
     print(f"{'Metric':>25} {'Mean':>8} {'P95':>8} {'Worst':>8} {'Target':>8} {'Pass':>6}")
     for name, key, target in [
-        ('SLL (1st null)', 'sll_first_null', -35),
-        ('SLL (3×3dB_BW)', 'sll_3bw', -35),
+        ('SLL (official first-null)', 'sll_official', SUM_SLL_THRESHOLD_DB),
+        ('SLL (3×3dB_BW diagnostic)', 'sll_3bw_diagnostic', None),
         ('Pointing err (°)', 'pointing_err', None),
         ('3dB BW (°)', 'bw_3db', None),
     ]:
@@ -162,9 +183,9 @@ def main():
     print(f"{'='*80}")
     print(f"{'Metric':>25} {'Mean':>8} {'P95':>8} {'Worst':>8} {'Target':>8} {'Pass':>6}")
     for name, key, target in [
-        ('SLL (1st null)', 'sll_fn', -35),
-        ('SLL (3×3dB_BW)', 'sll_3bw', -35),
-        ('Worst null (3°)', 'worst_null', -30),
+        ('SLL (official first-null)', 'sll_official', SUM_SLL_THRESHOLD_DB),
+        ('SLL (3×3dB_BW diagnostic)', 'sll_3bw_diagnostic', None),
+        ('Worst null center', 'worst_null_center_db', ADAPTIVE_NULL_THRESHOLD_DB),
         ('Pointing err (°)', 'pointing_err', None),
         ('Δ||w||', 'delta_w', None),
     ]:
@@ -174,14 +195,14 @@ def main():
         print(f"  {name:>25}: {m:>8.3f} {p:>8.3f} {w:>8.3f} {t_str:>8} {p_str:>6}")
 
     # 通过率
-    t_fn_pass = np.mean([r['sll_first_null'] <= -35 for r in results_taylor]) * 100
-    l_fn_pass = np.mean([r['sll_fn'] <= -35 for r in results_lcmv]) * 100
-    l_null_pass = np.mean([r['worst_null'] <= -30 for r in results_lcmv]) * 100
+    t_fn_pass = np.mean([r['sll_official'] <= SUM_SLL_THRESHOLD_DB for r in results_taylor]) * 100
+    l_fn_pass = np.mean([r['sll_official'] <= SUM_SLL_THRESHOLD_DB for r in results_lcmv]) * 100
+    l_null_pass = np.mean([r['worst_null_center_db'] <= ADAPTIVE_NULL_THRESHOLD_DB for r in results_lcmv]) * 100
 
-    print(f"\n  Pass rates (1st-null, ≤-35 dBc):")
-    print(f"    Taylor SLL:  {t_fn_pass:.0f}% ({sum(r['sll_first_null'] <= -35 for r in results_taylor)}/{len(dirs)})")
-    print(f"    LCMV SLL:    {l_fn_pass:.0f}% ({sum(r['sll_fn'] <= -35 for r in results_lcmv)}/{len(dirs)})")
-    print(f"    LCMV nulls:  {l_null_pass:.0f}% ({sum(r['worst_null'] <= -30 for r in results_lcmv)}/{len(dirs)})")
+    print(f"\n  Pass rates (official first-null, ≤-35 dBc):")
+    print(f"    Taylor SLL:  {t_fn_pass:.0f}% ({sum(r['sll_official'] <= SUM_SLL_THRESHOLD_DB for r in results_taylor)}/{len(dirs)})")
+    print(f"    LCMV SLL:    {l_fn_pass:.0f}% ({sum(r['sll_official'] <= SUM_SLL_THRESHOLD_DB for r in results_lcmv)}/{len(dirs)})")
+    print(f"    LCMV nulls:  {l_null_pass:.0f}% ({sum(r['worst_null_center_db'] <= ADAPTIVE_NULL_THRESHOLD_DB for r in results_lcmv)}/{len(dirs)})")
 
     results_file = os.path.join(OUTPUT_DIR, 'acceptance_v2.json')
     with open(results_file, 'w') as f:

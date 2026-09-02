@@ -11,11 +11,14 @@ from mylib.antenna_calc import (
     uniform_linear_array_pos,
     taylor_excitation,
     beam_steering_phase,
+    beam_steering_phase_2d,
+    combine_2d_excitation,
     calculate_1d_pattern,
     get_sll_1d,
     get_null_depth_1d,
     get_3db_beamwidth_1d,
 )
+from mylib.official_evaluator import array_factor_complex, field_to_dbc
 from mylib.sum_diff import (
     bayliss_excitation,
     bayliss_2d_separable,
@@ -23,6 +26,7 @@ from mylib.sum_diff import (
     capon_nulling,
     monopulse_metrics,
     pointing_accuracy_1d,
+    capon_nulling_difference_2d,
 )
 
 
@@ -124,6 +128,43 @@ def test_capon_nulling():
     sll = get_sll_1d(pat, theta, theta0, 8.0)
     assert sll <= -5, f"SLL after nulling={sll:.1f}, expected ≤ -5"
     print(f"PASS: test_capon_nulling (4 nulls, SLL={sll:.1f} dB, note: degraded from Taylor baseline)")
+
+
+def test_capon_nulling_difference_2d_generic():
+    """Difference LCMV adds four nulls without removing the intrinsic null."""
+    nx, ny = 6, 10
+    theta0, phi0 = 20.0, 15.0
+    posx = uniform_linear_array_pos(nx)
+    posy = uniform_linear_array_pos(ny)
+    amp_x, amp_y, _ = bayliss_2d_separable(nx, ny, 25)
+    phase_x, phase_y = beam_steering_phase_2d(posx, posy, theta0, phi0)
+    amp_ref, phase_ref = combine_2d_excitation(amp_x, amp_y, phase_x, phase_y)
+    null_dirs = [(35.0, 90.0), (40.0, 180.0), (45.0, 270.0), (50.0, 45.0)]
+
+    amp_new, phase_new = capon_nulling_difference_2d(
+        posx, posy, amp_ref, phase_ref, theta0, phi0, null_dirs)
+
+    uv_grid = np.linspace(-1.0, 1.0, 101)
+    uu, vv = np.meshgrid(uv_grid, uv_grid, indexing="ij")
+    visible = uu * uu + vv * vv <= 1.0
+    peak = float(np.max(np.abs(array_factor_complex(
+        amp_new, phase_new, posx, posy, uu[visible], vv[visible]))))
+    target_u = np.sin(np.deg2rad(theta0)) * np.cos(np.deg2rad(phi0))
+    target_v = np.sin(np.deg2rad(theta0)) * np.sin(np.deg2rad(phi0))
+    directions = [(target_u, target_v)]
+    directions.extend(
+        (np.sin(np.deg2rad(tn)) * np.cos(np.deg2rad(pn)),
+         np.sin(np.deg2rad(tn)) * np.sin(np.deg2rad(pn)))
+        for tn, pn in null_dirs)
+    responses = array_factor_complex(
+        amp_new, phase_new, posx, posy,
+        np.asarray([u for u, _ in directions]),
+        np.asarray([v for _, v in directions]))
+    levels = field_to_dbc(responses, peak)
+    assert np.all(levels <= -45.0), f"difference nulls={levels} dBc"
+    assert amp_new.shape == (nx, ny)
+    assert phase_new.shape == (nx, ny)
+    print("PASS: test_capon_nulling_difference_2d_generic")
 
 
 def test_monopulse_metrics():
