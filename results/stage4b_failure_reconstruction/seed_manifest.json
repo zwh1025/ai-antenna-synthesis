@@ -1,0 +1,40 @@
+{
+  "source": "D:\\学习\\tiaozhansai\\ai-antenna-synthesis\\results\\stage4a_robustness_degradation\\seed_manifest.json",
+  "source_sha256": "cc06b20cca9be54c80854d959d5e5277154b7cd1e9a39bfb5a07bae1d80108e4",
+  "rule": "Stage 4B uses exactly the Stage 4A case_id, rate, seed, and failed_indices; no RNG call creates a new mask.",
+  "pilot": {
+    "failure_rate": 0.2,
+    "seed": 0,
+    "cases": 16
+  },
+  "formal": {
+    "rates": [
+      0.2,
+      0.1,
+      0.05
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "cases_per_rate": 16
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "stage": "Stage 4A — Robustness Benchmark Freeze & Degradation Audit",
+  "run_status": "COMPLETE",
+  "generated_utc": "2026-09-04T02:20:42.668573+00:00",
+  "git_start": {
+    "branch": "main",
+    "head": "85c88b0e06f58f87ed32972a1fe524558c99dc6a",
+    "dirty": true,
+    "dirty_files": [
+      "?? \"8x8\\345\\205\\250\\346\\263\\242\\351\\252\\214\\350\\257\\201\\350\\257\\264\\346\\230\\216.md\"",
+      "?? project/run_ap_compare.py",
+      "?? project/run_convergence_v3.py",
+      "?? project/run_model_complexity.py",
+      "?? \"\\346\\212\\200\\346\\234\\257\\346\\212\\245\\345\\221\\212_\\346\\257\\224\\350\\265\\233\\346\\217\\220\\344\\272\\244\\347\\211\\210.md\"",
+      "?? \"\\347\\256\\227\\346\\263\\225\\346\\212\\245\\345\\221\\212_\\346\\257\\224\\350\\265\\233\\346\\217\\220\\344\\272\\244\\347\\211\\210.md\""
+    ],
+    "commit_or_push_performed": false
+  },
+  "metric_version": "1.0.0",
+  "robustness_model_version": "1.0.0",
+  "official_evaluator_version": "1.0.0",
+  "official_grid_size": 201,
+  "array": {
+    "nx": 32,
+    "ny": 32,
+    "elements": 1024,
+    "spacing_wavelengths": 0.5,
+    "lambda_reference": 1.0,
+    "geometry": "frozen Stage 2 planar array"
+  },
+  "stage2_baseline": "results\\stage2_strict_closure\\baseline",
+  "stage2_baseline_manifest_sha256": "38b8dcc7349ddbc7ada65437072426bfd9710d08da1c36382dd8e1f2ff262c7f",
+  "case_manifest_sha256": "ea066bb3f120933817d28b70ca9a61c9726c27ce5f49d115ca3424a6396f7a6f",
+  "forbidden_actions": [
+    "no Taylor/Bayliss/LCMV modification",
+    "no Stage 3C1 checkpoint/split modification",
+    "no AI retraining/fine-tuning",
+    "no re-synthesis after perturbation",
+    "no adaptive weight updates",
+    "no official evaluator modification",
+    "no Stage 2 threshold modification",
+    "no README/final report modification",
+    "no commit",
+    "no push"
+  ],
+  "ai_robustness_formal_status": "NOT RUN — PHYSICS FORMAL TRACK PRIORITIZED",
+  "completion_note": "case evaluation completed in original run; finalization (runtime/summary/decision) completed by finish_stage4a.py with ai runtime marked NOT_AVAILABLE_IN_THIS_REPO",
+  "generated_end_utc": "2026-09-04T02:41:33.269889+00:00"
+}

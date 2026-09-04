@@ -1,0 +1,49 @@
+{
+  "stage": "Stage 4B",
+  "gate": "STAGE_4B_CONDITIONAL",
+  "gate_checks": {
+    "exact_stage4a_masks_reused": true,
+    "formal_20pct_320_complete": true,
+    "formal_10pct_320_complete": true,
+    "formal_5pct_320_complete": true,
+    "reconstruction_improves_mean_sum_sll_20pct": true,
+    "main_beam_pointing_recorded": true,
+    "runtime_recorded": true,
+    "weights_saved": true,
+    "stage4a_metric_consistency_asserted": true,
+    "no_mask_regeneration": true
+  },
+  "recovery_classification": "C — LIMITED RECOVERY",
+  "formal_scope": "known failure mask to active-element weight reconstruction; Sum primary, azimuth Difference formal",
+  "elevation_difference": "NOT RUN",
+  "adaptive_null": "PARTIAL: Sum frozen nulls remain in the B2 field-fit objective and are measured; B1/B2 Difference four-null measurements run; Stage 4A B0 adaptive status remains unavailable",
+  "recovery_classification_basis": "pooled 960-mask B2 result across 20%, 10%, and 5%, with 20% retained as the primary severity level",
+  "primary_20pct": {
+    "mask_count": 320,
+    "B0_common_joint_pass_rate": {
+      "n": 320,
+      "pass": 0,
+      "pass_rate": 0.0,
+      "status": "MEASURED"
+    },
+    "B2_common_joint_pass_rate": {
+      "n": 320,
+      "pass": 0,
+      "pass_rate": 0.0,
+      "status": "MEASURED"
+    },
+    "B2_mean_recovery_db": {
+      "n": 320,
+      "mean": 2.094336920060693,
+      "median": 2.1929771877440896,
+      "std": 1.0599664741130497,
+      "P5": 0.21262591487895774,
+      "P95": 3.847372619179529,
+      "min": -0.9635118093108481,
+      "max": 4.609826396674663
+    }
+  },
+  "remaining_boundary": "This is not AI failure reconstruction, arbitrary geometry, position/frequency compensation, or a guarantee that all 960 masks recover the original hard spec.",
+  "next_stage_recommendation": "If authorized, complete a separate elevation Difference failure benchmark from a separately frozen Stage 2B reference; do not alter this exact Stage 4A comparison.",
+  "no_commit_or_push": true
+}

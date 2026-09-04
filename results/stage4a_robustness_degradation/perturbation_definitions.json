@@ -1,0 +1,160 @@
+{
+  "robustness_model_version": "1.0.0",
+  "metric_version": "1.0.0",
+  "formal_scope": "Track P planar 32x32 physics baseline; degradation-only; original frozen weights are reused exactly.",
+  "position_error": {
+    "model": "B",
+    "model_status": "OFFICIAL_ASSUMPTION_FOR_THIS_FREEZE",
+    "delta_x_lambda": "Uniform[-0.05,+0.05] independently per element",
+    "delta_y_lambda": "Uniform[-0.05,+0.05] independently per element",
+    "delta_z_lambda": 0.0,
+    "planar_geometry": true,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "rng": "numpy.random.RandomState(seed)",
+    "ambiguity_note": "The Stage 4A wording permits A/B/C readings. Existing planar non-ideal code directly supports B; formal Track P freezes B and records this assumption rather than silently claiming a unique 3-D interpretation.",
+    "not_run_alternatives": {
+      "A": "independent 3-D x/y/z offsets; not applicable to the frozen planar Track P geometry",
+      "C": "common-mode or rigid-body displacement; not an element-wise placement-error model"
+    }
+  },
+  "amplitude_phase": {
+    "mode": "deterministic_quantization",
+    "amplitude": {
+      "grid_db": 0.5,
+      "reference": "unit maximum per frozen excitation; dB=20*log10(amplitude)",
+      "operation": "clip to [1e-6,1], nearest grid using numpy.round, convert back to linear amplitude",
+      "zero_failure_handling": "failure excitation is set to exact zero in the separate failure benchmark"
+    },
+    "phase": {
+      "states": 64,
+      "step_deg": 5.625,
+      "step_rad": 0.09817477042468103,
+      "operation": "nearest state using numpy.round, modulo 2*pi; radians internally"
+    },
+    "random_seeds": [],
+    "ambiguity_note": "Amplitude wording can mean a quantizer or an additive/random hardware error. The formal freeze chooses the legacy-compatible nearest 0.5 dB quantizer; no stochastic amplitude error is silently mixed into this case.",
+    "re_synthesis": false
+  },
+  "element_failure": {
+    "rates": [
+      0.05,
+      0.1,
+      0.2
+    ],
+    "failed_excitation": "amp=0; phase=0 as an irrelevant placeholder",
+    "count_rule": "floor(N_elements*rate)",
+    "counts_for_1024": {
+      "0.05": 51,
+      "0.10": 102,
+      "0.20": 204
+    },
+    "mask_distribution": "uniform random choice without replacement",
+    "rng": "numpy.random.RandomState(seed)",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "same_mask_applied_to": [
+      "sum excitation",
+      "difference excitation"
+    ],
+    "mask_reuse": "Every mask and failed index list is saved for exact Stage 4B reuse.",
+    "re_synthesis": false
+  },
+  "frequency_offset": {
+    "ratio_definition": "lambda_ref/lambda_perturbed",
+    "frequency_ratios": [
+      0.9,
+      0.91,
+      0.92,
+      0.93,
+      0.94,
+      0.95,
+      0.96,
+      0.97,
+      0.98,
+      0.99,
+      1.0,
+      1.01,
+      1.02,
+      1.03,
+      1.04,
+      1.05,
+      1.06,
+      1.07,
+      1.08,
+      1.09,
+      1.1
+    ],
+    "frequency_offset_percent": [
+      -10,
+      10
+    ],
+    "implementation": "lambda=1/ratio in official array-factor evaluator",
+    "coordinates": "physical positions remain fixed; no coordinate re-scaling",
+    "weights": "original frozen weights; no retuning",
+    "re_synthesis": false
+  },
+  "compliance": {
+    "sum_sll": "<= -35 dBc",
+    "difference_sll": "<= -20 dBc",
+    "pointing": "measured error <= official beamwidth_3db/30",
+    "intrinsic_difference_null": "difference response at target <= -30 dBc",
+    "common_joint": "sum SLL + difference SLL + difference pointing + intrinsic difference null",
+    "track_p_joint": "common_joint + measured sum nulls available for the LCMV adaptive-null subset",
+    "difference_adaptive_null": "not implemented in frozen Stage 2 baseline; never reported as a pass"
+  },
+  "runtime_protocol": {
+    "repetitions": 100,
+    "warmup": 10,
+    "statistics": [
+      "mean",
+      "std",
+      "P50",
+      "P95",
+      "min",
+      "max",
+      "CV"
+    ],
+    "teacher_rerun": false
+  }
+}

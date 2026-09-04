@@ -1,0 +1,1095 @@
+{
+  "perturbation": "amplitude_phase_quantization",
+  "robustness_model_version": "1.0.0",
+  "metric_version": "1.0.0",
+  "deterministic": true,
+  "cases": [
+    {
+      "case_id": "regular_000",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "regular",
+      "sum_method": "lcmv",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -35.03146668284886,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": true,
+      "sum_beamwidth_3db_deg": 4.240087544052583,
+      "sum_peak_direction": {
+        "theta_deg": 0.0,
+        "phi_deg": 0.0
+      },
+      "sum_pointing_error_deg": 0.0,
+      "sum_pointing_threshold_deg": 0.14133625146841944,
+      "difference_sll_db": -20.683500351439363,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 9.536090719514274,
+        "phi_deg": 180.0
+      },
+      "difference_pointing_error_deg": 9.536090719514277,
+      "difference_pointing_threshold_deg": 0.14133625146841944,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -62.91794241189669,
+        -62.917942411897236,
+        -62.91794241189693,
+        -53.7256610399264
+      ],
+      "sum_null_window_worst_db": [
+        -37.827490530395295,
+        -37.827490530395266,
+        -37.82749053039528,
+        -52.07858297676908
+      ],
+      "sum_null_worst_db": -53.7256610399264,
+      "sum_null_pass": true,
+      "sum_null_available": true,
+      "sum_null_status": "ADAPTIVE_LCMV_REFERENCE",
+      "difference_intrinsic_null_db": 0.0,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": false,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.19167647231049756,
+      "delta_difference_sll_db": 1.249856110703135,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.536090719514277,
+      "delta_sum_null_worst_db": 246.2743389600736,
+      "delta_difference_intrinsic_null_db": 300.0
+    },
+    {
+      "case_id": "regular_002",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "regular",
+      "sum_method": "lcmv",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.52965433395277,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 4.3374725776909235,
+      "sum_peak_direction": {
+        "theta_deg": 10.074500585868563,
+        "phi_deg": 30.96375653207352
+      },
+      "sum_pointing_error_deg": 0.18374918222956915,
+      "sum_pointing_threshold_deg": 0.14458241925636411,
+      "difference_sll_db": -20.674873726831528,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 5.057269061351902,
+        "phi_deg": 99.9554423492635
+      },
+      "difference_pointing_error_deg": 9.522544793926574,
+      "difference_pointing_threshold_deg": 0.14458241925636411,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -63.310343543124105,
+        -73.88766215724574,
+        -89.03599723288293,
+        -71.32907730003433
+      ],
+      "sum_null_window_worst_db": [
+        -58.738623388829865,
+        -65.21459099558757,
+        -52.28077569652876,
+        -37.71610141213468
+      ],
+      "sum_null_worst_db": -63.310343543124105,
+      "sum_null_pass": true,
+      "sum_null_available": true,
+      "sum_null_status": "ADAPTIVE_LCMV_REFERENCE",
+      "difference_intrinsic_null_db": 0.02143909521705702,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": false,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.48932767819211165,
+      "delta_difference_sll_db": 1.2324619916518031,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.522543940152929,
+      "delta_sum_null_worst_db": 236.6896564568759,
+      "delta_difference_intrinsic_null_db": 300.02143909521703
+    },
+    {
+      "case_id": "regular_004",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "regular",
+      "sum_method": "lcmv",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -32.99740715341888,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 4.307324008102983,
+      "sum_peak_direction": {
+        "theta_deg": 9.787819056713975,
+        "phi_deg": 90.0
+      },
+      "sum_pointing_error_deg": 0.21218094328710996,
+      "sum_pointing_threshold_deg": 0.1435774669367661,
+      "difference_sll_db": -20.683666389440244,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 13.886523621186866,
+        "phi_deg": 46.34710724142514
+      },
+      "difference_pointing_error_deg": 9.537134054790053,
+      "difference_pointing_threshold_deg": 0.1435774669367661,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -73.8789844320053,
+        -50.53332351705688,
+        -67.19754875905846,
+        -62.96302594452763
+      ],
+      "sum_null_window_worst_db": [
+        -61.88284929226441,
+        -41.464915231753416,
+        -58.71698661239826,
+        -58.540164846129684
+      ],
+      "sum_null_worst_db": -50.53332351705688,
+      "sum_null_pass": true,
+      "sum_null_available": true,
+      "sum_null_status": "ADAPTIVE_LCMV_REFERENCE",
+      "difference_intrinsic_null_db": 0.027341477473740616,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": false,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 2.1556318813452364,
+      "delta_difference_sll_db": 1.2496900727022116,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.537133201016408,
+      "delta_sum_null_worst_db": 249.46667648294311,
+      "delta_difference_intrinsic_null_db": 300.0273414774737
+    },
+    {
+      "case_id": "regular_014",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "regular",
+      "sum_method": "lcmv",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.504085815450225,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 4.543670959628468,
+      "sum_peak_direction": {
+        "theta_deg": 20.170734613216478,
+        "phi_deg": 29.538782259558083
+      },
+      "sum_pointing_error_deg": 0.2328896004723953,
+      "sum_pointing_threshold_deg": 0.15145569865428227,
+      "difference_sll_db": -20.637858535190887,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 12.422229793332383,
+        "phi_deg": 52.65273022519355
+      },
+      "difference_pointing_error_deg": 9.73815665820926,
+      "difference_pointing_threshold_deg": 0.15145569865428227,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -66.09741970342684,
+        -59.73187769174193,
+        -64.87229166608971,
+        -65.72344953329124
+      ],
+      "sum_null_window_worst_db": [
+        -62.40126844868136,
+        -55.042943246323446,
+        -40.919746186232146,
+        -52.918134124923874
+      ],
+      "sum_null_worst_db": -59.73187769174193,
+      "sum_null_pass": true,
+      "sum_null_available": true,
+      "sum_null_status": "ADAPTIVE_LCMV_REFERENCE",
+      "difference_intrinsic_null_db": 0.011262536476270128,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": false,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.6379575436560785,
+      "delta_difference_sll_db": 1.2356968342920744,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.73815665820926,
+      "delta_sum_null_worst_db": 240.26812230825806,
+      "delta_difference_intrinsic_null_db": 300.0112625364763
+    },
+    {
+      "case_id": "regular_028",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "regular",
+      "sum_method": "lcmv",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.90526333461574,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 4.899405018718884,
+      "sum_peak_direction": {
+        "theta_deg": 30.000000000000004,
+        "phi_deg": 90.0
+      },
+      "sum_pointing_error_deg": 0.0,
+      "sum_pointing_threshold_deg": 0.1633135006239628,
+      "difference_sll_db": -20.683500351439367,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 31.78488605806187,
+        "phi_deg": 71.66802136462424
+      },
+      "difference_pointing_error_deg": 9.54729771534636,
+      "difference_pointing_threshold_deg": 0.1633135006239628,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -60.09171429252629,
+        -300.0,
+        -57.94375706852499,
+        -69.98685344350812
+      ],
+      "sum_null_window_worst_db": [
+        -59.95063507336313,
+        -42.297863787358864,
+        -57.842735890233484,
+        -44.39496346698813
+      ],
+      "sum_null_worst_db": -57.94375706852499,
+      "sum_null_pass": true,
+      "sum_null_available": true,
+      "sum_null_status": "ADAPTIVE_LCMV_REFERENCE",
+      "difference_intrinsic_null_db": 0.0,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": false,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.3106629583763123,
+      "delta_difference_sll_db": 1.2498561107031314,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.54729771534636,
+      "delta_sum_null_worst_db": 242.05624293147503,
+      "delta_difference_intrinsic_null_db": 300.0
+    },
+    {
+      "case_id": "regular_038",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "regular",
+      "sum_method": "lcmv",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.956365589417175,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 5.579117914541818,
+      "sum_peak_direction": {
+        "theta_deg": 40.16422242896221,
+        "phi_deg": 29.74488129694223
+      },
+      "sum_pointing_error_deg": 0.23227687514083398,
+      "sum_pointing_threshold_deg": 0.18597059715139394,
+      "difference_sll_db": -20.66293746408105,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 30.408702456328314,
+        "phi_deg": 39.416933885154194
+      },
+      "difference_pointing_error_deg": 10.997111218840958,
+      "difference_pointing_threshold_deg": 0.18597059715139394,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -73.36085840271683,
+        -55.177213685935385,
+        -62.33958059918229,
+        -42.61625591471518
+      ],
+      "sum_null_window_worst_db": [
+        -49.23026340298559,
+        -54.27433215576724,
+        -59.536966053999656,
+        -36.48832629268202
+      ],
+      "sum_null_worst_db": -42.61625591471518,
+      "sum_null_pass": true,
+      "sum_null_available": true,
+      "sum_null_status": "ADAPTIVE_LCMV_REFERENCE",
+      "difference_intrinsic_null_db": 0.010928641547615761,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": false,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.20059610256432592,
+      "delta_difference_sll_db": 1.1931182708800883,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 10.997111218840958,
+      "delta_sum_null_worst_db": 257.38374408528483,
+      "delta_difference_intrinsic_null_db": 300.0109286415476
+    },
+    {
+      "case_id": "regular_050",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "regular",
+      "sum_method": "lcmv",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.48732252831179,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 6.663365053207727,
+      "sum_peak_direction": {
+        "theta_deg": 49.603448110672964,
+        "phi_deg": 29.931511840507792
+      },
+      "sum_pointing_error_deg": 0.399987430682098,
+      "sum_pointing_threshold_deg": 0.22211216844025755,
+      "difference_sll_db": -20.68018026290145,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 38.90666587202876,
+        "phi_deg": 37.57908788824401
+      },
+      "difference_pointing_error_deg": 12.282149795915752,
+      "difference_pointing_threshold_deg": 0.22211216844025755,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -59.71043574982177,
+        -78.82429068384982,
+        -57.6834603778018,
+        -62.61356259411923
+      ],
+      "sum_null_window_worst_db": [
+        -42.82311044150553,
+        -60.64511903690119,
+        -57.43135824743206,
+        -53.16422996195527
+      ],
+      "sum_null_worst_db": -57.6834603778018,
+      "sum_null_pass": true,
+      "sum_null_available": true,
+      "sum_null_status": "ADAPTIVE_LCMV_REFERENCE",
+      "difference_intrinsic_null_db": 0.02662008653078798,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": false,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.7212484813693223,
+      "delta_difference_sll_db": 1.1784520394890485,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 12.282149795915752,
+      "delta_sum_null_worst_db": 242.3165396221982,
+      "delta_difference_intrinsic_null_db": 294.5721062844302
+    },
+    {
+      "case_id": "regular_072",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "regular",
+      "sum_method": "lcmv",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -31.522691047480443,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 8.615586110981148,
+      "sum_peak_direction": {
+        "theta_deg": 59.828281488509155,
+        "phi_deg": 330.17291534552527
+      },
+      "sum_pointing_error_deg": 0.22775680142022786,
+      "sum_pointing_threshold_deg": 0.2871862036993716,
+      "difference_sll_db": -3.253695294675633,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": false,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 46.6592268802684,
+        "phi_deg": 323.46007381830503
+      },
+      "difference_pointing_error_deg": 14.323038992541491,
+      "difference_pointing_threshold_deg": 0.2871862036993716,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -88.25316809353376,
+        -80.61721979727066,
+        -300.0,
+        -81.12941083041792
+      ],
+      "sum_null_window_worst_db": [
+        -69.79643162863422,
+        -61.171537578011296,
+        -41.77961923881615,
+        -62.742952690812785
+      ],
+      "sum_null_worst_db": -80.61721979727066,
+      "sum_null_pass": true,
+      "sum_null_available": true,
+      "sum_null_status": "ADAPTIVE_LCMV_REFERENCE",
+      "difference_intrinsic_null_db": 0.016232340207340983,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": false,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 3.7005561815848154,
+      "delta_difference_sll_db": 18.679661167466826,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 14.323038992541491,
+      "delta_sum_null_worst_db": 219.38278020272935,
+      "delta_difference_intrinsic_null_db": 290.96301426395405
+    },
+    {
+      "case_id": "random_000",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "random",
+      "sum_method": "taylor",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.99973899743408,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 4.603606592125637,
+      "sum_peak_direction": {
+        "theta_deg": 22.30106265812324,
+        "phi_deg": 341.565051177078
+      },
+      "sum_pointing_error_deg": 0.31438367955943275,
+      "sum_pointing_threshold_deg": 0.15345355307085456,
+      "difference_sll_db": -20.67637427738307,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 13.301465282358164,
+        "phi_deg": 329.5827038362372
+      },
+      "difference_pointing_error_deg": 9.911678003694208,
+      "difference_pointing_threshold_deg": 0.15345355307085456,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -77.38211471223602,
+        -62.72616965664124,
+        -66.20952173898151,
+        -82.65350368196543
+      ],
+      "sum_null_window_worst_db": [
+        -65.32358499711326,
+        -56.77596421510021,
+        -59.54150401138961,
+        -64.09907127710123
+      ],
+      "sum_null_worst_db": -62.72616965664124,
+      "sum_null_pass": true,
+      "sum_null_available": false,
+      "sum_null_status": "OBSERVED_ON_TAYLOR_NOT_ADAPTIVE",
+      "difference_intrinsic_null_db": 0.03643877451484158,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": null,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.18883679116859042,
+      "delta_difference_sll_db": 1.209782783006613,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.911678003694208,
+      "delta_sum_null_worst_db": 14.630754301457053,
+      "delta_difference_intrinsic_null_db": 300.03643877451486
+    },
+    {
+      "case_id": "random_025",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "random",
+      "sum_method": "taylor",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -35.02534406550603,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": true,
+      "sum_beamwidth_3db_deg": 5.171974904603793,
+      "sum_peak_direction": {
+        "theta_deg": 34.08049227579112,
+        "phi_deg": 34.8244891569568
+      },
+      "sum_pointing_error_deg": 0.15212203859950157,
+      "sum_pointing_threshold_deg": 0.1723991634867931,
+      "difference_sll_db": -20.65645038186893,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 44.77602049008787,
+        "phi_deg": 27.231539132802737
+      },
+      "difference_pointing_error_deg": 11.648228665899913,
+      "difference_pointing_threshold_deg": 0.1723991634867931,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -66.304346901881,
+        -60.10913879945225,
+        -50.50565289472188,
+        -68.76064228569388
+      ],
+      "sum_null_window_worst_db": [
+        -57.81832598241139,
+        -54.305459347187025,
+        -46.73816401647154,
+        -59.748405550546266
+      ],
+      "sum_null_worst_db": -50.50565289472188,
+      "sum_null_pass": true,
+      "sum_null_available": false,
+      "sum_null_status": "OBSERVED_ON_TAYLOR_NOT_ADAPTIVE",
+      "difference_intrinsic_null_db": 0.011448987602189722,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": null,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.15114752146467936,
+      "delta_difference_sll_db": 1.2399448679583784,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 11.648228665899913,
+      "delta_sum_null_worst_db": 32.42695103757988,
+      "delta_difference_intrinsic_null_db": 296.52270238245984
+    },
+    {
+      "case_id": "random_050",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "random",
+      "sum_method": "taylor",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.97805549902952,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 8.167423239527402,
+      "sum_peak_direction": {
+        "theta_deg": 57.778220256956736,
+        "phi_deg": 302.9386905429555
+      },
+      "sum_pointing_error_deg": 0.4579367204237356,
+      "sum_pointing_threshold_deg": 0.27224744131758005,
+      "difference_sll_db": -20.604500928398856,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 71.9444071806624,
+        "phi_deg": 311.55927156261686
+      },
+      "difference_pointing_error_deg": 15.701778468272876,
+      "difference_pointing_threshold_deg": 0.27224744131758005,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -69.99351707408255,
+        -65.73745295313375,
+        -50.27369243098829,
+        -60.84237763093532
+      ],
+      "sum_null_window_worst_db": [
+        -67.19249264274093,
+        -63.26610508913872,
+        -37.959617832927385,
+        -53.24857963341102
+      ],
+      "sum_null_worst_db": -50.27369243098829,
+      "sum_null_pass": true,
+      "sum_null_available": false,
+      "sum_null_status": "OBSERVED_ON_TAYLOR_NOT_ADAPTIVE",
+      "difference_intrinsic_null_db": 0.01938280562471652,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": null,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.17868692008601528,
+      "delta_difference_sll_db": 1.3381868599061875,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 15.701777260854605,
+      "delta_sum_null_worst_db": 31.271514817159456,
+      "delta_difference_intrinsic_null_db": 300.01938280562473
+    },
+    {
+      "case_id": "random_075",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "random",
+      "sum_method": "taylor",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.94373169018229,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 4.351422448670272,
+      "sum_peak_direction": {
+        "theta_deg": 10.875738511099039,
+        "phi_deg": 327.9946167919165
+      },
+      "sum_pointing_error_deg": 0.18098577066301316,
+      "sum_pointing_threshold_deg": 0.14504741495567572,
+      "difference_sll_db": -20.67447369921826,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 19.888357202113568,
+        "phi_deg": 342.4051951945278
+      },
+      "difference_pointing_error_deg": 9.79894457735969,
+      "difference_pointing_threshold_deg": 0.14504741495567572,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -66.95983076992393,
+        -63.59070422430261,
+        -53.209377887940555,
+        -77.6852120158162
+      ],
+      "sum_null_window_worst_db": [
+        -59.69376271061363,
+        -56.46792642112012,
+        -45.023380718683015,
+        -60.93687170311355
+      ],
+      "sum_null_worst_db": -53.209377887940555,
+      "sum_null_pass": true,
+      "sum_null_available": false,
+      "sum_null_status": "OBSERVED_ON_TAYLOR_NOT_ADAPTIVE",
+      "difference_intrinsic_null_db": 0.018125867202704725,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": null,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.21315751322536158,
+      "delta_difference_sll_db": 1.1852008719157965,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.79894457735969,
+      "delta_sum_null_worst_db": 6.284465833107156,
+      "delta_difference_intrinsic_null_db": 300.0181258672027
+    },
+    {
+      "case_id": "random_100",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "random",
+      "sum_method": "taylor",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -33.660484739926844,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 7.165016702045136,
+      "sum_peak_direction": {
+        "theta_deg": 53.183831874638415,
+        "phi_deg": 221.4552335444051
+      },
+      "sum_pointing_error_deg": 0.20606395851783105,
+      "sum_pointing_threshold_deg": 0.2388338900681712,
+      "difference_sll_db": -20.425253633985655,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 68.44645892555177,
+        "phi_deg": 214.92681051084378
+      },
+      "difference_pointing_error_deg": 16.38207649489106,
+      "difference_pointing_threshold_deg": 0.2388338900681712,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -71.22719062190427,
+        -75.0886611983068,
+        -60.60971803422304,
+        -70.33694246436082
+      ],
+      "sum_null_window_worst_db": [
+        -65.05233281395765,
+        -62.99375686615296,
+        -56.40920277109508,
+        -59.41249501462211
+      ],
+      "sum_null_worst_db": -60.60971803422304,
+      "sum_null_pass": true,
+      "sum_null_available": false,
+      "sum_null_status": "OBSERVED_ON_TAYLOR_NOT_ADAPTIVE",
+      "difference_intrinsic_null_db": 0.017600850479746022,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": null,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 1.5273376154276832,
+      "delta_difference_sll_db": 1.4180786997765082,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 16.38207649489106,
+      "delta_sum_null_worst_db": 16.494946422722897,
+      "delta_difference_intrinsic_null_db": 300.01760085047977
+    },
+    {
+      "case_id": "random_125",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "random",
+      "sum_method": "taylor",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -34.91624020483805,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 4.256027008703167,
+      "sum_peak_direction": {
+        "theta_deg": 2.922790454636123,
+        "phi_deg": 191.30993247402023
+      },
+      "sum_pointing_error_deg": 0.2707264214489031,
+      "sum_pointing_threshold_deg": 0.14186756695677222,
+      "difference_sll_db": -20.666743197638734,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 6.540630522802553,
+        "phi_deg": 352.9620394021007
+      },
+      "difference_pointing_error_deg": 9.504932267449899,
+      "difference_pointing_threshold_deg": 0.14186756695677222,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -62.646890866374115,
+        -68.1331713905455,
+        -80.85221357413417,
+        -54.73135407788638
+      ],
+      "sum_null_window_worst_db": [
+        -57.56679875829413,
+        -56.583615411841464,
+        -71.01804348445494,
+        -53.765727143551715
+      ],
+      "sum_null_worst_db": -54.73135407788638,
+      "sum_null_pass": true,
+      "sum_null_available": false,
+      "sum_null_status": "OBSERVED_ON_TAYLOR_NOT_ADAPTIVE",
+      "difference_intrinsic_null_db": 0.037110872099457376,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": null,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 0.2749667603770334,
+      "delta_difference_sll_db": 1.1766358133599653,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.504932267449899,
+      "delta_sum_null_worst_db": 18.98224786610575,
+      "delta_difference_intrinsic_null_db": 300.03711087209945
+    },
+    {
+      "case_id": "random_150",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "random",
+      "sum_method": "taylor",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -33.745055021701354,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 4.27930215030849,
+      "sum_peak_direction": {
+        "theta_deg": 1.6207855228230614,
+        "phi_deg": 225.0
+      },
+      "sum_pointing_error_deg": 0.2590424350041252,
+      "sum_pointing_threshold_deg": 0.142643405010283,
+      "difference_sll_db": -20.65273651438973,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 10.495298696135585,
+        "phi_deg": 186.07121413425585
+      },
+      "difference_pointing_error_deg": 9.545381914608766,
+      "difference_pointing_threshold_deg": 0.142643405010283,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -63.27103656980897,
+        -57.576074142407236,
+        -47.77328007067147,
+        -67.55521275884753
+      ],
+      "sum_null_window_worst_db": [
+        -60.647239231149115,
+        -53.13889706098006,
+        -40.96640995972275,
+        -60.922875480721636
+      ],
+      "sum_null_worst_db": -47.77328007067147,
+      "sum_null_pass": true,
+      "sum_null_available": false,
+      "sum_null_status": "OBSERVED_ON_TAYLOR_NOT_ADAPTIVE",
+      "difference_intrinsic_null_db": 0.013818140921312606,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": null,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 1.4290282194283535,
+      "delta_difference_sll_db": 1.2579809882501571,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 9.54538106083512,
+      "delta_sum_null_worst_db": 0.22880087753924983,
+      "delta_difference_intrinsic_null_db": 300.01381814092133
+    },
+    {
+      "case_id": "random_175",
+      "quantization": {
+        "amplitude_grid_db": 0.5,
+        "phase_states": 64,
+        "phase_step_deg": 5.625
+      },
+      "set": "random",
+      "sum_method": "taylor",
+      "metric_version": "1.0.0",
+      "sum_sll_db": -33.785655850365224,
+      "sum_sll_threshold_db": -35.0,
+      "sum_sll_pass": false,
+      "sum_beamwidth_3db_deg": 6.490199030551658,
+      "sum_peak_direction": {
+        "theta_deg": 49.21497132023921,
+        "phi_deg": 236.3099324740202
+      },
+      "sum_pointing_error_deg": 0.5090636307349506,
+      "sum_pointing_threshold_deg": 0.21633996768505526,
+      "difference_sll_db": -20.607871785031243,
+      "difference_sll_threshold_db": -20.0,
+      "difference_sll_pass": true,
+      "difference_zero_crossing_direction": {
+        "theta_deg": 58.68961161151902,
+        "phi_deg": 227.0461137738687
+      },
+      "difference_pointing_error_deg": 12.460380993098564,
+      "difference_pointing_threshold_deg": 0.21633996768505526,
+      "difference_pointing_pass": false,
+      "sum_null_center_db": [
+        -61.46406671355636,
+        -72.6493584745336,
+        -76.06910764628196,
+        -70.67648758808801
+      ],
+      "sum_null_window_worst_db": [
+        -60.22156648015974,
+        -58.50746693966577,
+        -63.567589574152535,
+        -58.51592844247647
+      ],
+      "sum_null_worst_db": -61.46406671355636,
+      "sum_null_pass": true,
+      "sum_null_available": false,
+      "sum_null_status": "OBSERVED_ON_TAYLOR_NOT_ADAPTIVE",
+      "difference_intrinsic_null_db": 0.05719640757814594,
+      "difference_intrinsic_null_pass": false,
+      "difference_adaptive_null_status": "NOT_IMPLEMENTED_IN_FROZEN_STAGE2_BASELINE",
+      "common_joint_pass": false,
+      "track_p_joint_pass": null,
+      "joint_compliance_definition": "common_joint plus adaptive sum null when available",
+      "official_peak_normalization": "visible-domain max field amplitude; evaluator output retains its -300 dBc floor",
+      "delta_sum_sll_db": 1.3925043575915623,
+      "delta_difference_sll_db": 1.2528813698563326,
+      "delta_sum_pointing_error_deg": 0.0,
+      "delta_difference_pointing_error_deg": 12.460380993098564,
+      "delta_sum_null_worst_db": 18.006691710404212,
+      "delta_difference_intrinsic_null_db": 300.05719640757815
+    }
+  ],
+  "aggregate_all_cases": {
+    "n_realizations": 16,
+    "metrics": {
+      "sum_sll_db": {
+        "n": 16,
+        "mean": -34.31178515965496,
+        "median": -34.71745883428426,
+        "std": 0.9394416487246298,
+        "P5": -35.02687471984174,
+        "P95": -32.62872812693427,
+        "worst": -31.522691047480443
+      },
+      "difference_sll_db": {
+        "n": 16,
+        "mean": -19.557788549619623,
+        "median": -20.664840330859892,
+        "std": 4.210149982154025,
+        "P5": -20.683541860939584,
+        "P95": -16.13236404915815,
+        "worst": -3.253695294675633
+      },
+      "sum_pointing_error_deg": {
+        "n": 16,
+        "mean": 0.23994784301148295,
+        "median": 0.23001683828053093,
+        "std": 0.13324842167851944,
+        "P5": 0.0,
+        "P95": 0.4707184480015394,
+        "worst": 0.5090636307349506
+      },
+      "difference_pointing_error_deg": {
+        "n": 16,
+        "mean": 11.277307833397481,
+        "median": 9.855311290526949,
+        "std": 2.267006360709327,
+        "P5": 9.518141662307405,
+        "P95": 15.871852974927421,
+        "worst": 16.38207649489106
+      },
+      "sum_null_worst_db": {
+        "n": 16,
+        "mean": -56.71595066979945,
+        "median": -56.20740722784409,
+        "std": 8.375445776842595,
+        "P5": -67.63706260666075,
+        "P95": -46.484024031682395,
+        "worst": -42.61625591471518
+      },
+      "difference_intrinsic_null_db": {
+        "n": 16,
+        "mean": 0.020309180217245437,
+        "median": 0.017863358841225373,
+        "std": 0.014005947020486579,
+        "P5": 0.0,
+        "P95": 0.04213225596912952,
+        "worst": 0.05719640757814594
+      },
+      "delta_sum_sll_db": {
+        "n": 16,
+        "mean": 0.8602076873854987,
+        "median": 0.399995318284212,
+        "std": 0.9475988248768289,
+        "P5": 0.1718020704306813,
+        "P95": 2.541862956405131,
+        "worst": 3.7005561815848154
+      },
+      "delta_difference_sll_db": {
+        "n": 16,
+        "mean": 2.334217803244891,
+        "median": 1.244817470330295,
+        "std": 4.220788600541593,
+        "P5": 1.1779979829567777,
+        "P95": 5.733474316699088,
+        "worst": 18.679661167466826
+      },
+      "delta_sum_pointing_error_deg": {
+        "n": 16,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "P5": 0.0,
+        "P95": 0.0,
+        "worst": 0.0
+      },
+      "delta_difference_pointing_error_deg": {
+        "n": 16,
+        "mean": 11.27730759785128,
+        "median": 9.855311290526949,
+        "std": 2.2670063364585222,
+        "P5": 9.518141021977172,
+        "P95": 15.871852069363719,
+        "worst": 16.38207649489106
+      },
+      "delta_sum_null_worst_db": {
+        "n": 16,
+        "mean": 129.5102796197446,
+        "median": 125.90486562015462,
+        "std": 112.69212289182697,
+        "P5": 4.770549594215179,
+        "P95": 251.44594338352854,
+        "worst": 257.38374408528483
+      },
+      "delta_difference_intrinsic_null_db": {
+        "n": 16,
+        "mean": 298.89552927499875,
+        "median": 300.01570949570055,
+        "std": 2.5459733607241097,
+        "P5": 293.6698332793112,
+        "P95": 300.04213225596914,
+        "worst": 300.05719640757815
+      }
+    },
+    "compliance": {
+      "common_joint": {
+        "n": 16,
+        "pass": 0,
+        "pass_rate": 0.0,
+        "status": "MEASURED"
+      },
+      "track_p_joint": {
+        "n": 8,
+        "pass": 0,
+        "pass_rate": 0.0,
+        "status": "MEASURED"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "policy": "A",
+  "definition": "For B1 and B2 separately, ||w_reconstructed||_2 is scaled to ||w0||_2 of the corresponding ideal beam. B0 retains the degraded masked norm.",
+  "failed_entries": "exact zero after reconstruction",
+  "power_increase_for_B1_B2": false,
+  "normalization_is_common_complex_scale": true,
+  "pattern_invariance": "common positive scaling does not change official peak-normalized dBc metrics",
+  "main_beam_response_loss": "not reported as an absolute gain loss because the frozen official evaluator peak-normalizes each pattern; pointing and beamwidth are reported",
+  "amplitude_limit_policy": "no additional per-element amplitude limit was invented; finite weights and exact failed zeros are checked"
+}

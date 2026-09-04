@@ -1,0 +1,42 @@
+{
+  "Taylor": {
+    "sll_coarse": -18.46248609150082,
+    "sll_dense": -18.46248609150082,
+    "time_ms": 1.0
+  },
+  "AP": {
+    "sll_coarse": -34.97371664505821,
+    "sll_dense": -34.97371664505822,
+    "pointing_err": 0.0,
+    "worst_null": -51.38379258689695,
+    "time_s": 10.791044200013857,
+    "iterations": 300,
+    "converged": false,
+    "dof": "1024 complex weights",
+    "init": "Taylor baseline"
+  },
+  "AI_v3": {
+    "sll_coarse": -23.401179076376835,
+    "sll_dense": -23.29834198984471,
+    "pointing_err": 0.0,
+    "worst_null": -73.09192571030658,
+    "time_cpu_ms": 2.806300006341189,
+    "time_npu_ms": 0.499,
+    "dof": "1024 complex weights"
+  },
+  "GA_ref": {
+    "sll_dense": -22.6,
+    "time_s": 35.0,
+    "note": "ga_pso_compare.json, 64维幅度, 粗网格口径"
+  },
+  "PSO_ref": {
+    "sll_dense": -24.7,
+    "time_s": 81.9,
+    "note": "ga_pso_compare.json, 64维幅度, 粗网格口径"
+  },
+  "SOCP_ref": {
+    "sll_dense": -21.8,
+    "time_s": 23.0,
+    "note": "教师标签, 1024复权值, 密集网格口径"
+  }
+}

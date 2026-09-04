@@ -1,0 +1,62 @@
+{
+  "20pct": {
+    "best": {
+      "row_index": 281,
+      "case_id": "random_150",
+      "seed": 1,
+      "sum_sll_recovery_db": 4.609826396674663
+    },
+    "median": {
+      "row_index": 82,
+      "case_id": "regular_028",
+      "seed": 2,
+      "sum_sll_recovery_db": 2.196414274368802
+    },
+    "worst": {
+      "row_index": 303,
+      "case_id": "random_175",
+      "seed": 3,
+      "sum_sll_recovery_db": -0.9635118093108481
+    }
+  },
+  "10pct": {
+    "best": {
+      "row_index": 0,
+      "case_id": "regular_000",
+      "seed": 0,
+      "sum_sll_recovery_db": 6.383657758891136
+    },
+    "median": {
+      "row_index": 144,
+      "case_id": "regular_072",
+      "seed": 4,
+      "sum_sll_recovery_db": 2.936176933599519
+    },
+    "worst": {
+      "row_index": 84,
+      "case_id": "regular_028",
+      "seed": 4,
+      "sum_sll_recovery_db": 0.11388831038244618
+    }
+  },
+  "5pct": {
+    "best": {
+      "row_index": 285,
+      "case_id": "random_150",
+      "seed": 5,
+      "sum_sll_recovery_db": 5.225247720395693
+    },
+    "median": {
+      "row_index": 297,
+      "case_id": "random_150",
+      "seed": 17,
+      "sum_sll_recovery_db": 2.5852530924523442
+    },
+    "worst": {
+      "row_index": 129,
+      "case_id": "regular_050",
+      "seed": 9,
+      "sum_sll_recovery_db": 0.4410424310513079
+    }
+  }
+}

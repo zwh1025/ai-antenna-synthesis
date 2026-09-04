@@ -62,14 +62,23 @@ v3 的 NPU 数字属于 upstream v3 的 256-dim 模型和对应硬件环境；�
 
 ### Robustness 与已知失效重构
 
+（数字来自本地冻结工件 `results/stage4a_robustness_degradation/` 与 `results/stage4b_failure_reconstruction/`，官方评估器 1.0.0。）
+
 补充 Track P robustness evidence 使用固定 frozen cases：
 
-- `Δx, Δy ~ Uniform[-0.05,+0.05]λ`：平均 Sum-SLL degradation `+2.186 dB`；
-- `0.5 dB` amplitude model + `6-bit / 5.625°` phase：平均 degradation `+0.860 dB`；
-- 5%/10%/20% element failure 分别对应 51/102/204 个失效阵元，平均 degradation `+4.212/+6.405/+9.967 dB`；
-- 频率 sweep 为 `0.90–1.10`，common-joint compliance 为 `76/336`，完整 ±10% band 为 `3/16` cases。
+- `Δx, Δy ~ Uniform[-0.05,+0.05]λ`：平均 Sum-SLL degradation `+2.171 dB`（worst `-29.818 dBc`）；
+- `0.5 dB` amplitude model + `6-bit / 5.625°` phase：平均 degradation `+0.845 dB`；
+- 5%/10%/20% element failure 分别对应 51/102/204 个失效阵元，平均 degradation `+4.197/+6.390/+9.952 dB`；
+- 频率 sweep 为 `0.90–1.10`，common-joint compliance 为 `76/336`，完整 ±10% band 为 `3/16` cases；16/16 案例存在含中心频率的合规带，平均合规带宽 22.6%。
 
 对已知 failure mask 的 B2 active-set reconstruction 平均恢复 `2.684/3.011/2.094 dB`（5%/10%/20%）。这是 limited recovery；全部 960 个 mask 的 common-joint hard-spec pass 仅为 `2/960`。Azimuth Difference 已运行，Elevation Difference failure reconstruction 未纳入正式 benchmark。
+
+### 竞赛效率四项指标（2026-09-04 补齐）
+
+- **收敛速度**：v3 训练第 100 epoch（265 s）进入最终最优 0.5 dB 内，总训练 751 s（`convergence_v3.json`）；
+- **单次合成与加速比**：AI(NPU) 0.499 ms，对 AP/SOCP/GA/PSO 加速 21,625×/46,080×/70,140×/164,128×；AP 同算例 −34.97 dB/10.79 s（竞赛明文算法，`ap_compare.json`）；
+- **模型复杂度**：参数 463,106、MACs 339M、FLOPs 678M、模型 1.86 MB（`model_complexity_v3.json`）；
+- **样本效率**：Stage 5A，4 个独立 parent 起有效改善。
 
 ## 方法与复现入口
 

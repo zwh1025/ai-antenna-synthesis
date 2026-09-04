@@ -1,0 +1,62 @@
+{
+  "audit_version": "stage4a-legacy-audit-v1",
+  "purpose": "Inventory only; no legacy result is promoted to the formal benchmark.",
+  "entries": [
+    {
+      "file": "project/run_nonideal_v2.py",
+      "sha256": "a7c16bced5134f5cb2e88f08478a41df44cbc8f4eee1302e881ac4b2f24967d1",
+      "functions_or_code_regions": [
+        "quantize_amp_05db",
+        "quantize_phase_6bit",
+        "apply_failure",
+        "inline position/frequency loops"
+      ],
+      "perturbation_definition": "0.5 dB amplitude grid; 6-bit phase; planar independent +/-0.05 lambda x/y; excitation-zero failures at floor(N*rate); lambda=1/ratio",
+      "random_distribution": "uniform amplitude/phase quantization; uniform position errors; random choice without replacement for failures",
+      "seed_protocol": "20 seeds; seed*1000+42 in the runner",
+      "metric_evaluator": "legacy mylib.evaluation grid/cut metrics, not official evaluator v1.0.0",
+      "geometry": "planar 32x32",
+      "weights": "fixed center Taylor weights; difference not the official Track P complete pair",
+      "result_or_status": "implemented legacy non-ideal experiment",
+      "reusable_for_stage4a_formal": false,
+      "reuse_decision": "Definitions are useful provenance, but evaluator and case protocol differ from this freeze."
+    },
+    {
+      "file": "project/run_failure_benchmark.py",
+      "sha256": "092f590a6012ec8fdfa7e6cc0b6a9174a1237b7adcb3ee9218a3829c794174d6",
+      "functions_or_code_regions": [
+        "generate_failure_mask",
+        "lcmv_on_active",
+        "failure benchmark loop"
+      ],
+      "perturbation_definition": "floor(N*rate) random failures; 100 scenes; active-set LCMV recomputation exists",
+      "random_distribution": "random masks without replacement",
+      "seed_protocol": "runner-specific seed protocol",
+      "metric_evaluator": "legacy 3-beamwidth evaluator",
+      "geometry": "planar baseline",
+      "weights": "includes LCMV re-optimization on active elements",
+      "result_or_status": "legacy failure benchmark",
+      "reusable_for_stage4a_formal": false,
+      "reuse_decision": "Re-synthesis is explicitly forbidden in Stage 4A; masks are not the formal saved protocol."
+    },
+    {
+      "file": "project/run_curved_nonideal.py",
+      "sha256": "768856b89acb1eb2384e658f052f11077aab210a607b26a51ce843f24883188b",
+      "functions_or_code_regions": [
+        "quantize_complex_weights",
+        "apply_failure",
+        "curved non-ideal loop"
+      ],
+      "perturbation_definition": "quantized/failure excitation tests on the Stage 3 curved AI setup",
+      "random_distribution": "runner-specific randomization",
+      "seed_protocol": "runner-specific seeds",
+      "metric_evaluator": "run_curved_verify legacy evaluator",
+      "geometry": "32x32 curved reconstructed geometry",
+      "weights": "AI curved weights and legacy verification",
+      "result_or_status": "legacy AI non-ideal diagnostic",
+      "reusable_for_stage4a_formal": false,
+      "reuse_decision": "Stage 4A formal scope is Track P physics; AI robustness is not mixed into the primary gate."
+    }
+  ],
+  "formal_reuse_rule": "Only the documented definitions are reused after re-evaluation by official evaluator v1.0.0; no legacy output value is reused."
+}

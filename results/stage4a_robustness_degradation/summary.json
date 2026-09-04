@@ -1,0 +1,1068 @@
+{
+  "stage": "Stage 4A — Robustness Benchmark Freeze & Degradation Audit",
+  "robustness_model_version": "1.0.0",
+  "metric_version": "1.0.0",
+  "official_evaluator_version": "1.0.0",
+  "formal_case_count": 16,
+  "formal_case_sets": {
+    "regular": 8,
+    "random": 8
+  },
+  "ideal_reference": {
+    "common_joint": {
+      "n": 16,
+      "pass": 16,
+      "pass_rate": 1.0,
+      "status": "MEASURED"
+    },
+    "track_p_joint": {
+      "n": 8,
+      "pass": 8,
+      "pass_rate": 1.0,
+      "status": "MEASURED"
+    }
+  },
+  "position_error": {
+    "n_realizations": 320,
+    "metrics": {
+      "sum_sll_db": {
+        "n": 320,
+        "mean": -32.98584732651386,
+        "median": -33.06298653290551,
+        "std": 1.15695360859577,
+        "P5": -34.69414826397086,
+        "P95": -31.113432202870786,
+        "worst": -29.81762601881544
+      },
+      "difference_sll_db": {
+        "n": 320,
+        "mean": -21.755236583050902,
+        "median": -21.80546804132467,
+        "std": 0.2027599654874051,
+        "P5": -21.99430369389596,
+        "P95": -21.372734199617394,
+        "worst": -20.925484195928274
+      },
+      "sum_pointing_error_deg": {
+        "n": 320,
+        "mean": 0.23742277417665178,
+        "median": 0.23001683828053093,
+        "std": 0.12974117598035784,
+        "P5": 0.0,
+        "P95": 0.5090636307349506,
+        "worst": 0.5090636307349506
+      },
+      "difference_pointing_error_deg": {
+        "n": 320,
+        "mean": 8.02351781399307,
+        "median": 9.439574648137206,
+        "std": 6.625640450271285,
+        "P5": 0.0,
+        "P95": 18.229435014457426,
+        "worst": 25.7796927650117
+      },
+      "sum_null_worst_db": {
+        "n": 320,
+        "mean": -43.767695243413655,
+        "median": -43.833987179588945,
+        "std": 3.456462998074878,
+        "P5": -49.532238740843404,
+        "P95": -38.5547117002285,
+        "worst": -35.879273164724566
+      },
+      "difference_intrinsic_null_db": {
+        "n": 320,
+        "mean": -71.18371827741723,
+        "median": -54.3894561964313,
+        "std": 60.29681725763724,
+        "P5": -300.0,
+        "P95": -39.77388209025292,
+        "worst": -35.32569090429548
+      },
+      "delta_sum_sll_db": {
+        "n": 320,
+        "mean": 2.186145520526586,
+        "median": 2.1028828405287108,
+        "std": 1.1661759011471544,
+        "P5": 0.48909509582154914,
+        "P95": 4.078215975824724,
+        "worst": 5.398300274176613
+      },
+      "delta_difference_sll_db": {
+        "n": 320,
+        "mean": 0.1367697698136145,
+        "median": 0.08580859903912952,
+        "std": 0.20607422475858028,
+        "P5": -0.11715728230489741,
+        "P95": 0.5345450905350946,
+        "worst": 0.9331481064622267
+      },
+      "delta_sum_pointing_error_deg": {
+        "n": 320,
+        "mean": -0.0025250688348311934,
+        "median": 0.0,
+        "std": 0.016892471307018795,
+        "P5": 0.0,
+        "P95": 0.0,
+        "worst": 0.0
+      },
+      "delta_difference_pointing_error_deg": {
+        "n": 320,
+        "mean": 8.023517578446869,
+        "median": 9.439574221250382,
+        "std": 6.625640462098037,
+        "P5": 0.0,
+        "P95": 18.229435014457426,
+        "worst": 25.7796927650117
+      },
+      "delta_sum_null_worst_db": {
+        "n": 320,
+        "mean": 142.4585350461304,
+        "median": 146.72316264788617,
+        "std": 112.63430380897948,
+        "P5": 8.450311181139945,
+        "P95": 258.76569069737445,
+        "worst": 264.12072683527543
+      },
+      "delta_difference_intrinsic_null_db": {
+        "n": 320,
+        "mean": 227.6915018173642,
+        "median": 243.631078232352,
+        "std": 59.91834882078155,
+        "P5": 0.0,
+        "P95": 259.4574913029962,
+        "worst": 264.67430909570453
+      }
+    },
+    "compliance": {
+      "common_joint": {
+        "n": 320,
+        "pass": 4,
+        "pass_rate": 0.0125,
+        "status": "MEASURED"
+      },
+      "track_p_joint": {
+        "n": 160,
+        "pass": 2,
+        "pass_rate": 0.0125,
+        "status": "MEASURED"
+      }
+    }
+  },
+  "quantization": {
+    "n_realizations": 16,
+    "metrics": {
+      "sum_sll_db": {
+        "n": 16,
+        "mean": -34.31178515965496,
+        "median": -34.71745883428426,
+        "std": 0.9394416487246298,
+        "P5": -35.02687471984174,
+        "P95": -32.62872812693427,
+        "worst": -31.522691047480443
+      },
+      "difference_sll_db": {
+        "n": 16,
+        "mean": -19.557788549619623,
+        "median": -20.664840330859892,
+        "std": 4.210149982154025,
+        "P5": -20.683541860939584,
+        "P95": -16.13236404915815,
+        "worst": -3.253695294675633
+      },
+      "sum_pointing_error_deg": {
+        "n": 16,
+        "mean": 0.23994784301148295,
+        "median": 0.23001683828053093,
+        "std": 0.13324842167851944,
+        "P5": 0.0,
+        "P95": 0.4707184480015394,
+        "worst": 0.5090636307349506
+      },
+      "difference_pointing_error_deg": {
+        "n": 16,
+        "mean": 11.277307833397481,
+        "median": 9.855311290526949,
+        "std": 2.267006360709327,
+        "P5": 9.518141662307405,
+        "P95": 15.871852974927421,
+        "worst": 16.38207649489106
+      },
+      "sum_null_worst_db": {
+        "n": 16,
+        "mean": -56.71595066979945,
+        "median": -56.20740722784409,
+        "std": 8.375445776842595,
+        "P5": -67.63706260666075,
+        "P95": -46.484024031682395,
+        "worst": -42.61625591471518
+      },
+      "difference_intrinsic_null_db": {
+        "n": 16,
+        "mean": 0.020309180217245437,
+        "median": 0.017863358841225373,
+        "std": 0.014005947020486579,
+        "P5": 0.0,
+        "P95": 0.04213225596912952,
+        "worst": 0.05719640757814594
+      },
+      "delta_sum_sll_db": {
+        "n": 16,
+        "mean": 0.8602076873854987,
+        "median": 0.399995318284212,
+        "std": 0.9475988248768289,
+        "P5": 0.1718020704306813,
+        "P95": 2.541862956405131,
+        "worst": 3.7005561815848154
+      },
+      "delta_difference_sll_db": {
+        "n": 16,
+        "mean": 2.334217803244891,
+        "median": 1.244817470330295,
+        "std": 4.220788600541593,
+        "P5": 1.1779979829567777,
+        "P95": 5.733474316699088,
+        "worst": 18.679661167466826
+      },
+      "delta_sum_pointing_error_deg": {
+        "n": 16,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0,
+        "P5": 0.0,
+        "P95": 0.0,
+        "worst": 0.0
+      },
+      "delta_difference_pointing_error_deg": {
+        "n": 16,
+        "mean": 11.27730759785128,
+        "median": 9.855311290526949,
+        "std": 2.2670063364585222,
+        "P5": 9.518141021977172,
+        "P95": 15.871852069363719,
+        "worst": 16.38207649489106
+      },
+      "delta_sum_null_worst_db": {
+        "n": 16,
+        "mean": 129.5102796197446,
+        "median": 125.90486562015462,
+        "std": 112.69212289182697,
+        "P5": 4.770549594215179,
+        "P95": 251.44594338352854,
+        "worst": 257.38374408528483
+      },
+      "delta_difference_intrinsic_null_db": {
+        "n": 16,
+        "mean": 298.89552927499875,
+        "median": 300.01570949570055,
+        "std": 2.5459733607241097,
+        "P5": 293.6698332793112,
+        "P95": 300.04213225596914,
+        "worst": 300.05719640757815
+      }
+    },
+    "compliance": {
+      "common_joint": {
+        "n": 16,
+        "pass": 0,
+        "pass_rate": 0.0,
+        "status": "MEASURED"
+      },
+      "track_p_joint": {
+        "n": 8,
+        "pass": 0,
+        "pass_rate": 0.0,
+        "status": "MEASURED"
+      }
+    }
+  },
+  "failure_by_rate": {
+    "0.05": {
+      "n_realizations": 320,
+      "metrics": {
+        "sum_sll_db": {
+          "n": 320,
+          "mean": -30.96025208649555,
+          "median": -30.670037288500424,
+          "std": 0.9591006327031136,
+          "P5": -32.68024325060885,
+          "P95": -29.680918895602233,
+          "worst": -29.42812929780906
+        },
+        "difference_sll_db": {
+          "n": 320,
+          "mean": -21.73924503793104,
+          "median": -21.832109604840035,
+          "std": 0.8644706411225119,
+          "P5": -23.087818138001683,
+          "P95": -20.478621330943422,
+          "worst": -19.704868570950634
+        },
+        "sum_pointing_error_deg": {
+          "n": 320,
+          "mean": 0.23994784301148292,
+          "median": 0.23001683828053093,
+          "std": 0.13324842167851944,
+          "P5": 0.0,
+          "P95": 0.5090636307349506,
+          "worst": 0.5090636307349506
+        },
+        "difference_pointing_error_deg": {
+          "n": 320,
+          "mean": 9.647134891133827,
+          "median": 10.219520864391438,
+          "std": 6.031015821999753,
+          "P5": 0.0,
+          "P95": 18.224178428209385,
+          "worst": 25.9735824008003
+        },
+        "sum_null_worst_db": {
+          "n": 320,
+          "mean": -38.58100924500933,
+          "median": -38.550553282764696,
+          "std": 2.744877888192444,
+          "P5": -42.644281293761615,
+          "P95": -34.37406258092345,
+          "worst": -30.567803835434106
+        },
+        "difference_intrinsic_null_db": {
+          "n": 320,
+          "mean": -44.3170579175483,
+          "median": -42.78185941148167,
+          "std": 11.023757951989221,
+          "P5": -59.69308918573701,
+          "P95": -31.4981986028509,
+          "worst": -27.081932555098234
+        },
+        "delta_sum_sll_db": {
+          "n": 320,
+          "mean": 4.211740760544901,
+          "median": 4.4711283144654566,
+          "std": 0.9596796380787314,
+          "P5": 2.4904206516492677,
+          "P95": 5.50362308071322,
+          "worst": 5.774246165270213
+        },
+        "delta_difference_sll_db": {
+          "n": 320,
+          "mean": 0.1527613149334755,
+          "median": 0.05727867188610958,
+          "std": 0.8635804705824413,
+          "P5": -1.151426716840783,
+          "P95": 1.385721369349194,
+          "worst": 2.1977327554903283
+        },
+        "delta_sum_pointing_error_deg": {
+          "n": 320,
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "P5": 0.0,
+          "P95": 0.0,
+          "worst": 0.0
+        },
+        "delta_difference_pointing_error_deg": {
+          "n": 320,
+          "mean": 9.647134655587626,
+          "median": 10.219520864391438,
+          "std": 6.031015825004481,
+          "P5": 0.0,
+          "P95": 18.224178428209385,
+          "worst": 25.97358119338203
+        },
+        "delta_sum_null_worst_db": {
+          "n": 320,
+          "mean": 147.6452210445347,
+          "median": 148.57561053520152,
+          "std": 114.11988282673512,
+          "P5": 11.249672662083032,
+          "P95": 264.5892865814797,
+          "worst": 269.4321961645659
+        },
+        "delta_difference_intrinsic_null_db": {
+          "n": 320,
+          "mean": 254.5581621772332,
+          "median": 256.2800897007253,
+          "std": 11.314090973858363,
+          "P5": 231.72311171063367,
+          "P95": 268.25998281366884,
+          "worst": 272.9180674449018
+        }
+      },
+      "compliance": {
+        "common_joint": {
+          "n": 320,
+          "pass": 0,
+          "pass_rate": 0.0,
+          "status": "MEASURED"
+        },
+        "track_p_joint": {
+          "n": 160,
+          "pass": 0,
+          "pass_rate": 0.0,
+          "status": "MEASURED"
+        }
+      }
+    },
+    "0.10": {
+      "n_realizations": 320,
+      "metrics": {
+        "sum_sll_db": {
+          "n": 320,
+          "mean": -28.766635511178116,
+          "median": -28.81828769108528,
+          "std": 0.7337096694461311,
+          "P5": -30.141674933900113,
+          "P95": -27.711564352069452,
+          "worst": -27.464757434450362
+        },
+        "difference_sll_db": {
+          "n": 320,
+          "mean": -21.66473661382262,
+          "median": -21.662352325133497,
+          "std": 0.9352950568874168,
+          "P5": -23.160005546114856,
+          "P95": -20.253599732759284,
+          "worst": -19.183336468248125
+        },
+        "sum_pointing_error_deg": {
+          "n": 320,
+          "mean": 0.23994784301148292,
+          "median": 0.23001683828053093,
+          "std": 0.13324842167851944,
+          "P5": 0.0,
+          "P95": 0.5090636307349506,
+          "worst": 0.5090636307349506
+        },
+        "difference_pointing_error_deg": {
+          "n": 320,
+          "mean": 8.121332927261102,
+          "median": 8.225554684615545,
+          "std": 6.362343651772892,
+          "P5": 0.0,
+          "P95": 17.824828333079857,
+          "worst": 26.25900267617391
+        },
+        "sum_null_worst_db": {
+          "n": 320,
+          "mean": -35.60705612675806,
+          "median": -35.35624979797694,
+          "std": 2.827703644027791,
+          "P5": -40.52044360030507,
+          "P95": -31.596656374790708,
+          "worst": -27.817247445047038
+        },
+        "difference_intrinsic_null_db": {
+          "n": 320,
+          "mean": -40.36278841829911,
+          "median": -37.09424854525133,
+          "std": 9.011539705373737,
+          "P5": -59.41977857613359,
+          "P95": -29.593227997804295,
+          "worst": -27.3104888966366
+        },
+        "delta_sum_sll_db": {
+          "n": 320,
+          "mean": 6.405357335862337,
+          "median": 6.281464282412186,
+          "std": 0.7348336078239416,
+          "P5": 5.047526254267324,
+          "P95": 7.491908133503211,
+          "worst": 7.729262061512774
+        },
+        "delta_difference_sll_db": {
+          "n": 320,
+          "mean": 0.22726973904189637,
+          "median": 0.22940478080794158,
+          "std": 0.9350019238826012,
+          "P5": -1.2224648367543032,
+          "P95": 1.6291200495412752,
+          "worst": 2.7340431447008093
+        },
+        "delta_sum_pointing_error_deg": {
+          "n": 320,
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "P5": 0.0,
+          "P95": 0.0,
+          "worst": 0.0
+        },
+        "delta_difference_pointing_error_deg": {
+          "n": 320,
+          "mean": 8.121332691714901,
+          "median": 8.225554684615545,
+          "std": 6.362343660473691,
+          "P5": 0.0,
+          "P95": 17.824828333079857,
+          "worst": 26.25900267617391
+        },
+        "delta_sum_null_worst_db": {
+          "n": 320,
+          "mean": 150.61917416278598,
+          "median": 152.3761291593949,
+          "std": 114.31696886871961,
+          "P5": 14.701046471854038,
+          "P95": 267.77406716969733,
+          "worst": 272.18275255495297
+        },
+        "delta_difference_intrinsic_null_db": {
+          "n": 320,
+          "mean": 258.5124316764824,
+          "median": 261.19183976856857,
+          "std": 9.364532885483504,
+          "P5": 239.1590691128121,
+          "P95": 270.2662532923106,
+          "worst": 272.68951110336343
+        }
+      },
+      "compliance": {
+        "common_joint": {
+          "n": 320,
+          "pass": 0,
+          "pass_rate": 0.0,
+          "status": "MEASURED"
+        },
+        "track_p_joint": {
+          "n": 160,
+          "pass": 0,
+          "pass_rate": 0.0,
+          "status": "MEASURED"
+        }
+      }
+    },
+    "0.20": {
+      "n_realizations": 320,
+      "metrics": {
+        "sum_sll_db": {
+          "n": 320,
+          "mean": -25.204757399756737,
+          "median": -25.493052558325616,
+          "std": 0.8493899794793923,
+          "P5": -26.20408601098159,
+          "P95": -23.7577009867805,
+          "worst": -23.303352893410047
+        },
+        "difference_sll_db": {
+          "n": 320,
+          "mean": -21.07939823338286,
+          "median": -20.886152690191782,
+          "std": 1.0170802150634712,
+          "P5": -23.25335024710665,
+          "P95": -19.795396868579644,
+          "worst": -18.909591754938585
+        },
+        "sum_pointing_error_deg": {
+          "n": 320,
+          "mean": 0.23994784301148292,
+          "median": 0.23001683828053093,
+          "std": 0.13324842167851944,
+          "P5": 0.0,
+          "P95": 0.5090636307349506,
+          "worst": 0.5090636307349506
+        },
+        "difference_pointing_error_deg": {
+          "n": 320,
+          "mean": 10.243970063515397,
+          "median": 10.597121227084473,
+          "std": 5.958862275933794,
+          "P5": 0.0,
+          "P95": 18.70633495903102,
+          "worst": 27.48600285683375
+        },
+        "sum_null_worst_db": {
+          "n": 320,
+          "mean": -31.915861173291137,
+          "median": -31.742642811336033,
+          "std": 2.5651195464258256,
+          "P5": -36.225882828627775,
+          "P95": -27.851066845196147,
+          "worst": -24.51692229222306
+        },
+        "difference_intrinsic_null_db": {
+          "n": 320,
+          "mean": -36.331516263630064,
+          "median": -34.54830502960045,
+          "std": 7.034689032235921,
+          "P5": -50.08406523330384,
+          "P95": -27.981521919160286,
+          "worst": -25.1713371440678
+        },
+        "delta_sum_sll_db": {
+          "n": 320,
+          "mean": 9.967235447283716,
+          "median": 9.689975836672339,
+          "std": 0.8500878255353636,
+          "P5": 8.83791898544956,
+          "P95": 11.41778104534856,
+          "worst": 11.87480731454674
+        },
+        "delta_difference_sll_db": {
+          "n": 320,
+          "mean": 0.8126081194816539,
+          "median": 1.0041476273948646,
+          "std": 1.0170132770230234,
+          "P5": -1.3415007964916346,
+          "P95": 2.098902539904141,
+          "worst": 2.967262994660853
+        },
+        "delta_sum_pointing_error_deg": {
+          "n": 320,
+          "mean": 0.0,
+          "median": 0.0,
+          "std": 0.0,
+          "P5": 0.0,
+          "P95": 0.0,
+          "worst": 0.0
+        },
+        "delta_difference_pointing_error_deg": {
+          "n": 320,
+          "mean": 10.243969827969197,
+          "median": 10.597121227084473,
+          "std": 5.958862299831134,
+          "P5": 0.0,
+          "P95": 18.70633495903102,
+          "worst": 27.48600285683375
+        },
+        "delta_sum_null_worst_db": {
+          "n": 320,
+          "mean": 154.31036911625296,
+          "median": 157.37347388021254,
+          "std": 114.43195837714754,
+          "P5": 18.208988079022937,
+          "P95": 271.46933375808203,
+          "worst": 275.48307770777694
+        },
+        "delta_difference_intrinsic_null_db": {
+          "n": 320,
+          "mean": 262.54370383115145,
+          "median": 264.59390278613796,
+          "std": 7.48148186756094,
+          "P5": 247.74394361365015,
+          "P95": 271.848057761472,
+          "worst": 274.8286628559322
+        }
+      },
+      "compliance": {
+        "common_joint": {
+          "n": 320,
+          "pass": 0,
+          "pass_rate": 0.0,
+          "status": "MEASURED"
+        },
+        "track_p_joint": {
+          "n": 160,
+          "pass": 0,
+          "pass_rate": 0.0,
+          "status": "MEASURED"
+        }
+      }
+    }
+  },
+  "frequency_by_case": [
+    {
+      "case_id": "regular_000",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 21,
+        "pass_rate": 1.0,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        0.9,
+        1.1
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 21,
+        "pass": 21,
+        "pass_rate": 1.0,
+        "status": "MEASURED"
+      },
+      "track_p_joint_band": [
+        0.9,
+        1.1
+      ]
+    },
+    {
+      "case_id": "regular_002",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "track_p_joint_band": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "case_id": "regular_004",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 21,
+        "pass_rate": 1.0,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        0.9,
+        1.1
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 21,
+        "pass": 21,
+        "pass_rate": 1.0,
+        "status": "MEASURED"
+      },
+      "track_p_joint_band": [
+        0.9,
+        1.1
+      ]
+    },
+    {
+      "case_id": "regular_014",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "track_p_joint_band": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "case_id": "regular_028",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 21,
+        "pass_rate": 1.0,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        0.9,
+        1.1
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 21,
+        "pass": 21,
+        "pass_rate": 1.0,
+        "status": "MEASURED"
+      },
+      "track_p_joint_band": [
+        0.9,
+        1.1
+      ]
+    },
+    {
+      "case_id": "regular_038",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "track_p_joint_band": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "case_id": "regular_050",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "track_p_joint_band": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "case_id": "regular_072",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "track_p_joint_band": [
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "case_id": "random_000",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 0,
+        "pass": 0,
+        "pass_rate": null,
+        "status": "NOT_AVAILABLE"
+      },
+      "track_p_joint_band": null
+    },
+    {
+      "case_id": "random_025",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 0,
+        "pass": 0,
+        "pass_rate": null,
+        "status": "NOT_AVAILABLE"
+      },
+      "track_p_joint_band": null
+    },
+    {
+      "case_id": "random_050",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 0,
+        "pass": 0,
+        "pass_rate": null,
+        "status": "NOT_AVAILABLE"
+      },
+      "track_p_joint_band": null
+    },
+    {
+      "case_id": "random_075",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 0,
+        "pass": 0,
+        "pass_rate": null,
+        "status": "NOT_AVAILABLE"
+      },
+      "track_p_joint_band": null
+    },
+    {
+      "case_id": "random_100",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 0,
+        "pass": 0,
+        "pass_rate": null,
+        "status": "NOT_AVAILABLE"
+      },
+      "track_p_joint_band": null
+    },
+    {
+      "case_id": "random_125",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 0,
+        "pass": 0,
+        "pass_rate": null,
+        "status": "NOT_AVAILABLE"
+      },
+      "track_p_joint_band": null
+    },
+    {
+      "case_id": "random_150",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 0,
+        "pass": 0,
+        "pass_rate": null,
+        "status": "NOT_AVAILABLE"
+      },
+      "track_p_joint_band": null
+    },
+    {
+      "case_id": "random_175",
+      "common_joint_pass_rate": {
+        "n": 21,
+        "pass": 1,
+        "pass_rate": 0.047619047619047616,
+        "status": "MEASURED"
+      },
+      "common_joint_band": [
+        1.0,
+        1.0
+      ],
+      "track_p_joint_pass_rate": {
+        "n": 0,
+        "pass": 0,
+        "pass_rate": null,
+        "status": "NOT_AVAILABLE"
+      },
+      "track_p_joint_band": null
+    }
+  ],
+  "runtime_stability": {
+    "physics": {
+      "name": "Stage2 planar Taylor/Bayliss fixed-target synthesis",
+      "N": 1024,
+      "repetitions": 100,
+      "warmup": 10,
+      "target": {
+        "theta0_deg": 0.0,
+        "phi0_deg": 0.0
+      },
+      "scope": "synthesis function calls only; no LCMV solve and no dense official evaluator",
+      "samples_s": {
+        "n": 100,
+        "mean_s": 0.00031065900053363295,
+        "std_s": 9.362017389076235e-05,
+        "P50_s": 0.0003753500059247017,
+        "P95_s": 0.00040256500724353825,
+        "min_s": 0.00018990000535268337,
+        "max_s": 0.0006349000032059848,
+        "CV": 0.3013599275409589
+      }
+    },
+    "ai": {
+      "name": "v3 model Ascend 910 inference stability (substituted for Stage3C1 module, not in this repo)",
+      "N": 1024,
+      "batch_size": 1,
+      "repetitions": "v3 256-dim, 1024 elements, batch=1, 1000 iters",
+      "source": "project/outputs/benchmark_v3.json",
+      "platform": "Ascend 910_9362 single card",
+      "scope": {
+        "inference_only": "input on NPU to model output (1000 iters)",
+        "end_to_end": "CPU input -> H2D -> NPU inference -> D2H (200 iters)"
+      },
+      "inference_only_s": {
+        "n": 200,
+        "mean_s": 0.0004991319330147235,
+        "std_s": 1.0391350653992007e-05,
+        "P50_s": 0.0004973640006937785,
+        "P95_s": 0.0005168464506823511,
+        "min_s": 0.00047284899846999906,
+        "max_s": 0.0005612220011244062,
+        "CV": 0.020818845613080582
+      },
+      "end_to_end_s": {
+        "n": 200,
+        "mean_s": 0.0006319296799665607,
+        "std_s": 2.3330499789153692e-05,
+        "P50_s": 0.0006256295000639511,
+        "P95_s": 0.0006489599998531048,
+        "min_s": 0.0006256295000639511,
+        "max_s": 0.0006642379005825205,
+        "CV": 0.036919455643210565
+      }
+    }
+  },
+  "primary_interpretation": {
+    "degradation": "positive delta SLL/null/pointing means a numerically worse value than its case-specific ideal reference",
+    "common_joint": "the primary all-16-case comparable hard-metric compliance field",
+    "track_p_joint": "reported only for the eight regular LCMV adaptive-null cases; random Taylor cases remain explicitly unavailable"
+  }
+}

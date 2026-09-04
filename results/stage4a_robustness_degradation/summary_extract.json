@@ -1,0 +1,46 @@
+{
+  "position_error": {
+    "realizations": 320,
+    "sum_sll_mean_db": -32.986,
+    "sum_sll_worst_db": -29.818,
+    "degradation_mean_db": 2.171,
+    "diff_sll_mean_db": -21.755
+  },
+  "quantization_0.5dB_6bit": {
+    "realizations": 16,
+    "sum_sll_mean_db": -34.312,
+    "sum_sll_worst_db": -31.523,
+    "degradation_mean_db": 0.845
+  },
+  "element_failure": {
+    "0.05": {
+      "expected_failed": 51,
+      "realizations": 320,
+      "sum_sll_mean_db": -30.96,
+      "sum_sll_worst_db": -29.428,
+      "degradation_mean_db": 4.197
+    },
+    "0.10": {
+      "expected_failed": 102,
+      "realizations": 320,
+      "sum_sll_mean_db": -28.767,
+      "sum_sll_worst_db": -27.465,
+      "degradation_mean_db": 6.39
+    },
+    "0.20": {
+      "expected_failed": 204,
+      "realizations": 320,
+      "sum_sll_mean_db": -25.205,
+      "sum_sll_worst_db": -23.303,
+      "degradation_mean_db": 9.952
+    }
+  },
+  "frequency_offset_pm10pct": {
+    "frequency_ratios": 21,
+    "realizations": 336,
+    "common_joint_pass_ratio": "76/336",
+    "full_band_cases": "0/16",
+    "f0_containing_compliant_cases": "16/16",
+    "mean_compliant_band_percent": 22.6
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "description": "v3 convergence: epochs/time to reach SLL within 0.5 dB of final best (competition 2a)",
+  "config": {
+    "seed": 456,
+    "epochs_max": 300,
+    "batch": 16,
+    "lr": 0.001,
+    "hidden": 256,
+    "samples": {
+      "curved": 280,
+      "planar": 120
+    },
+    "eval_every": 20,
+    "eval_subset": 10,
+    "params": 463106
+  },
+  "final_curved_sll_mean_db": -24.190634683435828,
+  "best_curved_sll_mean_db": -24.278198260389882,
+  "epoch_to_0.5dB_of_best": 100,
+  "time_to_0.5dB_of_best_s": 265.4486622810364,
+  "total_train_time_s": 750.9020161628723,
+  "early_stopped": true,
+  "sll_curve": [
+    {
+      "epoch": 1,
+      "val_loss": 0.16850367188453674,
+      "curved_sll_mean_db": -21.766881474474182,
+      "elapsed_s": 2.011420488357544
+    },
+    {
+      "epoch": 20,
+      "val_loss": 0.07877203077077866,
+      "curved_sll_mean_db": -23.145427801338656,
+      "elapsed_s": 41.842036485672
+    },
+    {
+      "epoch": 40,
+      "val_loss": 0.07387932389974594,
+      "curved_sll_mean_db": -23.261765338048274,
+      "elapsed_s": 107.72537112236023
+    },
+    {
+      "epoch": 60,
+      "val_loss": 0.07091006636619568,
+      "curved_sll_mean_db": -23.524751502302056,
+      "elapsed_s": 190.0882396697998
+    },
+    {
+      "epoch": 80,
+      "val_loss": 0.06725180894136429,
+      "curved_sll_mean_db": -23.71922675296193,
+      "elapsed_s": 227.57011103630066
+    },
+    {
+      "epoch": 100,
+      "val_loss": 0.06489331275224686,
+      "curved_sll_mean_db": -23.90053397037027,
+      "elapsed_s": 265.4486622810364
+    },
+    {
+      "epoch": 120,
+      "val_loss": 0.06335915625095367,
+      "curved_sll_mean_db": -24.009742664492435,
+      "elapsed_s": 311.1454894542694
+    },
+    {
+      "epoch": 140,
+      "val_loss": 0.06225989758968353,
+      "curved_sll_mean_db": -24.010080570421295,
+      "elapsed_s": 450.0994293689728
+    },
+    {
+      "epoch": 160,
+      "val_loss": 0.06031590327620506,
+      "curved_sll_mean_db": -24.278198260389882,
+      "elapsed_s": 547.5680980682373
+    },
+    {
+      "epoch": 180,
+      "val_loss": 0.06018723174929619,
+      "curved_sll_mean_db": -24.170025959334374,
+      "elapsed_s": 593.4278030395508
+    },
+    {
+      "epoch": 200,
+      "val_loss": 0.06012822687625885,
+      "curved_sll_mean_db": -24.160446747636733,
+      "elapsed_s": 639.6805081367493
+    },
+    {
+      "epoch": 220,
+      "val_loss": 0.05995390564203262,
+      "curved_sll_mean_db": -24.19762772172816,
+      "elapsed_s": 683.4528086185455
+    },
+    {
+      "epoch": 240,
+      "val_loss": 0.059992361813783646,
+      "curved_sll_mean_db": -24.19201055226282,
+      "elapsed_s": 727.7614538669586
+    }
+  ],
+  "stage5a_reference": {
+    "fixed_task_90pct_gain_epoch": {
+      "4p": 70,
+      "6p": 55,
+      "8p": 55
+    },
+    "fixed_task_runtime_s": {
+      "4p": 106.7,
+      "6p": 133.4,
+      "8p": 152.7
+    },
+    "note": "Stage5A为固定曲面任务、不同训练协议, 仅作参照"
+  },
+  "inference_convergence": {
+    "iterations_per_synthesis": 1,
+    "note": "AI推理为单次前向, 无迭代收敛过程"
+  }
+}

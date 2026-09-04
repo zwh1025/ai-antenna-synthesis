@@ -1,0 +1,49 @@
+{
+  "model": "DeepSets(input=9, hidden=256, output=2, n_phi=3, n_rho=2, n_output=2)",
+  "task_config": "1024 elements, batch=1",
+  "parameters": {
+    "total": 463106,
+    "trainable": 463106,
+    "details": {
+      "phi.0.weight": 2304,
+      "phi.0.bias": 256,
+      "phi.2.weight": 65536,
+      "phi.2.bias": 256,
+      "phi.4.weight": 65536,
+      "phi.4.bias": 256,
+      "rho.0.weight": 131072,
+      "rho.0.bias": 256,
+      "rho.2.weight": 65536,
+      "rho.2.bias": 256,
+      "output_net.0.weight": 131072,
+      "output_net.0.bias": 256,
+      "output_net.2.weight": 512,
+      "output_net.2.bias": 2
+    }
+  },
+  "compute": {
+    "macs_by_layer": {
+      "phi_linear1(9->256)": 2359296,
+      "phi_linear2(256->256)": 67108864,
+      "phi_linear3(256->256)": 67108864,
+      "pool_mean+max": 524288,
+      "rho_linear1(512->256)": 131072,
+      "rho_linear2(256->256)": 65536,
+      "dec_linear1(512->256)": 134217728,
+      "dec_linear2(256->256)": 67108864,
+      "out_linear(256->2)": 524288
+    },
+    "total_macs": 339148800,
+    "total_flops_2x_mac_convention": 678297600
+  },
+  "deployment": {
+    "model_file_mb": 1.857,
+    "cpu_infer_mean_ms": 2.761776678982642,
+    "npu_infer_mean_ms": 0.4991319330147235,
+    "npu_infer_p99_ms": 0.5318146007630276,
+    "npu_end_to_end_mean_ms": 0.6319296799665608,
+    "npu_batch64_throughput_sps": 27648.614527034435,
+    "platform": "Ascend 910_9362 single card / Kunpeng CPU"
+  },
+  "resource_constrained_note": "模型 1.9MB、0.5ms 级推理, 可在 Ascend 910 及主流嵌入式 NPU/GPU 实时部署; CPU-only 亦为毫秒级(2.8ms)"
+}

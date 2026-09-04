@@ -1,0 +1,28 @@
+{
+  "failure_reconstruction_version": "1.0.0",
+  "primary_method": "B2_field_fit_active_lcmv",
+  "method_selection_reason": "existing active-set LCMV is legacy-evaluator code; this is the smallest arbitrary-active-coordinate constrained least-squares correction that preserves the frozen target/null formulation",
+  "common_hyperparameters": {
+    "solver": "Cholesky solve plus numpy.linalg.lstsq for the small constraint system",
+    "rcond": 1e-12,
+    "regularization": "reference ridge with fixed ratio 0.05",
+    "stopping_criteria": "closed-form solve; no iterative stopping or mask-specific tuning",
+    "level_dependent_parameters": false
+  },
+  "B0": "No Reconstruction: exact Stage 4A masked reference; no normalization or redesign.",
+  "B1": "Masked / Active Re-normalization: failed entries zero, active complex weights unchanged up to one common scale.",
+  "B2_formulation": {
+    "active_set": "A = complement of the exact Stage 4A frozen failure mask",
+    "sum": "min ||A_active w_A-A_full w0||_2^2 + rho||w_A-w0_A||_2^2 subject only to preserving a(theta0,phi0)^H w_A=(a(theta0,phi0)^H w0); the four frozen Sum nulls remain in the ideal-field objective and are measured after reconstruction",
+    "difference": "min ||A_active w_A-A_full w0||_2^2 + rho||w_A-w0_A||_2^2 subject to a(theta0,phi0)^H w_A=0 and a(null_j)^H w_A=0 for the four frozen nulls",
+    "coordinates": "arbitrary active x/y coordinates from the original planar 32x32 array; failed coordinates are excluded from variables",
+    "complex_solution": "R=A_active^H A_active+rho I; w=R^-1(A_active^H A_full w0+rho w0)+R^-1 C(C^H R^-1 C)^+(f-C^H R^-1 rhs)",
+    "field_grid": "61 theta samples × 121 azimuth samples, visible domain; A_full is the ideal reference field and A_active is the same grid on active coordinates",
+    "reference_ridge_ratio": 0.05
+  },
+  "reconstruction_policy": "Every case and every level uses the same B0/B1/B2 definitions; no performance-selected parameters.",
+  "formal_primary": "Sum B2 on all 320 masks at each of 20%, 10%, and 5%; Difference azimuth is evaluated in the same official call.",
+  "elevation_status": "not part of Stage 4A formal weight source; Stage 2B elevation remains a separate capability and is not silently mixed into this exact baseline comparison",
+  "frozen_before_pilot": true,
+  "definition_sha256": "212a624022964dbaa80e6aea61cedea554ab2745c10c62510b6478aa0e21bc2b"
+}

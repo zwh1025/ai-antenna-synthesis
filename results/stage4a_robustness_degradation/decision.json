@@ -1,0 +1,26 @@
+{
+  "stage": "Stage 4A",
+  "gate": "STAGE_4A_GO",
+  "gate_checks": {
+    "four_perturbation_definitions_frozen": true,
+    "representative_cases_frozen_before_perturbations": true,
+    "fixed_seeds_recorded": true,
+    "degradation_only_no_resynthesis": true,
+    "failure_masks_complete": true,
+    "frequency_pm10_complete": true,
+    "runtime_stability_complete": true,
+    "stage4b_mask_reuse_ready": true,
+    "required_artifacts_present": true,
+    "official_metric_and_robustness_versions": true
+  },
+  "missing_required_files": [],
+  "formal_scope": "Track P physics degradation audit only",
+  "ai_robustness_diagnostic": "NOT RUN — PHYSICS FORMAL TRACK PRIORITIZED",
+  "re_synthesis_or_adaptation": false,
+  "stage4b_recommendation": {
+    "recommended_failure_level_by_mean_sum_sll_degradation": "0.20",
+    "reason": "use the largest observed mean sum-SLL degradation as the first Stage 4B mask level; do not modify masks or weights in Stage 4A",
+    "masks_artifact": "results\\stage4a_robustness_degradation\\failure_cases.json"
+  },
+  "no_commit_or_push": true
+}

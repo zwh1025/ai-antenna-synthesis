@@ -1,0 +1,55 @@
+{
+  "physics": {
+    "name": "Stage2 planar Taylor/Bayliss fixed-target synthesis",
+    "N": 1024,
+    "repetitions": 100,
+    "warmup": 10,
+    "target": {
+      "theta0_deg": 0.0,
+      "phi0_deg": 0.0
+    },
+    "scope": "synthesis function calls only; no LCMV solve and no dense official evaluator",
+    "samples_s": {
+      "n": 100,
+      "mean_s": 0.00031065900053363295,
+      "std_s": 9.362017389076235e-05,
+      "P50_s": 0.0003753500059247017,
+      "P95_s": 0.00040256500724353825,
+      "min_s": 0.00018990000535268337,
+      "max_s": 0.0006349000032059848,
+      "CV": 0.3013599275409589
+    }
+  },
+  "ai": {
+    "name": "v3 model Ascend 910 inference stability (substituted for Stage3C1 module, not in this repo)",
+    "N": 1024,
+    "batch_size": 1,
+    "repetitions": "v3 256-dim, 1024 elements, batch=1, 1000 iters",
+    "source": "project/outputs/benchmark_v3.json",
+    "platform": "Ascend 910_9362 single card",
+    "scope": {
+      "inference_only": "input on NPU to model output (1000 iters)",
+      "end_to_end": "CPU input -> H2D -> NPU inference -> D2H (200 iters)"
+    },
+    "inference_only_s": {
+      "n": 200,
+      "mean_s": 0.0004991319330147235,
+      "std_s": 1.0391350653992007e-05,
+      "P50_s": 0.0004973640006937785,
+      "P95_s": 0.0005168464506823511,
+      "min_s": 0.00047284899846999906,
+      "max_s": 0.0005612220011244062,
+      "CV": 0.020818845613080582
+    },
+    "end_to_end_s": {
+      "n": 200,
+      "mean_s": 0.0006319296799665607,
+      "std_s": 2.3330499789153692e-05,
+      "P50_s": 0.0006256295000639511,
+      "P95_s": 0.0006489599998531048,
+      "min_s": 0.0006256295000639511,
+      "max_s": 0.0006642379005825205,
+      "CV": 0.036919455643210565
+    }
+  }
+}
