@@ -38,5 +38,10 @@
     "sll_dense": -21.8,
     "time_s": 23.0,
     "note": "教师标签, 1024复权值, 密集网格口径"
+  },
+  "correction_20260905": {
+    "finding": "AP design-grid SLL -34.97 dB is a SAMPLING ARTIFACT: independent evaluation (201x201 + offset grid + 2000 random angles + peak refinement, teacher_stage0a) shows AP collapses to -0.5 ~ -19.3 dB across 12 curved cases, with weight norm 2-21x Taylor and null neighborhood up to -3.8 dB. The -34.97 number must NOT be cited as performance evidence.",
+    "independent_eval_reference": "outputs/teacher_stage0a.json",
+    "dense_socp_with_norm_constraint": "dense cutting-plane SOCP (41x41 init, 15 rounds, null -35dB, ||w||<=1.4*||w_taylor||) achieves -21.9 ~ -37.2 dB on the same independent evaluator with norm ratio pinned at 1.40 — the real teacher-quality upgrade path."
   }
 }
