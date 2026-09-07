@@ -38,10 +38,11 @@ upstream v3 在 1024 阵元任务上报告了以下当前结果：
 
 - 平面增广后，服务器复现的 40 个方向平面退化最大值为 `+0.34 dB`；
 - 同一 v3 模型的曲面测试恢复率为 `120.2%`；
-- **官方口径平面验收**（`results/stage2_ai_v3_official/`，commit d19f736，official evaluator 1.0.0，与 Track P 基线同 273 方向）：v3 direct arm 标准方向 `69/73`（最差 `-34.726`）、随机方向 `196/200`；v3+LCMV arm 为 `61/73`（最差 `-34.626`）、`186/200`；自适应零陷 73/73 全过（`-300 dBc`）；
+- **官方口径平面验收**（`results/stage2_ai_v3_official/` + `server_v4_acceptance.json`，official evaluator 1.0.0，与 Track P 基线同 273 方向）：v3 direct arm 标准方向 `69/73`（最差 `-34.726`）、随机方向 `196/200`；v3+LCMV arm 为 `61/73`（最差 `-34.626`）、`186/200`；**v4（最终交付模型，混合规模训练）direct `68/73`、`198/200`（最差 `-34.35`），v4+LCMV `65/73`、`190/200`（最差 `-34.09`——部署管线臂较 v3 双提升 +4/+4）**；自适应零陷 73/73 全过（`-300 dBc`）；
 - legacy 3×3dB_BW 口径对照（`acceptance_v3_ai.json`）：direct `70/73`、`199/200`，LCMV `69/73`、`194/200`——**第一零点口径更严**，LCMV 置零在该口径下有 0.05–1.1 dB 代价，多方向裕量本就 <0.1 dB；未达标方向由安全门控回退 Taylor 兜底；
-- NPU benchmark 使用真实 v3 权重，在 Ascend 910 上得到纯推理 mean `0.499 ms`、端到端 mean `0.632 ms`、纯推理 P99 `0.532 ms`，batch=64 吞吐 `27,649 samples/s`；
-- 4096 阵元结果是 DeepSets 计算规模测试，不是 4096 阵元 HFSS 全波验证。
+- NPU benchmark（真实权重，Ascend 910）：v4 纯推理 @1024 mean `0.502 ms`（与 v3 的 `0.499 ms` 持平——混合规模训练零延迟代价）、**@4096 mean `1.242 ms`（805 samples/s，相对 4096 SOCP 49.6 s 约 40,000×）**；v4 批量 bs64 `27,410 samples/s`；一致性 max_err `7.45e-7`、cos_sim `1.0`；
+- v4 规模泛化（`scale_fix_v4.json`）：4096 平面最差退化 `+0.11 dB`、4096 曲面反超 Taylor `1.7~3.1 dB`、1024 曲面恢复率 `134%`（v3 为 128%）；
+- 4096 阵元结果是 DeepSets 计算规模测试（阵因子级），不是 4096 阵元 HFSS 全波验证。
 
 v3 的 NPU 数字属于 upstream v3 的 256-dim 模型和对应硬件环境；不能与下述固定曲面 CPU 模型数字直接横向排名。
 
