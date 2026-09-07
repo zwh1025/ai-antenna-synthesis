@@ -1,0 +1,28 @@
+{
+  "model": "deepsets_model_v4_256.pt",
+  "official_metric_version": "1.0.0",
+  "ai_direct": {
+    "regular_pass": 68,
+    "regular_total": 73,
+    "random_pass": 198,
+    "random_total": 200,
+    "worst_db": -34.3485583924667
+  },
+  "ai_lcmv": {
+    "regular_pass": 65,
+    "random_pass": 190,
+    "worst_db": -34.08856486853288
+  },
+  "reference_v3": {
+    "ai_direct": {
+      "regular": "69/73",
+      "random": "196/200",
+      "worst": -34.726
+    },
+    "ai_lcmv": {
+      "regular": "61/73",
+      "random": "186/200",
+      "worst": -34.626
+    }
+  }
+}

@@ -1,0 +1,30 @@
+# v4 服务器补测运行日志 (2026-09-07)
+# 环境: Ascend 910, npu-smi 25.5.5, torch 2.7.1+cpu, torch_npu
+# 权重: 仓库自带 deepsets_model_v4_256.pt (32f1ea5, 463,106 params)
+# 修复: run_consistency 设备bug(NPU模型CPU推理崩溃, 同v3修复方式), 已随本次提交
+
+/opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/utils/_path_manager.py:66: UserWarning: Permission mismatch: The owner of /opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/lib/libop_plugin_atb.so does not match.
+  warnings.warn(f"Permission mismatch: The owner of {path} does not match.")
+model: /mnt/workspace/gitCode/cann/tiaozhansai/project/outputs/deepsets_model_v4_256.pt (463,106 params)
+
+=== 1) NPU benchmark (v4 256-dim) ===
+  pure 1024: mean=0.502ms P99=0.534ms throughput=1992/s
+  pure 4096: mean=1.242ms P99=1.280ms throughput=805/s
+  e2e 1024: mean=0.752ms P99=0.787ms
+  batch 8: 13626 samples/s
+  batch 16: 21537 samples/s
+  batch 64: 27410 samples/s
+  consistency: max_err=7.451e-07 cos=1.00000012
+  saved: outputs/server_v4_benchmark.json
+
+=== 2) v4 official-caliber acceptance (273 dirs) ===
+  50/273 (176s)
+  100/273 (355s)
+  150/273 (534s)
+  200/273 (713s)
+  250/273 (891s)
+
+  v4 direct: 68/73 regular, 198/200 random, worst -34.349
+  v4 +LCMV: 65/73 regular, 190/200 random, worst -34.089
+  (v3 对照: direct 69/73+196/200, lcmv 61/73+186/200)
+  saved: outputs/server_v4_acceptance.json

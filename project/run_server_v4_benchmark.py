@@ -131,9 +131,11 @@ def run_npu_benchmark(model_npu, dev):
 
 
 def run_consistency(model, dev):
+    import copy
+    model_cpu = copy.deepcopy(model).to('cpu').eval()
     x = torch.randn(1, 1024, 9)
     with torch.no_grad():
-        y_cpu = model(x).numpy().flatten()
+        y_cpu = model_cpu(x).numpy().flatten()
         y_npu = model(x.to(dev)).to('cpu').numpy().flatten()
     max_err = float(np.max(np.abs(y_cpu - y_npu)))
     cos = float(np.dot(y_cpu, y_npu) /
