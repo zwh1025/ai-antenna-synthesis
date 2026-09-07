@@ -1,0 +1,443 @@
+{
+  "stage": "Stage 0D final — perturbed-aperture three-arm pilot",
+  "verdict": {
+    "fail20": "SOCP teacher +7.07 dB over frozen Taylor-LCMV (all 7 cases +6.1~+8.3)",
+    "fail10": "+4.72 dB (6/7 cases improved +1.9~+7.4, 1 case no gain)",
+    "fail05": "+0.61 dB conservative (5/7 cases SOCP found no gain; 2 cases +2.0/+2.2) — frozen weights near-optimal at 5%",
+    "pos": "A2 shows no SOCP gain over coordinate-Taylor start; analytic resynthesis (coordinate Taylor) is near-optimal for +/-0.05lambda known position errors",
+    "quant": "teacher not measured (needs quantization-aware SOCP, nonconvex)",
+    "freq": "sum-SLL insensitive for all arms; degradation lives in nulls/difference channel (per Stage4A)"
+  },
+  "caliber_fixes_discovered": [
+    "v1 A2 column INVALID: 3bw exclusion left [1bw,3bw] skirt blind zone (SOCP piled energy into mainlobe skirt, official -9.5dB artifact)",
+    "adaptive-mask chasing oscillates (mask is a function of solution)",
+    "v2 fix: constraints & convergence on fixed A0 first-null envelope (fair, convex, reproducible); official caliber still reported",
+    "WARNING: stage0a/0c curved teachers used 3bw exclusion + independent_eval — same caliber misalignment may affect their limits"
+  ],
+  "implications_for_v5": [
+    "core scenario = element failure: teacher headroom +4.7~+7.1 dB",
+    "position errors: benchmark against coordinate Taylor (analytic, free); AI value = unified model, parity is enough",
+    "hybrid teacher strategy: SOCP for failure cases, analytic coordinate-Taylor for pos/quant/freq cases (label cost control)",
+    "fail05 labels partly equal frozen weights (true structure, network should learn no-op there)"
+  ],
+  "table": {
+    "fail05": {
+      "a0": -30.54,
+      "a1": -30.61,
+      "a2": -31.15,
+      "recovery_a2_vs_a0": -0.61
+    },
+    "fail10": {
+      "a0": -28.08,
+      "a1": -28.0,
+      "a2": -32.8,
+      "recovery_a2_vs_a0": -4.72
+    },
+    "fail20": {
+      "a0": -23.35,
+      "a1": -23.3,
+      "a2": -30.28,
+      "recovery_a2_vs_a0": -6.93
+    },
+    "pos": {
+      "a0": -32.83,
+      "a1": -32.14,
+      "a2": -33.42,
+      "recovery_a2_vs_a0": -0.59
+    }
+  },
+  "rows": [
+    {
+      "tag": "ideal",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -35.22,
+      "a1_analytic_resynth": -35.22,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "ideal",
+      "case_id": "regular_004",
+      "a0_fixed_frozen": -35.15,
+      "a1_analytic_resynth": -35.15,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "ideal",
+      "case_id": "regular_028",
+      "a0_fixed_frozen": -35.22,
+      "a1_analytic_resynth": -35.22,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "ideal",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -35.21,
+      "a1_analytic_resynth": -35.21,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "ideal",
+      "case_id": "regular_072",
+      "a0_fixed_frozen": -35.22,
+      "a1_analytic_resynth": -35.22,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "ideal",
+      "case_id": "random_000",
+      "a0_fixed_frozen": -35.19,
+      "a1_analytic_resynth": -35.19,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "ideal",
+      "case_id": "random_050",
+      "a0_fixed_frozen": -35.16,
+      "a1_analytic_resynth": -35.16,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "fail05",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -30.58,
+      "a1_analytic_resynth": -31.18,
+      "a2_socp_teacher": -30.58,
+      "a2_time_s": 6808
+    },
+    {
+      "tag": "fail05",
+      "case_id": "regular_004",
+      "a0_fixed_frozen": -30.51,
+      "a1_analytic_resynth": -30.55,
+      "a2_socp_teacher": -30.52,
+      "a2_time_s": 6872
+    },
+    {
+      "tag": "fail05",
+      "case_id": "regular_028",
+      "a0_fixed_frozen": -30.58,
+      "a1_analytic_resynth": -30.49,
+      "a2_socp_teacher": -30.58,
+      "a2_time_s": 6497
+    },
+    {
+      "tag": "fail05",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -30.55,
+      "a1_analytic_resynth": -30.54,
+      "a2_socp_teacher": -30.55,
+      "a2_time_s": 6605
+    },
+    {
+      "tag": "fail05",
+      "case_id": "regular_072",
+      "a0_fixed_frozen": -30.59,
+      "a1_analytic_resynth": -30.54,
+      "a2_socp_teacher": -32.61,
+      "a2_time_s": 6678
+    },
+    {
+      "tag": "fail05",
+      "case_id": "random_000",
+      "a0_fixed_frozen": -30.48,
+      "a1_analytic_resynth": -30.47,
+      "a2_socp_teacher": -30.48,
+      "a2_time_s": 6667
+    },
+    {
+      "tag": "fail05",
+      "case_id": "random_050",
+      "a0_fixed_frozen": -30.49,
+      "a1_analytic_resynth": -30.48,
+      "a2_socp_teacher": -32.72,
+      "a2_time_s": 6465
+    },
+    {
+      "tag": "fail10",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -28.12,
+      "a1_analytic_resynth": -28.06,
+      "a2_socp_teacher": -33.95,
+      "a2_time_s": 6634
+    },
+    {
+      "tag": "fail10",
+      "case_id": "regular_004",
+      "a0_fixed_frozen": -28.05,
+      "a1_analytic_resynth": -27.78,
+      "a2_socp_teacher": -34.96,
+      "a2_time_s": 6595
+    },
+    {
+      "tag": "fail10",
+      "case_id": "regular_028",
+      "a0_fixed_frozen": -28.12,
+      "a1_analytic_resynth": -28.08,
+      "a2_socp_teacher": -32.92,
+      "a2_time_s": 6539
+    },
+    {
+      "tag": "fail10",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -28.06,
+      "a1_analytic_resynth": -28.06,
+      "a2_socp_teacher": -28.06,
+      "a2_time_s": 6690
+    },
+    {
+      "tag": "fail10",
+      "case_id": "regular_072",
+      "a0_fixed_frozen": -28.08,
+      "a1_analytic_resynth": -28.06,
+      "a2_socp_teacher": -35.51,
+      "a2_time_s": 6314
+    },
+    {
+      "tag": "fail10",
+      "case_id": "random_000",
+      "a0_fixed_frozen": -28.05,
+      "a1_analytic_resynth": -28.04,
+      "a2_socp_teacher": -29.96,
+      "a2_time_s": 6594
+    },
+    {
+      "tag": "fail10",
+      "case_id": "random_050",
+      "a0_fixed_frozen": -28.06,
+      "a1_analytic_resynth": -27.95,
+      "a2_socp_teacher": -34.22,
+      "a2_time_s": 6564
+    },
+    {
+      "tag": "fail20",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -23.37,
+      "a1_analytic_resynth": -23.29,
+      "a2_socp_teacher": -31.66,
+      "a2_time_s": 6615
+    },
+    {
+      "tag": "fail20",
+      "case_id": "regular_004",
+      "a0_fixed_frozen": -23.34,
+      "a1_analytic_resynth": -23.26,
+      "a2_socp_teacher": -30.49,
+      "a2_time_s": 6551
+    },
+    {
+      "tag": "fail20",
+      "case_id": "regular_028",
+      "a0_fixed_frozen": -23.38,
+      "a1_analytic_resynth": -23.27,
+      "a2_socp_teacher": -30.37,
+      "a2_time_s": 6304
+    },
+    {
+      "tag": "fail20",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -23.34,
+      "a1_analytic_resynth": -23.33,
+      "a2_socp_teacher": -29.43,
+      "a2_time_s": 6479
+    },
+    {
+      "tag": "fail20",
+      "case_id": "regular_072",
+      "a0_fixed_frozen": -23.37,
+      "a1_analytic_resynth": -23.34,
+      "a2_socp_teacher": -29.72,
+      "a2_time_s": 6305
+    },
+    {
+      "tag": "fail20",
+      "case_id": "random_000",
+      "a0_fixed_frozen": -23.32,
+      "a1_analytic_resynth": -23.32,
+      "a2_socp_teacher": -29.58,
+      "a2_time_s": 6399
+    },
+    {
+      "tag": "fail20",
+      "case_id": "random_050",
+      "a0_fixed_frozen": -23.33,
+      "a1_analytic_resynth": -23.3,
+      "a2_socp_teacher": -30.71,
+      "a2_time_s": 6312
+    },
+    {
+      "tag": "pos",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -34.67,
+      "a1_analytic_resynth": -34.82,
+      "a2_socp_teacher": -35.22,
+      "a2_time_s": 5747
+    },
+    {
+      "tag": "pos",
+      "case_id": "regular_004",
+      "a0_fixed_frozen": -33.7,
+      "a1_analytic_resynth": -34.56,
+      "a2_socp_teacher": -34.82,
+      "a2_time_s": 6517
+    },
+    {
+      "tag": "pos",
+      "case_id": "regular_028",
+      "a0_fixed_frozen": -32.31,
+      "a1_analytic_resynth": -30.88,
+      "a2_socp_teacher": -33.54,
+      "a2_time_s": 6317
+    },
+    {
+      "tag": "pos",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -33.23,
+      "a1_analytic_resynth": -30.87,
+      "a2_socp_teacher": -34.02,
+      "a2_time_s": 5755
+    },
+    {
+      "tag": "pos",
+      "case_id": "regular_072",
+      "a0_fixed_frozen": -31.8,
+      "a1_analytic_resynth": -30.54,
+      "a2_socp_teacher": -31.24,
+      "a2_time_s": 6071
+    },
+    {
+      "tag": "pos",
+      "case_id": "random_000",
+      "a0_fixed_frozen": -32.47,
+      "a1_analytic_resynth": -32.59,
+      "a2_socp_teacher": -34.01,
+      "a2_time_s": 6203
+    },
+    {
+      "tag": "pos",
+      "case_id": "random_050",
+      "a0_fixed_frozen": -31.63,
+      "a1_analytic_resynth": -30.74,
+      "a2_socp_teacher": -31.12,
+      "a2_time_s": 5794
+    },
+    {
+      "tag": "quant",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -35.03,
+      "a1_analytic_resynth": -34.96,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "quant",
+      "case_id": "regular_028",
+      "a0_fixed_frozen": -34.91,
+      "a1_analytic_resynth": -34.99,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "quant",
+      "case_id": "regular_072",
+      "a0_fixed_frozen": -31.52,
+      "a1_analytic_resynth": -31.77,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "quant",
+      "case_id": "random_000",
+      "a0_fixed_frozen": -35.0,
+      "a1_analytic_resynth": -35.01,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq0.90",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -35.25,
+      "a1_analytic_resynth": -34.52,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq0.95",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -35.35,
+      "a1_analytic_resynth": -35.08,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq1.00",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -35.22,
+      "a1_analytic_resynth": -35.22,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq1.05",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -35.43,
+      "a1_analytic_resynth": -35.32,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq1.10",
+      "case_id": "regular_000",
+      "a0_fixed_frozen": -35.23,
+      "a1_analytic_resynth": -35.04,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq0.90",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -35.16,
+      "a1_analytic_resynth": -35.17,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq0.95",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -35.2,
+      "a1_analytic_resynth": -35.16,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq1.00",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -35.21,
+      "a1_analytic_resynth": -35.21,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq1.05",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -35.19,
+      "a1_analytic_resynth": -35.14,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    },
+    {
+      "tag": "freq1.10",
+      "case_id": "regular_050",
+      "a0_fixed_frozen": -35.15,
+      "a1_analytic_resynth": -35.17,
+      "a2_socp_teacher": null,
+      "a2_time_s": null
+    }
+  ]
+}
