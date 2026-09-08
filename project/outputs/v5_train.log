@@ -1,0 +1,46 @@
+/opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/utils/_path_manager.py:66: UserWarning: Permission mismatch: The owner of /opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/lib/libop_plugin_atb.so does not match.
+  warnings.warn(f"Permission mismatch: The owner of {path} does not match.")
+==============================================================================
+v5: conditional DeepSets (perturbation-aware re-synthesis)
+==============================================================================
+[stage1] analytic: 280 samples
+[stage1] failure: 15 samples
+[stage1] saved: /mnt/workspace/gitCode/cann/tiaozhansai/project/outputs/teacher_labels_v5.npz (295 samples: 163 train / 59 val / 73 test)
+[stage2] train: 163 samples in 2 groups; val: 59; params=463,362
+  ep  1: loss=6.304965 val=1.828567 (10s)
+  ep 10: loss=0.058401 val=0.058693 (91s)
+  ep 20: loss=0.055458 val=0.053464 (182s)
+  ep 30: loss=0.042104 val=0.040277 (274s)
+  ep 40: loss=0.037688 val=0.035285 (365s)
+  ep 50: loss=0.036492 val=0.036019 (456s)
+  ep 60: loss=0.029162 val=0.030309 (548s)
+  ep 70: loss=0.027542 val=0.031234 (640s)
+  ep 80: loss=0.027908 val=0.029180 (732s)
+  ep 90: loss=0.026936 val=0.025394 (823s)
+  ep100: loss=0.024570 val=0.023432 (915s)
+  ep110: loss=0.025764 val=0.025573 (1006s)
+  ep120: loss=0.022871 val=0.023220 (1099s)
+  ep130: loss=0.022453 val=0.022684 (1191s)
+  ep140: loss=0.021856 val=0.022590 (1282s)
+  ep150: loss=0.022389 val=0.023179 (1374s)
+  ep160: loss=0.021850 val=0.022287 (1466s)
+  ep170: loss=0.021529 val=0.021921 (1556s)
+  ep180: loss=0.020652 val=0.021985 (1646s)
+  ep190: loss=0.020427 val=0.021932 (1737s)
+  early stop ep193 (best 0.021858)
+[stage2] saved: /mnt/workspace/gitCode/cann/tiaozhansai/project/outputs/deepsets_model_v5_256.pt (best val 0.021858)
+  fail05 regular_000: A0=-30.58 AI=-30.56 (+0.03)
+  fail05 regular_028: A0=-30.58 AI=-30.65 (-0.07)
+  fail05 regular_072: A0=-30.59 AI=-28.66 (+1.94)
+  fail05 random_000: A0=-30.48 AI=-30.49 (-0.00)
+  fail10 regular_000: A0=-28.12 AI=-28.13 (-0.01)
+  fail10 regular_028: A0=-28.12 AI=-28.14 (-0.01)
+  fail10 regular_072: A0=-28.08 AI=-28.23 (-0.15)
+  fail10 random_000: A0=-28.05 AI=-28.04 (+0.01)
+  fail20 regular_000: A0=-23.37 AI=-23.38 (-0.00)
+  fail20 regular_028: A0=-23.38 AI=-23.38 (-0.00)
+  fail20 regular_072: A0=-23.37 AI=-23.73 (-0.36)
+  fail20 random_000: A0=-23.32 AI=-23.33 (-0.01)
+  planar ideal worst degradation: +7.71 dB
+[stage3] saved: /mnt/workspace/gitCode/cann/tiaozhansai/project/outputs/conditional_v5.json
+==============================================================================
