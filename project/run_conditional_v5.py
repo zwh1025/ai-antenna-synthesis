@@ -334,6 +334,44 @@ def _features_v5(px, py, pz, w_re, w_im, u0, v0, w0, scale, mask):
     ], axis=-1).astype(np.float32)
 
 
+def _init_from_v4(model, v4_path):
+    """从 v4 权重迁移学习：复制 9 维权重，mask 维初始化为 0（无影响）。"""
+    v4_sd = torch.load(v4_path, map_location='cpu', weights_only=True)
+    v5_sd = model.state_dict()
+    copied = 0
+    for k in v5_sd:
+        if k in v4_sd and v4_sd[k].shape == v5_sd[k].shape:
+            v5_sd[k] = v4_sd[k].clone()
+            copied += 1
+        elif k == 'phi.0.weight' and 'phi.0.weight' in v4_sd:
+            w = v4_sd['phi.0.weight']  # (256, 9)
+            v5_sd[k][:, :9] = w
+            v5_sd[k][:, 9] = 0.0  # mask 维 = 0，初始等价 v4
+            copied += 1
+            print(f'  [transfer] phi.0.weight: {w.shape} -> {v5_sd[k].shape} '
+                  f'(mask col=0)', flush=True)
+    model.load_state_dict(v5_sd)
+    print(f'  [transfer] copied {copied}/{len(v5_sd)} tensors from v4',
+          flush=True)
+    return model
+
+
+def _eval_ideal_degradation(model, posx, posy, amp_x, amp_y, px0, py0, pz0):
+    """理想平面 40 方向最差退化（快速评估，用于训练早停门控）。"""
+    mask_one = np.ones(len(px0), dtype=np.float32)
+    worst = -100.0
+    for t in [0, 30, 60]:
+        for p in [0, 90, 180, 270]:
+            nd = _get_null_dirs(t, p)
+            w_t = coordinate_taylor_3d(px0, py0, pz0, amp_x, amp_y, t, p)
+            sll_t, _, _, _ = eval_dense_3d(w_t, px0, py0, pz0, t, p, nd)
+            w_ai, _ = model_predict_v5(model, px0, py0, pz0, amp_x, amp_y,
+                                        t, p, mask_one)
+            sll_a, _, _, _ = eval_dense_3d(w_ai, px0, py0, pz0, t, p, nd)
+            worst = max(worst, sll_a - sll_t)
+    return worst
+
+
 def stage2_train():
     if os.path.exists(MODEL_V5):
         print(f'[stage2] 已存在, 跳过: {MODEL_V5}')
@@ -344,11 +382,11 @@ def stage2_train():
     va_idx = np.where(split == 1)[0]
 
     def pack(idx_list):
-        feats, tgts = [], []
+        feats, tgts, is_failure = [], [], []
         for i in idx_list:
             n = len(d['px'][i])
             scale = float(n)
-            mask = d['mask'][i]
+            mask = np.asarray(d['mask'][i], dtype=np.float32)
             w_re = d['w_taylor_re'][i]
             w_im = d['w_taylor_im'][i]
             d_re = (d['w_socp_re'][i] - w_re) * scale * mask
@@ -358,36 +396,61 @@ def stage2_train():
                 float(d['u0'][i]), float(d['v0'][i]), float(d['w0'][i]),
                 scale, mask))
             tgts.append(np.stack([d_re, d_im], axis=-1).astype(np.float32))
-        return np.array(feats, dtype=object), np.array(tgts, dtype=object)
+            is_failure.append(float(mask.min()) < 0.5)
+        return feats, tgts, is_failure
 
-    tr_f, tr_t = pack(tr_idx)
-    va_f, va_t = pack(va_idx)
+    tr_f, tr_t, tr_fail = pack(tr_idx)
+    va_f, va_t, _ = pack(va_idx)
 
-    groups = []
-    for f, t in zip(tr_f, tr_t):
-        groups.append((len(f), [f], [t]))
-    merged = {}
-    for n, fl, tl in groups:
+    # 数据平衡：失效样本 3x 上采样
+    fail_idx = [i for i, f in enumerate(tr_fail) if f]
+    ideal_idx = [i for i, f in enumerate(tr_fail) if not f]
+    oversample = fail_idx * 3  # 3x 失效样本
+    balanced_idx = ideal_idx + oversample
+    print(f'[stage2] train: {len(ideal_idx)} ideal + {len(fail_idx)} failure '
+          f'-> {len(balanced_idx)} balanced (failure 3x oversampled)',
+          flush=True)
+
+    # 按 size 分组
+    by_size = {}
+    for i in balanced_idx:
+        n = len(tr_f[i])
         key = '1024' if n == 1024 else ('4096' if n == 4096 else f'n{n}')
-        if key not in merged:
-            merged[key] = ([], [])
-        merged[key][0].append(fl[0])
-        merged[key][1].append(tl[0])
+        if key not in by_size:
+            by_size[key] = ([], [])
+        by_size[key][0].append(tr_f[i])
+        by_size[key][1].append(tr_t[i])
     train_groups = [(k, np.array(v[0]), np.array(v[1]))
-                    for k, v in merged.items()]
+                    for k, v in by_size.items()]
 
     model = DeepSetsModel(input_dim=10, hidden_dim=HIDDEN, output_dim=2)
-    opt = torch.optim.Adam(model.parameters(), lr=LR)
+
+    # v4 迁移学习
+    v4_path = os.path.join(OUTPUT_DIR, 'deepsets_model_v4_256.pt')
+    if os.path.exists(v4_path):
+        print(f'[stage2] v4 transfer learning from {v4_path}', flush=True)
+        model = _init_from_v4(model, v4_path)
+
+    opt = torch.optim.Adam(model.parameters(), lr=LR * 0.3)  # 低 LR 微调
     sched = torch.optim.lr_scheduler.ReduceLROnPlateau(opt, mode='min',
                                                        factor=0.5, patience=8)
     stop = EarlyStopping(patience=30)
     crit = nn.MSELoss()
 
-    print(f'[stage2] train: {len(tr_idx)} samples in {len(train_groups)} '
-          f'groups; val: {len(va_idx)}; params={count_parameters(model):,}',
+    # 理想平面回归监控
+    posx = uniform_linear_array_pos(NX32)
+    posy = uniform_linear_array_pos(NX32)
+    amp_x, amp_y = taylor_2d_separable(NX32, NX32, 35)
+    px0 = np.tile(posx[:, None], (1, NX32)).ravel()
+    py0 = np.tile(posy[None, :], (NX32, 1)).ravel()
+    pz0 = np.zeros(NX32 * NX32)
+
+    print(f'[stage2] params={count_parameters(model):,}; '
+          f'val={len(va_idx)}; lr={LR*0.3:.1e} (v4 fine-tune)',
           flush=True)
     t0 = time.time()
     best = float('inf')
+    best_ideal_deg = +99.0
     for epoch in range(EPOCHS):
         model.train()
         tot, nb = 0.0, 0
@@ -417,16 +480,32 @@ def stage2_train():
                 cnt += 1
         vl /= max(cnt, 1)
         sched.step(vl)
-        if vl < best:
-            best = vl
-            torch.save(model.state_dict(), MODEL_V5)
+
+        # 每 10 epoch 检查理想退化
+        ideal_deg = None
         if (epoch + 1) % 10 == 0 or epoch == 0:
-            print(f'  ep{epoch+1:3d}: loss={tot/nb:.6f} val={vl:.6f} '
-                  f'({time.time()-t0:.0f}s)', flush=True)
+            ideal_deg = _eval_ideal_degradation(model, posx, posy, amp_x,
+                                                amp_y, px0, py0, pz0)
+
+        # 保存条件：val loss 改善 AND 理想退化 < 2dB（或首次）
+        save = vl < best
+        if ideal_deg is not None and ideal_deg > 2.0 and best < float('inf'):
+            save = False  # 理想退化超 2dB，拒绝保存
+        if save:
+            best = vl
+            best_ideal_deg = ideal_deg if ideal_deg is not None else best_ideal_deg
+            torch.save(model.state_dict(), MODEL_V5)
+
+        if (epoch + 1) % 10 == 0 or epoch == 0:
+            deg_str = f' ideal_deg={ideal_deg:+.2f}dB' if ideal_deg is not None else ''
+            print(f'  ep{epoch+1:3d}: loss={tot/nb:.6f} val={vl:.6f}'
+                  f'{deg_str} ({time.time()-t0:.0f}s)', flush=True)
         if stop.step(vl):
-            print(f'  early stop ep{epoch+1} (best {best:.6f})', flush=True)
+            print(f'  early stop ep{epoch+1} (best {best:.6f}, '
+                  f'ideal_deg={best_ideal_deg:+.2f}dB)', flush=True)
             break
-    print(f'[stage2] saved: {MODEL_V5} (best val {best:.6f})', flush=True)
+    print(f'[stage2] saved: {MODEL_V5} (best val {best:.6f}, '
+          f'ideal_deg={best_ideal_deg:+.2f}dB)', flush=True)
 
 
 # ==================== stage 3: 评估 ====================

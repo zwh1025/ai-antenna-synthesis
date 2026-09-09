@@ -1,0 +1,22 @@
+/opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/utils/_path_manager.py:66: UserWarning: Permission mismatch: The owner of /opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/lib/libop_plugin_atb.so does not match.
+  warnings.warn(f"Permission mismatch: The owner of {path} does not match.")
+[failure] 100 失效样本 SOCP 教师 (rounds=15, rho=1.4) on 38 procs
+/mnt/workspace/gitCode/cann/tiaozhansai/project/run_teacher_stage0d_v2.py:206: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=cp.CLARABEL)
+/mnt/workspace/gitCode/cann/tiaozhansai/project/run_teacher_stage0d_v2.py:206: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=cp.CLARABEL)
+/mnt/workspace/gitCode/cann/tiaozhansai/project/run_teacher_stage0d_v2.py:206: UserWarning: Solution may be inaccurate. Try another solver, adjusting the solver settings, or solve with verbose=True for more information.
+  prob.solve(solver=cp.CLARABEL)
+[failure] 1/100 (8036s, rate=0.1, th=30, SLL_t=-28.9, SLL_s=-28.9)
+[failure] 10/100 (8633s, rate=0.1, th=30, SLL_t=-29.5, SLL_s=-29.3)
+[failure] 20/100 (8633s, rate=0.1, th=0, SLL_t=-29.4, SLL_s=-32.4)
+[failure] 30/100 (8633s, rate=0.1, th=15, SLL_t=-28.6, SLL_s=-28.4)
+[failure] 40/100 (15121s, rate=0.1, th=60, SLL_t=-28.9, SLL_s=-28.9)
+[failure] 50/100 (15904s, rate=0.1, th=0, SLL_t=-30.4, SLL_s=-30.5)
+[failure] 60/100 (15904s, rate=0.2, th=45, SLL_t=-26.1, SLL_s=-26.0)
+[failure] 70/100 (15904s, rate=0.2, th=30, SLL_t=-25.3, SLL_s=-28.0)
+[failure] 80/100 (19318s, rate=0.2, th=0, SLL_t=-25.9, SLL_s=-26.1)
+[failure] 90/100 (19382s, rate=0.2, th=0, SLL_t=-25.8, SLL_s=-25.9)
+[failure] 100/100 (19619s, rate=0.2, th=15, SLL_t=-26.1, SLL_s=-27.9)
+[failure] done in 19620s
+[failure] saved: /mnt/workspace/gitCode/cann/tiaozhansai/project/outputs/teacher_labels_v5_failure.npz (100 samples)

@@ -45,8 +45,8 @@ COORD_NORM = 8.0
 SEED_ANALYTIC = 314
 
 POS_N = 60
-FAIL_RATES = [0.05, 0.10, 0.20]
-FAIL_N_PER_RATE = 7  # 7 cases × 3 rates = 21 高质量种子（25轮固定掩膜SOCP）
+FAIL_RATES = [0.10, 0.20]  # skip 5% (0D 证明≈Taylor, 无增益)
+FAIL_N_PER_RATE = 50       # 50 × 2 rates = 100 高质量样本
 FAIL_SEED_BASE = 500
 FAIL_THETAS = [0.0, 15.0, 30.0, 45.0, 60.0]
 
@@ -178,7 +178,7 @@ def stage1_analytic():
 
 # ============ 失效 SOCP 教师（后台并行） ============
 
-SOCP_ROUNDS = 25
+SOCP_ROUNDS = 15  # 15轮（0D: round10 -24.59, round25 -31.66; 15轮预计-28~-29）
 SOCP_RHO = 1.4
 SOCCP_EPS_DB = -35
 SOCP_COARSE_GRID = 31
